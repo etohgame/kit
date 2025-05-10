@@ -1,0 +1,10 @@
+tmp.rbxl
+place.rbxl
+sourcemap.json
+.DS_Store
+lib
+.build
+/build
+.vscode
+.env
+mirror

@@ -1,0 +1,18 @@
+gitRepoUrl = "https://github.com/etohgame/kit"
+gitSourceBranch = "main"
+
+[[classOrder]]
+classes = ["ClientObjects", "Character", "Config", "Functions", "Gui", "Instance", "JumpButton", "Lighting", "Property", "ScopeUtil", "Table"]
+section = "Utility"
+
+[home]
+enabled = true
+includeReadme = false
+
+[docusaurus]
+tagline = "EToH Kit V6 (BETA)"
+
+
+[footer]
+style = "dark"
+copyright = "etohgame"
