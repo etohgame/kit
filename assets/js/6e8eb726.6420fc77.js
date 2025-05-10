@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[756],{84410:e=>{e.exports=JSON.parse('{"sourceUrl":"https://github.com/etohgame/kit/blob/main","baseUrl":"/kit/","classOrder":[{"classes":["ClientObjects","Character","Config","Functions","Gui","Instance","JumpButton","Lighting","Property","ScopeUtil","Table"],"section":"Utility"}],"apiCategories":[]}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[337],{10587:e=>{e.exports=JSON.parse('{"functions":[],"properties":[],"types":[],"name":"Gui","desc":"A table of utility functions that can be used to speed up the process of writing repository scripts for client objects.","realm":["Client"],"source":{"line":9,"path":"mirror/Kit.Utility.Gui.luau"}}')}}]);
