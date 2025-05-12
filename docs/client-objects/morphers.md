@@ -2,10 +2,9 @@
 sidebar_position: 15
 ---
 # Morphers
+
 Description
 
-# Media
+## Use Cases
 
-# Use Cases
-
-# Configuration
+## Configuration

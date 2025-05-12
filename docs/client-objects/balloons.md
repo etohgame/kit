@@ -2,10 +2,9 @@
 sidebar_position: 3
 ---
 # Balloons
+
 Description
 
-# Media
+## Use Cases
 
-# Use Cases
-
-# Configuration
+## Configuration

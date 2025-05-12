@@ -1,7 +1,7 @@
 ---
-sidebar_position: 26
+sidebar_position: 33
 ---
-# Vanishers
+# Property Changers
 
 Description
 

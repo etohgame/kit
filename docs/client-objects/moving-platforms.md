@@ -2,10 +2,9 @@
 sidebar_position: 16
 ---
 # Moving Platforms
+
 Description
 
-# Media
+## Use Cases
 
-# Use Cases
-
-# Configuration
+## Configuration

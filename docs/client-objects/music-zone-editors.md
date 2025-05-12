@@ -2,10 +2,9 @@
 sidebar_position: 17
 ---
 # Music Zone Editors
+
 Description
 
-# Media
+## Use Cases
 
-# Use Cases
-
-# Configuration
+## Configuration

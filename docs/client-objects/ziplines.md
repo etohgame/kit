@@ -2,10 +2,9 @@
 sidebar_position: 2
 ---
 # Ziplines
+
 Description
 
-# Media
+## Use Cases
 
-# Use Cases
-
-# Configuration
+## Configuration

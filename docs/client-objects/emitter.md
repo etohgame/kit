@@ -2,10 +2,9 @@
 sidebar_position: 20
 ---
 # Emitter
+
 Description
 
-# Media
+## Use Cases
 
-# Use Cases
-
-# Configuration
+## Configuration

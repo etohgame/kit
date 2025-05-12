@@ -2,10 +2,9 @@
 sidebar_position: 14
 ---
 # Lighting Changers
+
 Description
 
-# Media
+## Use Cases
 
-# Use Cases
-
-# Configuration
+## Configuration
