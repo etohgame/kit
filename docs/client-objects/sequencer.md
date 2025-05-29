@@ -1,6 +1,3 @@
----
-sidebar_position: 28
----
 # Sequencer
 
 Description
