@@ -1,7 +1,3 @@
----
-sidebar_position: 0
----
-
 # Kill Bricks
 
 Kill Bricks deal damage to characters that come into contact with them. Damage from Kill Bricks are typically dealt in fixed values.
