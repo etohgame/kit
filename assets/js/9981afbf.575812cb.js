@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[2005],{25575:e=>{e.exports=JSON.parse('{"functions":[],"properties":[],"types":[],"name":"Communicator","desc":"Scope Communicator","realm":["Client"],"source":{"line":319,"path":"mirror/Kit.Managers.ScopeConstructor.luau"}}')}}]);
