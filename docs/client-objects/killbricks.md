@@ -16,4 +16,4 @@ Below are [`Tags`](https://create.roblox.com/docs/reference/engine/classes/Colle
 | `instakills`| infinite |
 | `heals` | Heals the player to full health|  
 
-Damage may be dynamically set by adding a `number` [`Attribute`](https://create.roblox.com/docs/scripting/attributes) called `damage`.
+Damage may be dynamically set by adding a `number` [`Attribute`](https://create.roblox.com/docs/scripting/attributes) called `damage` (case sensitive) to the part.
