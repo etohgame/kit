@@ -4,6 +4,8 @@ Vanishers are objects that allow any BasePart to vanish.
 
 ## Use Cases
 
+Vanishers can be used to create varying types of gameplay, puzzles, or contraptions.
+
 ## Vanish modes
 
 Each `VanishMode` has unique logic.
