@@ -3,10 +3,11 @@
 Pushbox spawners are objects that spawn a Pushbox upon pressing the button. It can also be used to spawn other objects.
 
 ## Use Cases
-* Spawning a box that can be pushed around
-* Spawning or resetting a contraption parented inside the Pushbox model
+
+Pushbox spawners can be used to spawn a box that can be pushed around, or to reset a contraption parented inside the Pushbox model.
 
 ## Configuration
+
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `Cooldown` | 0.5 | Delay between being able to respawn the Pushbox group.

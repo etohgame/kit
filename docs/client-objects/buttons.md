@@ -6,6 +6,8 @@ Buttons are defined as [`Models`](https://create.roblox.com/docs/reference/engin
 
 ## Use Cases
 
+Buttons may be used to create toggleable parts and objects, or to display text on the player's screen.
+
 ## Configuration
 
 ### `PressedMaterial`
@@ -62,6 +64,8 @@ By default, a Button Activated Part behaves as follows:
 |-------------------------------|--------------|----------------|----------------|
 | Unpressed                     | `false`      | `0.6`          | disabled |
 | Pressed                       | `true`       | `0`            | enabled |
+
+It should be noted that if 64 or more parts are toggled at once, there will be a single frame delay to improve performance.
 
 ### Supported Visual Instances
 

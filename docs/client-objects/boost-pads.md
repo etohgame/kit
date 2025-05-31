@@ -1,11 +1,12 @@
 # Boost Pads
 
-Boost Pads are similar to Boosters, but the boost is only active while the player is interacting with or close-by the boost pad.
+Boost Pads are similar to Boosters, but the boost is only active while the player is interacting with or near the boost pad.
 
 ## Use Cases
 
 ## Configuration
-For the Type and Power settings, see the Booster page for more details.
+
+For the Type and Power settings, see [Boosters](/docs/client-objects/boosters.md)
 
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:

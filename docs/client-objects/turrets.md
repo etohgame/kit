@@ -1,11 +1,13 @@
 # Turrets
+
 Turrets are objects that shoot out bullets that damage the player. They are also able to be customized to shoot out other things.
 
 ## Use Cases
-* Shooting projectiles the player has to avoid
-* Shooting out other objects, such as platforms or other COs
+
+Turrets can be used to shoot projectiles the player has to avoid, or to shoot out other objects such as platforms or other client objects.
 
 ## Configuration
+
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `Damage` | 5 | How much damage the bullet will deal upon impact with the player. Note that only parts named "Bullet" will deal damage.
@@ -16,7 +18,9 @@ Turrets are objects that shoot out bullets that damage the player. They are also
 | `Speed` | 50 | The speed that fired bullets will move at, measured in studs per second
 
 ## Additional notes
+
 When making complex bullets (e.g. firing other client objects), you should keep in mind that the "main" part of the bullet will be automatically positioned at the turret's position and rotation when firing, moving all other parts welded to it as well. The main part is determined by going through these steps and picking the first one that applies:
+
 * The bullet model's PrimaryPart
 * A part inside the bullet model named "Bullet"
 * If neither of these apply, a default bullet will be used as a failsafe.

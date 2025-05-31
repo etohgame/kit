@@ -5,6 +5,7 @@ Boosters grant the player a boost when they are interacted with.
 ## Use Cases
 
 ## Configuration
+
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `Mode` | Default | The mode of the booster. See the Modes section below for more details
@@ -14,12 +15,14 @@ Boosters grant the player a boost when they are interacted with.
 | `TimerDecimals` | 1 | The amount of decimals to show on the boost timer.
 
 ## Modes
+
 | Mode | Humanoid Property affected | Default Value
 |:-----:|:-----:|:-----:
 | `Speed` | `WalkSpeed` | 16
 | `Jump` | `JumpPower` | 50
 
 ## Types
+
 | Type | Description
 |:-----:|:-----:
 | `Default` | Booster will behave as normal. Boost can only be removed by a Boost Remover or by letting the timer expire.
