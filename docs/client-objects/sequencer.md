@@ -1,4 +1,4 @@
-# Sequencer
+# Sequencers
 
 Description
 
