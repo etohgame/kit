@@ -12,7 +12,7 @@ W.I.P.
 | Name | Default Value | Description
 |------|---------------|------------
 | `AllowJumpDismount` | true | Determines whether the vine can be dismounted by jumping
-| `KeepMomentum` | true | When true, objects will retain their momentun upon grabbing the vine
+| `KeepMomentum` | true | When true, objects will retain their momentum upon grabbing the vine
 | `RespawnTime` | 1 | The time it takes for the vine's `AttachmentPart` to re-appear after the player dismounts it
 | `RopeLength` | 8 | The length of the vine's [rope][RopeConstraint] (in studs)
 
