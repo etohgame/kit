@@ -1,6 +1,3 @@
----
-sidebar_position: 27
----
 # Vines
 
 Vines attach a player or a pushbox to a part using a rope.

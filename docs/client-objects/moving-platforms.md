@@ -1,6 +1,3 @@
----
-sidebar_position: 16
----
 # Moving Platforms
 
 Description

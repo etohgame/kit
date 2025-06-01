@@ -1,7 +1,4 @@
----
-sidebar_position: 28
----
-# Sequencer
+# Sequencers
 
 Description
 

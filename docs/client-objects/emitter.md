@@ -1,7 +1,4 @@
----
-sidebar_position: 20
----
-# Emitter
+# Emitters
 
 Description
 
