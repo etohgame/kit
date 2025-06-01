@@ -10,4 +10,4 @@ Pushbox spawners are objects that spawn a Pushbox upon pressing the button. It c
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `Cooldown` | 0.5 | Delay between being able to respawn the Pushbox group.
-| `DontSpawnFirst` | true | When enabled, the Pushbox group will not automatically spawn when the spawner loads. The button must be pressed for it to spawn.
+| `DontSpawnFirst` | true | When true, the Pushbox group will not automatically spawn when the spawner loads. The button must be pressed for it to spawn.
