@@ -1,6 +1,6 @@
 # Conveyors
 
-Conveyors are parts that move objects in the direction it is facing. Conveyors only work if anchored.
+Conveyors are parts that move objects in the direction it is facing.
 
 ## Use Cases
 
