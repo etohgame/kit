@@ -3,9 +3,11 @@
 Pushbox destroyers are parts that destroy any Pushbox that touches it.
 
 ## Use Cases
+
 Pushbox destroyers can be used to destroy Pushboxes or contraptions parented within a Pushbox model.
 
 ## Configuration
+
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `ColorSpecific` | false | When true, the Pushbox part that touches the destroyer must match the destroyer's color for it to be destroyed.
