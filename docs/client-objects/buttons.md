@@ -107,6 +107,10 @@ Below are [`Tags`](https://create.roblox.com/docs/reference/engine/classes/Colle
 
 Sets the Unpressed `Transparency` to `1`.
 
+### `SetTransparency`
+
+Attribute. Its value is the `Transparency` of the Button Activated Part in the Unpressed state.
+
 ### `IgnoreTransparency`
 
 `Transparency` of the Button Activated Part will not be changed and remains in its default state.
