@@ -8,9 +8,9 @@ Boosters can be used to give the player a movement boost. These can be either te
 ## Configuration
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
-| `Mode` | Default | The mode of the booster. See the Modes section below for more details
-| `Type` | Speed | The type of the boost. See the Types section below for more details
-| `Power` | 50 | The power of the boost. See the Types section below for more details
+| `Mode` | Default | The [mode](#modes) of the booster.
+| `Type` | Speed | The [type](#types) of the boost.
+| `Power` | 50 | The [power](#types) of the boost.
 | `Duration` | 5 | Duration of the boost in seconds. If set to 0, the boost will be infinite until removed.
 | `TimerDecimals` | 1 | The amount of decimals to show on the boost timer.
 
