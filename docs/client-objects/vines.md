@@ -5,8 +5,6 @@ Objects on vines dismount either when touching a [Dismounter](dismounters.md) or
 
 ## Use Cases
 
-W.I.P.
-
 ## Configuration
 
 | Name | Default Value | Description

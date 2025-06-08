@@ -10,10 +10,6 @@ Balloon timers can be customized by editing the `TimerGui` inside the balloon's 
 
 ## Use Cases
 
-Lifting the player or a pushbox into the sky.  
-W.I.P.  
-help I don't know how to write these -auri  
-
 ## Configuration
 
 | Name | Default Value | Description
