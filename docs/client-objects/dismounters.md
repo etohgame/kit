@@ -10,9 +10,9 @@ Dismounters can be used to forcefully dismount the player from mounts.
 |:-----:|:-----:|:-----:
 | `Cooldown` | 0 | Delay between being able to use the Dismounter.
 | `MountColorSpecific` | false | When true, the mount's color must match the Dismounter's color in order to be activated.
-| `DismountAttachers` | true | When true, the Dismounter can dismount you from Attachers.
-| `DismountBalloons` | true | When true, the Dismounter can dismount you from Balloons.
+| `DismountAttachers` | true | When true, the Dismounter can dismount you from [Attachers](attachers.md).
+| `DismountBalloons` | true | When true, the Dismounter can dismount you from [Balloons](balloons.md).
 | `DismountSeats` | true | When true, the Dismounter can dismount you from Seats.
-| `DismountSwings` | true | When true, the Dismounter can dismount you from Swings.
-| `DismountVines` | true | When true, the Dismounter can dismount you from Vines.
-| `DismountZiplines` | true | When true, the Dismounter can dismount you from Ziplines.
+| `DismountSwings` | true | When true, the Dismounter can dismount you from [Swings](swings.md).
+| `DismountVines` | true | When true, the Dismounter can dismount you from [Vines](vines.md).
+| `DismountZiplines` | true | When true, the Dismounter can dismount you from [Ziplines](ziplines.md).

@@ -1,6 +1,6 @@
 # Pushbox Destroyers
 
-Pushbox destroyers are parts that destroy any Pushbox that touches it.
+Pushbox destroyers are parts that destroy any [Pushbox](pushbox-spawners.md) that touches it.
 
 ## Use Cases
 

@@ -9,7 +9,7 @@ LightingChangers are used for cinematic effects and help bring together the
 mood of towers. Dark lighting can create a gloomy feel. In contrast, bright and
 vibrant lighting can heighten the final stretch of a tower.
 
-LightingChangers can be activated by Pushbox, and thus be used in Pushbox
+LightingChangers can be activated by [Pushboxes](pushbox-spawners.md), and thus be used in Pushbox
 contraptions.
 
 ## `Lighting` Module
