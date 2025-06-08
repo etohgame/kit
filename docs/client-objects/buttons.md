@@ -28,19 +28,8 @@ The number of decimal places displayed by any timer displays.
 
 ### `TimerText`
 
-The text that appears on any timer display. Can be any [`string`](https://create.roblox.com/docs/reference/engine/libraries/string). Below are special codes that are replaced within the string automatically. If blank, it simply shows the remaining time left on the timer.
-
-| Code | Replaced with: |
-|------|---------------------------|
-| `{T}` | The time left on the timer, modified with `TimerDecimalPlaces` |
-| `{S}` | An "s" if there's more than one second left (like "second**s**"), or empty otherwise. If `TimerDecimalPlaces` is not `0`, it is always an "s" |
-| `{Pn}` | The player's username |
-| `{pn}` | The username in all lowercase |
-| `{PN}` | The username in all UPPERCASE |
-| `{Dn}` | The player's Display Name |
-| `{dn}` | The Display Name in all lowercase |
-| `{DN}` | The Display Name in all UPPERCASE |
-| `{UID}` | The player's User ID |
+The text that appears on any timer display. Can be any [`string`](https://create.roblox.com/docs/reference/engine/libraries/string).
+See [this page](/api/ClientObjects#formatTimerText) for more info.
 
 ### `TimerLabel`
 
@@ -65,7 +54,7 @@ By default, a Button Activated Part behaves as follows:
 | Unpressed                     | `false`      | `0.6`          | disabled |
 | Pressed                       | `true`       | `0`            | enabled |
 
-It should be noted that if 64 or more parts are toggled at once, there will be a single frame delay to improve performance.
+It should be noted that if 64 or more parts are toggled at once, there will be a 1 frame delay every 64 parts to improve performance.
 
 ### Supported Visual Instances
 
