@@ -14,6 +14,6 @@ W.I.P.
 | `AllowJumpDismount` | true | Determines whether the vine can be dismounted by jumping
 | `KeepMomentum` | true | When true, objects will retain their momentum upon grabbing the vine
 | `RespawnTime` | 1 | The time it takes for the vine's `AttachmentPart` to re-appear after the player dismounts it
-| `RopeLength` | 8 | The length of the vine's [rope][RopeConstraint] (in studs)
+| `RopeLength` | 8 | The length of the vine's [rope][RopeConstraint] 
 
 [RopeConstraint]: https://create.roblox.com/docs/reference/engine/classes/RopeConstraint
