@@ -3,6 +3,7 @@
 Bounce Pads are objects that bounce players and objects when touched.
 
 ## Use Cases
+Bounce pads can be used to launch the player in any direction.
 
 ## Configuration
 | Name | Default Value | Description

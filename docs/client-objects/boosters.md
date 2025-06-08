@@ -3,6 +3,7 @@
 Boosters grant the player a boost when they are interacted with.
 
 ## Use Cases
+Boosters can be used to give the player a movement boost. These can be either temporary or permanent until removed.
 
 ## Configuration
 | Name | Default Value | Description

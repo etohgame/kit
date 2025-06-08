@@ -9,6 +9,7 @@ Balloon visuals can be customized by editing the `BalloonModel` inside the ballo
 Balloon timers can be customized by editing the `TimerGui` inside the balloon's configuration.
 
 ## Use Cases
+Balloons can be used to slowly lift the player upwards or downwards while allowing free horizontal movement.
 
 ## Configuration
 

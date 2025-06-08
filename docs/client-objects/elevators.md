@@ -3,7 +3,7 @@
 Elevators are used to propel players and objects in the direction the elevator is facing.
 
 ## Use Cases
-
+Elevators can be used to move players and objects around, or launch them away.
 
 ## Configuration
 | Name | Default Value | Description
