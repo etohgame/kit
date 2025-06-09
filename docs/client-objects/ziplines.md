@@ -1,6 +1,6 @@
 # Ziplines
 
-Ziplines carry attached objects allowed via a `TouchConfiguration` along a set path. A Zipline is a [`Model`](https://create.roblox.com/docs/reference/engine/classes/Model) that contains a `ZiplineConfiguration`, a [`Folder`](https://create.roblox.com/docs/reference/engine/classes/Folder) called `Points`, and a [`BasePart`](https://create.roblox.com/docs/reference/engine/classes/BasePart) called `MountPart`. The zipline will always try to keep attached objects upright.
+Ziplines carry attached objects allowed via a [TouchConfiguration](/docs/global-configurations/touch-configurations.md) along a set path. A Zipline is a [`Model`](https://create.roblox.com/docs/reference/engine/classes/Model) that contains a `ZiplineConfiguration`, a [`Folder`](https://create.roblox.com/docs/reference/engine/classes/Folder) called `Points`, and a [`BasePart`](https://create.roblox.com/docs/reference/engine/classes/BasePart) called `MountPart`. The zipline will always try to keep attached objects upright.
 
 ## Use Cases
 

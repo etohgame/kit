@@ -1,6 +1,6 @@
 # Buttons
 
-Buttons are parts that, when touched by objects allowed via a `TouchConfiguration`, toggle a set of parts between a Pressed and Unpressed state.
+Buttons are parts that, when touched by objects allowed via a [TouchConfiguration](/docs/global-configurations/touch-configurations.md), toggle a set of parts between a Pressed and Unpressed state.
 
 Buttons are defined as [`Models`](https://create.roblox.com/docs/reference/engine/classes/Model) containing a `ButtonConfiguration` and a [`BasePart`](https://create.roblox.com/docs/reference/engine/classes/BasePart) named `ButtonPart`. By default, Buttons are linked to their corresponding Button Activated Objects if the [`Color`](https://create.roblox.com/docs/reference/engine/classes/BasePart#Color) of the `ButtonPart` matches that of the Button Activated Object.
 
@@ -16,7 +16,7 @@ The [`Material`](https://create.roblox.com/docs/reference/engine/enums/Material)
 
 ### `PressOffset`
 
-Consists of two [`Vector3`](https://create.roblox.com/docs/reference/engine/datatypes/Vector3) values, `Position` and `Orientation`. `Position` is the offset, in Studs, of the `ButtonPart`. `Orientation` is the offset, in degrees, of the `ButtonPart`. The time it takes for the `ButtonPart` to reach the `Position` and `Orientation` may be determined via a `TweenConfiguration`.
+Consists of two [`Vector3`](https://create.roblox.com/docs/reference/engine/datatypes/Vector3) values, `Position` and `Orientation`. `Position` is the offset, in Studs, of the `ButtonPart`. `Orientation` is the offset, in degrees, of the `ButtonPart`. The time it takes for the `ButtonPart` to reach the `Position` and `Orientation` may be determined via a [TweenConfiguration](/docs/global-configurations/tween-configurations.md).
 
 ### `Timer`
 
