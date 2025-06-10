@@ -1,6 +1,6 @@
-# GradientParts
+# Gradient Parts
 
-GradientParts shifts it's `Color` over time by using a `UIGradient` instance.
+Gradient Parts shift their `Color` over time by using a `UIGradient` instance.
 
 For performance, GradientParts will stop shifting colors when the player is
 further than a set distance from a child `DistancePivot` part.
