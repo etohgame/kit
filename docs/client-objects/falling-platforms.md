@@ -1,15 +1,16 @@
 # Falling Platforms
 
-Falling Platforms are platforms that will fall when stepped on. Once they touch the `End` part, they will become uncollidable until they are back at their original position.
+Falling Platforms are platforms that will fall when stepped on. Once it touches the `End` part, it will become uncollidable until it's back at its original position.
 
 ## Use Cases
 
-Falling Platforms can be used to force the player not to wait around on certain sections. It is heavily recommended not to use them as traps as it can create frustrating and unfair gameplay.
+Falling Platforms can be used for advanced gameplay mechanics or to force the player not to wait around on certain sections. It is heavily recommended not to use them as traps as it can create frustrating and unfair gameplay.
 
 ## Configuration
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
-| `ActiveTime` | 1.5 | Time in seconds the falling platform will be uncollidable for after it reaches the `End` part.
-| `ActiveTransparency` | 0.75 | The transparency the falling platform when use while uncollidable.
-| `BaseMass` | 4.8 | The mass of the falling platform. Change this when resizing the falling platform.
-| `InactiveTransparency` | 0 | The transparency the falling platform when use while collidable.
+| `ActivateConnectedParts` | true | When true, all other parts welded to the falling platform will also become uncollidable when the main platform touches the `End` part.
+| `ActiveTime` | 1.5 | Time in seconds the falling platform will be uncollidable for after it touches the `End` part.
+| `ActiveTransparency` | 0.75 | The transparency the falling platform will use while uncollidable.
+| `BaseMass` | 12.6 | The mass of the falling platform. Used to set the density of the platform. Higher values will make the platform heavier. Very low values may make the platform unstable.
+| `InactiveTransparency` | 0 | The transparency the falling platform will use while collidable.
