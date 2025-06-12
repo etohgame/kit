@@ -2,24 +2,47 @@ gitRepoUrl = "https://github.com/etohgame/kit"
 gitSourceBranch = "main"
 
 [[classOrder]]
-classes = ["ClientObjects", "Character", "Config", "Functions", "Gui", "Instance", "JumpButton", "Lighting", "Property", "ScopeUtil", "Table"]
+classes = [
+    "ClientObjects",
+    "Character",
+    "Config",
+    "Functions",
+    "Gui",
+    "Instance",
+    "JumpButton",
+    "Lighting",
+    "Property",
+    "ScopeUtil",
+    "Table",
+]
 section = "Utility"
 
 [[classOrder]]
-classes = ["CharacterManager", "ClientObjectManager", "EffectGuiManager", "FlipManager", "LightingManager"]
+classes = [
+    "CharacterManager",
+    "ClientObjectManager",
+    "EffectGuiManager",
+    "FlipManager",
+    "LightingManager",
+]
 section = "Managers"
 
-[[classOrder]]
-classes = ["ScopeConstructor", "ScopeCommunicator"]
-section = "Scope"
+# [[classOrder]]
+# classes = ["ScopeConstructor", "ScopeCommunicator"]
+# section = "Scope"
 
 [home]
 enabled = true
 includeReadme = false
 
 [docusaurus]
-tagline = "EToH Kit V6 (BETA)"
+tagline = "Eternal Towers of Hell Kit Documentation"
+favicon = "/favicon.ico"
 
+organizationName = "Eternal Towers of Hell"
+projectName = "Kit Documentation"
+url = "https://etohgame.github.io"
+baseUrl = "/kit"
 
 [footer]
 style = "dark"

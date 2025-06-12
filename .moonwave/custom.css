@@ -1,10 +1,153 @@
 /*
-using https://github.com/NeonD00m/Axis/blob/main/.moonwave/custom.css
-for testing
+    Eternal Towers of Hell Kit Documentation theme by znotfireman
 
-TODO: actually start work on theme
+    Inspirations:
+        https://vexide.dev/docs/
+        https://elttob.uk/Fusion/0.3/
+        https://jtoh.fandom.com/wiki/Juke%27s_Towers_of_Hell_Wiki
+        https://prvdmwrong.github.io/prvdmwrong/0.2/
 */
 
+/* ======== GLOBALS ======== */
+
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+:root {
+    /* EToH docs */
+
+    --etohdoc-cartoon-font: "Comic Relief", cursive;
+
+    --etohdoc-base-chroma: 0.025;
+    --etohdoc-base-hue: 280;
+    --etohdoc-base-0: oklch(5% var(--etohdoc-base-chroma) var(--etohdoc-base-hue));
+    --etohdoc-base-1: oklch(10% var(--etohdoc-base-chroma) var(--etohdoc-base-hue));
+    --etohdoc-base-2: oklch(15% var(--etohdoc-base-chroma) var(--etohdoc-base-hue));
+    --etohdoc-base-3: oklch(20% var(--etohdoc-base-chroma) var(--etohdoc-base-hue));
+    --etohdoc-base-4: oklch(30% var(--etohdoc-base-chroma) var(--etohdoc-base-hue));
+    --etohdoc-base-5: oklch(40% var(--etohdoc-base-chroma) var(--etohdoc-base-hue));
+    --etohdoc-base-6: oklch(50% var(--etohdoc-base-chroma) var(--etohdoc-base-hue));
+    --etohdoc-base-7: oklch(60% var(--etohdoc-base-chroma) var(--etohdoc-base-hue));
+    --etohdoc-base-8: oklch(75% var(--etohdoc-base-chroma) var(--etohdoc-base-hue));
+    --etohdoc-base-9: oklch(80% var(--etohdoc-base-chroma) var(--etohdoc-base-hue));
+    --etohdoc-base-10: oklch(90% var(--etohdoc-base-chroma) var(--etohdoc-base-hue));
+
+    /* IFM */
+
+    --ifm-background-color: var(--etohdoc-bg) !important;
+    --ifm-heading-color: var(--etohdoc-heading) !important;
+    --ifm-font-color-base: var(--etohdoc-text) !important;
+    --ifm-table-border-color: var(--etohdoc-table-border) !important;
+    --ifm-navbar-background-color: var(--etohdoc-navbar-bg);
+    --ifm-navbar-search-input-background-color: var(--ifm-background-color);
+    --ifm-navbar-shadow: none;
+
+    --ifm-color-primary: oklch(60% 0.15 var(--etohdoc-base-hue));
+
+    --ifm-font-family-base: "Source Sans 3", sans-serif;
+
+    --ifm-breadcrumb-padding-vertical: 0;
+    --ifm-breadcrumb-padding-horizontal: 0;
+    --ifm-leading: 0;
+}
+
+html[data-theme="dark"] {
+    --etohdoc-bg: var(--etohdoc-base-2) !important;
+    --etohdoc-navbar-bg: var(--etohdoc-base-3) !important;
+    --etohdoc-heading: var(--etohdoc-base-9) !important;
+    --etohdoc-text: var(--etohdoc-base-8) !important;
+    --etohdoc-table-border: var(--etohdoc-base-5) !important;
+}
+
+html[data-theme="light"] {
+    --etohdoc-bg: var(--etohdoc-base-10) !important;
+    --etohdoc-navbar-bg: var(--etohdoc-base-9) !important;
+    --etohdoc-heading: var(--etohdoc-base-3) !important;
+    --etohdoc-text: var(--etohdoc-base-2) !important;
+    --etohdoc-table-border: var(--etohdoc-base-6) !important;
+}
+
+/* ======== SIDEBAR ======== */
+
+@media (min-width: 997px) {
+    .theme-doc-sidebar-container {
+        border-right: none !important;
+    }
+}
+
+/* ======== BREADCRUMBS ======== */
+
+.theme-doc-breadcrumbs {
+    margin-bottom: 0 !important;
+}
+
+.breadcrumbs {
+    --ifm-breadcrumb-size-multiplier: 1 !important;
+}
+
+.breadcrumbs>*:first-child {
+    /* Hide home breadcrumb (the topbar is already enough) */
+    display: none;
+}
+
+.breadcrumbs__item--active .breadcrumbs__link {
+    background: unset;
+    color: unset;
+    font-weight: bold;
+}
+
+.breadcrumbs__item:not(:last-child)::after {
+    opacity: 1;
+}
+
+/* ======== ARTICLE ======== */
+
+/*  SHIT BREAKS */
+.markdown {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+
+/* ??? */
+.markdown::before {
+    display: none;
+}
+
+.theme-doc-markdown header h1,
+.markdown h1:first-child {
+    /* font-family: var(--etohdoc-cartoon-font); */
+    /* font-weight: 700;
+    font-style: normal; */
+    /* margin-left: -0.15rem; */
+    margin-bottom: 0;
+}
+
+.markdown h1:not(:first-child),
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+    margin-top: 1.5rem;
+    /* border-bottom: var(--ifm-table-border-color) solid var(--ifm-table-border-width); */
+}
+
+.markdown table {
+    max-width: max-content;
+    border-radius: 0.5rem;
+    border: var(--ifm-table-border-color) solid var(--ifm-table-border-width);
+}
+
+.markdown table th,
+.markdown table tr,
+.markdown table td {
+    border: none !important;
+}
+
+/*
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 :root {
@@ -122,4 +265,4 @@ pre[class*="language-"][class*="language-"] {
 .menu__link:hover {
     color: var(--ifm-menu-color-active);
     background: none;
-}
+} */
