@@ -1,7 +1,4 @@
----
-sidebar_position: 21
----
-# Speed Booster
+# Sequencers
 
 Description
 
