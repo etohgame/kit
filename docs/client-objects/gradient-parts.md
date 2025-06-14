@@ -1,21 +1,22 @@
 # Gradient Parts
 
-Gradient Parts shift their `Color` over time by using a `UIGradient` instance.
+Gradient Parts change their `Color` over time by using a `UIGradient` instance.
 
-For performance, GradientParts will stop shifting colors when the player is
-further than a set distance from a child `DistancePivot` part.
+To improve performance, the color shifting of Gradient Parts will temporarily pause when the player is
+further than a set distance away from the `DistancePivot` part.
 
 ## Use Cases
 
-GradientParts can be used for decoration, such as the rainbow parts shown in
-Citadel of Void.
+Gradient Parts can be used for decoration. A few examples of these are pulsing parts and rainbow parts.
 
-Unlike Beam instances, which uses a texture, the `Color` of GradientParts are
+Unlike `Beam` instances, which use a texture, the `Color` of Gradient Parts are
 uniform.
 
 ## Configuration
 
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
-| `DistanceAnchor` | 100 | The furthest the player can be from it's `DistancePivot` to shift colors
-| `Speed` | 60 | How long, in seconds, to fully cycle colors from the `UIGradient`.
+| `MaxDistance` | 100 | The furthest the player can be from the `DistancePivot` before the Gradient Parts will pause to improve performance.
+| `RefreshRate` | 30 | How many times per second the Gradient Parts will update their color.
+| `TickOffset` | 0 | The offset in seconds for the color shifting calculation.
+| `Throttle` | 64 | The part throttle limit. If there are more parts in a Gradient Parts group than the configured maximum, there will be a 1 frame delay every that amount of parts to improve performance.
