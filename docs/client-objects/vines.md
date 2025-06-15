@@ -4,6 +4,7 @@ Vines are objects that attach the player or a pushbox to a part using a [rope][R
 Objects on vines dismount either when touching a [Dismounter](dismounters.md) or when the player jumps.
 
 ## Use Cases
+Vines are used in gameplay, for example to swing to platforms that are otherwise impossible to reach.
 
 ## Configuration
 
