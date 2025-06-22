@@ -45,6 +45,6 @@ If you are experienced with building towers using an old kit, please read throug
 [Swings](client-objects/swings.md),
 and [Sequencers](client-objects/sequencers.md)
 * Various additions and changes to existing client objects
-* Value objects inside Client Objects have been removed in favor of `Configuration` objects and [Tags](misc.md#object-tags). `ClientObject` values are also no longer needed and client objects are instead detected by searching for said `Configuration` object.
+* Value objects inside Client Objects have been removed in favor of `Configuration` objects and [Tags](misc.md#object-tags). `ClientObject` values are also no longer needed or used.
 * [Distance Anchoring](client-objects/distance-anchoring.md) is now enabled by default for most physics objects to increase performance.
-* There is a [`KitSettings`](misc.md#kit-settings) module found in `ReplicatedStorage` that allows you to toggle global kit settings.
+* There is now a [`KitSettings`](misc.md#kit-settings) module found in `ReplicatedStorage` that allows you to toggle global kit settings.

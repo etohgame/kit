@@ -35,8 +35,5 @@ In Kit v6, value objects are no longer used in favor of `Configuration` objects 
 
 | Name | Description
 |:-----:|:-----:
-| `FullHidePlatform`, `InvertPlatform`, `IgnoreAll`, `IgnoreTransparency`, `IgnoreEnabled`, `IgnoreCanCollide`, `IgnoreInitialActivate`, `UseAltTransparencyLayer`, `UseSpecialColor` | Used in [Buttons](client-objects/buttons.md).
-| `ButtonActivated` | If present, the object will become inactive until activated by a [Button](client-objects/buttons.md).
-| `ReturnKey` | Used in [Keys](client-objects/keys.md).
-| `YieldSequence` | Used in [Sequencers](client-objects/sequencers.md).
-| `SkipObjectLoad` | If present inside a client object, it will not be loaded. Required for client objects that have the capability of spawning other client objects.
+| `ButtonActivated` | If present, the client object will become inactive until activated by a [Button](client-objects/buttons.md).
+| `SkipObjectLoad` | If present inside a client object, it will not be automatically loaded when the tower loads. Required for client objects that have the capability of spawning other client objects.
