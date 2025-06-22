@@ -10,3 +10,4 @@ All client objects that can be interacted with have a `TouchConfiguration` confi
 | `turret` | false | When true, the client object can be interacted with by [Turret bullets](/docs/client-objects/turrets.md).
 | `balloon` | false | When true, the client object can be interacted with by [Balloons](/docs/client-objects/balloons.md).
 | `colorSpecific` | false | When true, the part that interacted with the client object must match the color of the client object to be able to interact with it. This does not affect players.
+| `canFlip` | false | When true, the client object can be interacted with using Corner Flips.
