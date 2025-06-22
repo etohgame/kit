@@ -9,6 +9,5 @@ Trip parts can be used to make the player forcefully sit down, useful when makin
 ## Configuration
 
 | Name | Default Value | Description
-
 |:-----:|:-----:|:-----:
 | `Cooldown` | 1 | Delay between being able to use the Trip Part again.

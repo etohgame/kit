@@ -130,8 +130,8 @@ The Button Activated Part will not have its collision or Transparency changed.
 
 ## Unsupported Client Objects
 
-Below is a list of all the client objects that cannot currently be toggled by a Button.
+Below is a list of all the client objects that either cannot currently be toggled by a Button, or have known issues regarding them when button activated.
 
 | Unsupported Client Object | Notes |
 |------------| ------------------|
-| Vanishers | Inconsistent behaviour when toggled while vanishing |
+| [Vanishers](vanishers.md) | Inconsistent behaviour when toggled while vanishing |
