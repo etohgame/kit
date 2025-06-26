@@ -6,11 +6,11 @@ classes = ["ClientObjects", "Character", "Config", "Functions", "Gui", "Instance
 section = "Utility"
 
 [[classOrder]]
-classes = ["CharacterManager", "ClientObjectManager", "EffectGuiManager", "FlipManager", "LightingManager"]
+classes = ["CharacterManager", "ClientObjectManager", "GuiManager", "FlipManager", "LightingManager"]
 section = "Managers"
 
 [[classOrder]]
-classes = ["ScopeConstructor", "ScopeCommunicator"]
+classes = ["Scope", "ScopeCommunicator"]
 section = "Scope"
 
 [home]
