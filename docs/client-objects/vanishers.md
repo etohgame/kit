@@ -1,6 +1,6 @@
 # Vanishers
 
-Vanishers are objects that allow any BasePart to vanish.
+Vanishers are objects that disappear and become uncollidable when touched.
 
 ## Use Cases
 

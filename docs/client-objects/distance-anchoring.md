@@ -1,6 +1,6 @@
 # Distance Anchoring
 
-Distance Anchoring is a folder that will freeze any physics objects inside of it.
+Distance Anchoring is a folder that will freeze or unload any physics objects inside of it.
 
 ## Use Cases
 
@@ -11,5 +11,12 @@ You can disable Distance Anchoring on a per-object basis by dragging them out of
 ## Configuration
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
-| `Range` | 150 | How far away the player can be before objects freeze. Can be overridden on a per-object basis by adding a `number` `Attribute` named `CustomRange` to the object.
+| `Range` | 150 | How far away the player can be before objects toggle. Can be overridden on a per-object basis by adding a `number` `Attribute` named `CustomRange` to the object.
 | `UpdateInterval` | 0.2 | How often the distance anchoring system will update.
+| `Mode` | `Anchor` | How the distance anchoring system will behave. See [Modes](#modes) for more information.
+
+## Modes
+| Mode | Description
+|:-----:|:-----:
+| `Anchor` | Far-away objects will freeze in place.
+| `Unload` | Far-away objects will unload entirely.

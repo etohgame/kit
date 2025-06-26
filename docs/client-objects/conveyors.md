@@ -1,6 +1,6 @@
 # Conveyors
 
-Conveyors are parts that move objects in the direction it is facing.
+Conveyors are parts that move objects in the direction they are facing.
 
 ## Use Cases
 

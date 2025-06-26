@@ -3,6 +3,7 @@
 Boosters grant the player a boost when they are interacted with.
 
 ## Use Cases
+
 Boosters can be used to give the player a movement boost. These can be either temporary or permanent until removed.
 
 ## Configuration
@@ -13,6 +14,7 @@ Boosters can be used to give the player a movement boost. These can be either te
 | `Power` | 50 | The [power](#types) of the boost.
 | `Duration` | 5 | Duration of the boost in seconds. If set to 0, the boost will be infinite until removed.
 | `TimerDecimals` | 1 | The amount of decimals to show on the boost timer.
+| `HideGUI` | false | When true, the boost GUI will not be shown.
 
 ## Types
 | Type | Humanoid Property affected | Default Value

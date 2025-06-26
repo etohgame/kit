@@ -3,6 +3,7 @@
 Moving Platforms are parts that will periodically move between set destinations.
 
 ## Use Cases
+
 Moving Platforms can be used to transport players and objects between various locations. They can also rotate if the destinations are rotated.
 
 ## Moving Platform Configuration
@@ -14,4 +15,4 @@ Moving Platforms can be used to transport players and objects between various lo
 ## Destination Configuration
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
-| `MoveDelay` | 2 | How long the moving platform will stay at this destination before moving onto the next.
+| `MoveDelay` | 2 | How long the platform will stay at this destination before moving onto the next.
