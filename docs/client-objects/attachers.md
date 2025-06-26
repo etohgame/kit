@@ -1,10 +1,10 @@
 # Attachers
 
-Attachers are objects that enable other models or parts to "attach" themselves upon contact.
+Attachers are objects that enable players and parts to "attach" a set of parts to themselves upon contact.
 
 ## Use Cases
 
-Attaching objects (e.g. trails, lights, or spinning killbricks) to the object that interacted with the attacher.
+Attaching objects (e.g. trails, lights, or spinning killbricks) to the object that interacted with the Attacher.
 
 ## Configuration
 

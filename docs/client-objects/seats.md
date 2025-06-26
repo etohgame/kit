@@ -1,6 +1,6 @@
 # Seats
 
-Seats are [`BasePart`](https://create.roblox.com/docs/reference/engine/classes/BasePart)s that weld a player to them when touched. Sitting players are immedietely moved to the `Top` surface of the part and placed in a sitting animation. When the player attempts to jump, they will dismount from the Seat. Being a mountable, a player may be forcibly dismounted from a seat using a [Dismounter](dismounters.md).
+Seats are parts that weld a player to them when touched. Sitting players are immedietely moved to the `Top` surface of the part and placed in a sitting animation. When the player attempts to jump, they will dismount from the Seat. Being a mountable, a player may be forcibly dismounted from a seat using a [Dismounter](dismounters.md).
 
 ## Use Cases
 

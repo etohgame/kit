@@ -24,7 +24,7 @@ Detailed documentation for each Client Object in the kit can be found in the Cli
 
 ### Global Configuration Documentation
 
-The Global Configurations category contains documentation for the various types of global configurations in the kit. These configurations are used by several Client Objects in the kit and as such are listed seperately for convenience.
+The Global Configurations category contains documentation for special configuration sets that nearly all Client Objects in the kit have. These are listed seperately for convenience.
 
 ### API Documentation
 
@@ -45,6 +45,6 @@ If you are experienced with building towers using an old kit, please read throug
 [Swings](client-objects/swings.md),
 and [Sequencers](client-objects/sequencers.md)
 * Various additions and changes to existing client objects
-* Value objects inside Client Objects have been removed in favor of `Configuration` objects and [Tags](misc.md#object-tags). `ClientObject` values are also no longer needed or used.
+* Value objects inside Client Objects have been removed in favor of `Configuration` objects for settings and [Tags](misc.md#object-tags) for object flags. `ClientObject` values are also no longer needed or used.
 * [Distance Anchoring](client-objects/distance-anchoring.md) is now enabled by default for most physics objects to increase performance.
 * There is now a [`KitSettings`](misc.md#kit-settings) module found in `ReplicatedStorage` that allows you to toggle global kit settings.

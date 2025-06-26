@@ -3,7 +3,8 @@
 Keys are objects that can open Key Doors. Keys and key doors can have their model fully customized.
 
 ## Use Cases
-Keys are used to open any key doors that are in the same group as the key. They can also optionally be used as light sources if one is added into it.
+
+Keys are used to open any key doors that are in the same group as the key.
 
 Key doors can be used to require the player to pick them up in order to proceed.
 A key door can be destroyed in multiple ways when opened, based on what the parts inside are named:

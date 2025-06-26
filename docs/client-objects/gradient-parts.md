@@ -8,9 +8,7 @@ further than a set distance away from the `DistancePivot` part.
 ## Use Cases
 
 Gradient Parts can be used for decoration. A few examples of these are pulsing parts and rainbow parts.
-
-Unlike `Beam` instances, which use a texture, the `Color` of Gradient Parts are
-uniform.
+Unlike `Beam` instances, which use a texture, the `Color` of Gradient Parts are uniform.
 
 ## Configuration
 

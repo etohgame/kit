@@ -1,10 +1,10 @@
 # Trip Parts
 
-Trip parts will trip the player when touched by making them sit down.
+Trip Parts will trip the player when touched by making them sit down.
 
 ## Use Cases
 
-Trip parts can be used to make the player forcefully sit down, useful when making things such as slides.
+Trip Parts can be used to make the player forcefully sit down, useful when making things such as slides.
 
 ## Configuration
 

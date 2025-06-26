@@ -3,6 +3,7 @@
 Beat blocks are groups of parts that will toggle on and off on a set interval.
 
 ## Use Cases
+
 Beat blocks can be used for gameplay where the player has to time their jumps, or as animated design.
 
 ## Configuration

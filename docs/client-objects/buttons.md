@@ -92,7 +92,7 @@ If a [`Color3`](https://create.roblox.com/docs/reference/engine/datatypes/Color3
 
 Below are [`Tags`](https://create.roblox.com/docs/reference/engine/classes/CollectionService) that may be added to a Button Activated Part.
 
-### `FullHidePlatform`
+### `FullHide`
 
 Sets the Unpressed `Transparency` to `1`.
 
@@ -116,7 +116,7 @@ The `CanCollide` property of the Button Activated Part will not be toggled and r
 
 [Enabled toggle instances](#supported-visual-instances) will not have their `Enabled` property toggled.
 
-### `InvertPlatform`
+### `Invert`
 
 Swaps the collision and Transparency data in the Pressed and Unpressed states.
 

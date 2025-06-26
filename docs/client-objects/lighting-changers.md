@@ -4,13 +4,13 @@ Lighting Changers change the game's lighting and lighting effects when used.
 
 ## Use Cases
 
-LightingChangers are used for cinematic effects and help bring together the
-mood of towers. Dark lighting can create a gloomy feel. In contrast, bright and
-vibrant lighting can heighten the final stretch of a tower.
+Lighting Changers are used for cinematic effects and help bring together the
+mood of towers. For example, dark lighting can create a gloomy feel. In contrast, bright and
+vibrant lighting can heighten intense or upbeat sections of towers.
 
 ## `Lighting` Module
 
-LightingChangers are configured inside of a `Lighting` ModuleScript that is found inside the
+Lighting Changers are configured inside of a `Lighting` ModuleScript that is found inside the
 `LightingChangerConfiguration` object. This module contains a list of lighting objects to change, as well as their properties.
 You can define either a single object to change or multiple objects to change at once.
 
