@@ -13,6 +13,5 @@ Teleporters can be used to move players and parts to a designated position.
 | `DisableCollision` | false | Only applies to players. If true, the player will not activate objects they interact with while teleporting.
 | `Instant` | true | If true, the teleported object will be instantly moved to the destination. Otherwise, they will move to the destination using the provided [TweenConfiguration](/docs/global-configurations/tween-configurations.md)
 | `KeepVelocity` | true | If true, the teleported object will retain its previous velocity when teleporting. Otherwise, it will be reset to 0.
-| `Offset.Position` | (0, 0, 0) | The offset, in studs, relative to the destination, the teleported object is teleported.
-| `Offset.Orientation` | (0, 0, 0) | The offset, in degrees, relative to the destination, the teleported object is rotated.
+| `Offset` | [`CFrame.new(0, 0, 0)`](https://create.roblox.com/docs/reference/engine/datatypes/CFrame) | When being teleported, the location the teleported object will teleport to will be offset by this value.
 | `SeamlessTeleport` | false | If true, the teleported object will be moved and rotated so that it ends up in the same position and orientation relative to the destination as it was relative to the teleporter. Additionally, if a character is being teleported, the player's camera will be oriented relative to the player's new world orientation. Overrides `Offset.Position` and `Offset.Orientation`.

@@ -7,6 +7,7 @@ Falling Platforms are platforms that will fall when stepped on. Once it touches 
 Falling Platforms can be used for advanced gameplay mechanics or to force the player not to wait around on certain sections. It is heavily recommended not to use them as traps as it can create frustrating and unfair gameplay.
 
 ## Configuration
+
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `ActivateConnectedParts` | true | When true, all other parts welded to the falling platform will also become uncollidable when the main platform touches the `End` part.

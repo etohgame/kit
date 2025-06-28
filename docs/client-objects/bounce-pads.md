@@ -7,6 +7,7 @@ Bounce Pads are objects that bounce players and objects when touched.
 Bounce Pads can be used to launch objects in any direction.
 
 ## Configuration
+
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `Cooldown` | 0.05 | Delay between being able to use the Bounce Pad again.

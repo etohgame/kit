@@ -16,8 +16,8 @@ The main Morpher object does not have configurable properties, this list is for 
 | `CarryObjects` | true | When true, morphing parts will carry objects that are on top of them.
 | `EasingStyle` | `Enum.EasingStyle.Quad` | The [EasingStyle](https://create.roblox.com/docs/reference/engine/enums/EasingStyle) of the Morpher's movement.
 | `EasingDirection` | `Enum.EasingDirection.Out` | The [EasingDirection](https://create.roblox.com/docs/reference/engine/enums/EasingDirection) of the Morpher's movement.
-| `MoveTime` | 3 | The duration of the Morpher's movement, in seconds
-| `ReturnTime` | 3 | The duration of the Morpher's movement when moving back to the default position, in seconds
+| `MoveTime` | 0.5 | The duration of the Morpher's movement, in seconds
+| `ReturnTime` | 0.5 | The duration of the Morpher's movement when moving back to the default position, in seconds
 | `Timer` | 5 | The duration the Morpher will stay active for, after this time has passed the Morpher will move back to its default position. If set to 0, the timer does not apply and the Morpher will stay active until another Morpher button is activated.
 | `TimerDecimalPlaces` | 0 | The amount of decimals that will be shown on the timer.
 | `TimerText` | `{T}` | The text that will be displayed on the timer. See [this page](/api/ClientObjects#formatTimerText) for more info.

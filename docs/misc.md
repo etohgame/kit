@@ -37,3 +37,13 @@ In Kit v6, value objects are no longer used in favor of `Configuration` objects 
 |:-----:|:-----:
 | `ButtonActivated` | If present, the client object will become inactive until activated by a [Button](client-objects/buttons.md).
 | `SkipObjectLoad` | If present inside a client object, it will not be automatically loaded when the tower loads. Required for client objects that have the capability of spawning other client objects.
+
+# Writing/Editing Repository Scripts
+
+NOTE: Keep in mind that custom scripts are **not allowed** unless you have the Verified Builder role or are in a collaboration with someone who has the role.
+
+When writing custom Client Object repository scripts, PLEASE keep the following things in mind as not following them can and will lead to many issues ingame:
+
+* Do not edit existing scripts under any circumstance. These changes will not carry over ingame and will break your tower. If you want to make slight behavioral edits, copy the script instead, parent it into the `ExternalRepositories.TowerKit` folder in `ReplicatedStorage`, and give it a new name, preferably with your tower's name in it for organization purposes.
+* Make sure to put any events or connections you create into a [Scope](/api/Scope), so that they will automatically be cleaned up when the tower unloads.
+* Read the [API Documentation](/api/ClientObjects) carefully as these contain many functions to speed up the process of writing repository scripts.

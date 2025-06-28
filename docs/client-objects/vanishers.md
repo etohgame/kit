@@ -15,7 +15,7 @@ Each `VanishMode` has unique logic.
 | `Fade` | Smoothly fades.
 | `Blink` | Flashes multiple times before vanishing.
 | `Constant` | Gradually fades depending on contact. If not in contact, regenerates.
-| `Shrink` | Shrinks the part away in a set direction.
+| `Shrink` | Shrinks the part away in a set direction (`Top`, `Bottom`, `Left`, `Right`, `Front`, `Back`, `Center`).
 
 ## Configuration
 
@@ -26,5 +26,5 @@ Each `VanishMode` has unique logic.
 | `Invert` | false | Reverses behavior: visible becomes invisible and vice versa
 | `RespawnFade` | false | Whether the part fades in when respawning
 | `RespawnTime` | 2 | Seconds before the part reappears
-| `ShrinkDirection` | `Center` | Direction of shrinking (`Top`, `Bottom`, `Left`, `Right`, `Front`, `Back`, `Center`)
-| `VanishMode` | `Fade` | Vanish behavior (`Fade`, `Blink`, `Constant`, `Shrink`)
+| `ShrinkDirection` | `Center` | [Direction of shrinking](#vanish-modes)
+| `VanishMode` | `Fade` | [Vanish behavior](#vanish-modes)

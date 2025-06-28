@@ -52,3 +52,6 @@ This table holds extra configurations for the music.
 #### KeepTimePosition
 
 When enabled, the music zone will keep the currently playing song's time position plus the defined Offset. Useful for dynamically changing between songs that have multiple versions.
+```lua
+KeepTimePosition = { Enabled = false, Offset = 0 },
+```

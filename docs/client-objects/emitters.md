@@ -12,5 +12,5 @@ Emitters can be used for cinematic effects and gameplay cues. They can be limite
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `GlobalSound` | true | Whether `Sound` instances should play globally or spatially from the Emitter.
-| `Uses` | Infinite | How many times the Emitter can be used. Every time the emitter is used, this value is decremented.
+| `Uses` | 0 | How many times the Emitter can be used. Every time the emitter is used, this value is decremented. If set to 0, the Emitter will have infinite uses.
 | `Cooldown` | 1 | Time in seconds to wait before the Emitter can activate again

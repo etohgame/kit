@@ -13,5 +13,5 @@ For the Type and Power settings, see [Boosters](boosters.md)
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `Type` | Speed | The [type](boosters/#types) of the boost
-| `Power` | 50 | The [power](boosters/#types) of the boost
+| `Power` | 32 (Speed), 100 (Jump) | The [power](boosters/#types) of the boost
 | `Distance` | 10 | How far above the boost pad the boost will be active, measured in studs

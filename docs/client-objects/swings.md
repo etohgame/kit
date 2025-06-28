@@ -7,6 +7,7 @@ Swings are objects that the player can mount and swing around on.
 Swings can be used to create complex gameplay sections and jumps.
 
 ## Swing Configuration
+
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `AllowJumpDismount` | true | When true, the Swing is able to be dismounted by jumping.
@@ -17,6 +18,7 @@ Swings can be used to create complex gameplay sections and jumps.
 | `JumpOff` | true | When true, the player will jump when dismounting. Otherwise, they will simply start falling.
 
 ## Control Configuration
+
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `CanControl` | true | When true, the player will be able to control the movement of the Swing.

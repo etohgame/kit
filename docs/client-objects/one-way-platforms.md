@@ -8,4 +8,9 @@ One-Way platforms are useful for making mechanics such as platforms that you can
 
 ## Configuration
 
-This client object has no configurable properties.
+| Name | Default Value | Description
+|:-----:|:-----:|:-----:
+| `ActivateConnectedParts` | true | When true, all other parts welded to the platform will update their state when the main platform does.
+| `ActiveTransparency` | 0 | The transparency the platform will use while collidable.
+| `InactiveTransparency` | 0.5 | The transparency the platform will use while uncollidable.
+| `Offset` | [`CFrame.new(0, 0, 0)`](https://create.roblox.com/docs/reference/engine/datatypes/CFrame) | Offset applied to the player's checked position when the platform updates.

@@ -1,16 +1,13 @@
 # Balloons
 
-Balloon Dispensers attach an object that touches them to a balloon using a [rope][RopeConstraint].  
-The balloon is propelled up by a force.  
-Objects on balloons will be dismounted when the player jumps or when the object/balloon touches a [Dismounter](dismounters.md).  
-Alternatively, they are dismounted when specific conditions are met, which are listed in the [configurations](#configuration).
-
-Balloon visuals can be customized by editing the `BalloonModel` inside the balloon dispenser.  
-Balloon timers can be customized by editing the `TimerGui` inside the balloon's configuration.
+Balloon Dispensers attach objects that touch them to a balloon using a [rope][RopeConstraint]. The balloon will be propelled vertically.  
+Objects on balloons will be dismounted when the player jumps or when the object/balloon touches a [Dismounter](dismounters.md). Alternatively, they are dismounted when specific conditions are met, which are listed in the [configurations](#configuration).
 
 ## Use Cases
 
 Balloons can be used to slowly lift the player upwards or downwards while allowing free horizontal movement.
+Balloon visuals can be customized by editing the `BalloonModel` inside the balloon dispenser.
+Balloon timers can be customized by editing the `TimerGui` inside the balloon's configuration.
 
 ## Configuration
 
