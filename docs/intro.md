@@ -28,7 +28,9 @@ The Global Configurations category contains documentation for special configurat
 
 ### API Documentation
 
-Documentation for the kit's scripts can be found in the API section found in the top bar. These are meant to assist people that are working on custom scripts for the kit. Please note that you are **not allowed** to use custom scripts unless you have the Verified Builder role or are in a collaboration with someone who has the role.
+Documentation for the kit's scripts can be found in the API section found in the top bar. These are meant to assist people that are working on custom scripts for the kit. 
+
+See [here](misc.md#writing--editing-repository-scripts) for more information. Please note that you are **not allowed** to use custom scripts unless you have the Verified Builder role or are in a collaboration with someone who has the role.
 
 ## What's different compared to Version 5?
 

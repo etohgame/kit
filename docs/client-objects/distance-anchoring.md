@@ -9,6 +9,7 @@ Distance Anchoring is used for lag reduction. From Kit v6 onwards, most physics 
 You can disable Distance Anchoring on a per-object basis by dragging them out of this folder, however this is *heavily discouraged unless absolutely necessary* as having too many permanently active objects can cause performance issues, especially if the objects are very big or if you have a lot of them.
 
 ## Configuration
+
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `Range` | 150 | How far away the player can be before objects toggle. Can be overridden on a per-object basis by adding a `number` `Attribute` named `CustomRange` to the object.
@@ -16,6 +17,7 @@ You can disable Distance Anchoring on a per-object basis by dragging them out of
 | `Mode` | `Anchor` | How the distance anchoring system will behave. See [Modes](#modes) for more information.
 
 ## Modes
+
 | Mode | Description
 |:-----:|:-----:
 | `Anchor` | Far-away objects will freeze in place.

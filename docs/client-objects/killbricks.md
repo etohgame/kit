@@ -19,4 +19,4 @@ The player will not be affected if they have a [`ForceField`](https://create.rob
 | `instakills`| infinite |
 | `heals` | Heals the player to full health |  
 
-Custom damage values may be set by adding a `number` [`Attribute`](https://create.roblox.com/docs/scripting/attributes) called `damage` (case sensitive) to the part.
+Custom damage values may be set by adding a `number` [`Attribute`](https://create.roblox.com/docs/scripting/attributes) called `customDamage` (case sensitive) to the part.
