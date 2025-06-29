@@ -21,7 +21,7 @@ There is a `KitSettings` module found in `ReplicatedStorage` that allows you to 
 
 In Kit v6, value objects are no longer used in favor of `Configuration` objects for settings, and [Tags](https://create.roblox.com/docs/studio/properties#instance-tags) for object flags. Below is a table of all usable tags.
 
-# General
+## General
 
 | Name | Description
 |:-----:|:-----:
@@ -31,7 +31,7 @@ In Kit v6, value objects are no longer used in favor of `Configuration` objects 
 | `DoNotFlipPlayer` | If present alongside the `CanFlip` tag, performing a Corner Flip on a Part will not move/rotate the player. Useful for flip-activated client objects.
 | `OnlyInStudio` | If present, the object will only be visible in Studio and will automatically be deleted when playing the tower.
 
-# Client Object Specific
+## Client Object Specific
 
 | Name | Description
 |:-----:|:-----:
@@ -64,15 +64,15 @@ It also contains a `Sync` module where the actual sync is defined, an example of
 
 ```lua
 return {
-	TimingOffset = 000.000, -- Change this to sync your song
-	BeatsPerMinute = {
+    TimingOffset = 000.000, -- Change this to sync your song
+    BeatsPerMinute = {
         -- Example: { beat = 016.000, bpm = 180.000 },
         { beat = 000.000, bpm = 130.000 },
-	},
-	Stops = {
-		-- Example stop: { beat = 002.000, seconds = 000.500 },
-		-- Stops the music at beat 2 for 0.5 seconds
-	},
+    },
+    Stops = {
+        -- Example stop: { beat = 002.000, seconds = 000.500 },
+        -- Stops the music at beat 2 for 0.5 seconds
+    },
 }
 ```
 

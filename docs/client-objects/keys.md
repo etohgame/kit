@@ -8,6 +8,7 @@ Keys are used to open any key doors that are in the same group as the key.
 
 Key doors can be used to require the player to pick them up in order to proceed.
 A key door can be destroyed in multiple ways when opened, based on what the parts inside are named:
+
 | Part Name | Function
 |:-----:|:-----:
 | `Vanish` | The part will fade out, being destroyed after the fade ends.
@@ -24,7 +25,6 @@ Any parts named `ReturnKey` inside of the key group will cause the key to return
 | `Timer` | 0 | The amount of time you can pick this key up for before it'll return to its original spot. If set to 0, the key will not have a timer
 | `TimerDecimalPlaces` | 1 | The amount of decimals that will be shown on the timer.
 | `ViewportOffset` | [`CFrame.new(0, 0, 0)`](https://create.roblox.com/docs/reference/engine/datatypes/CFrame) | Offset applied to the key's model in its viewport when collected.
-
 
 ## Door Configuration
 

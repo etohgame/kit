@@ -26,10 +26,10 @@ The `UseSpecialColor` tag can be used on the `TimerLabel` to disable its automat
 
 Any Part with the `ButtonActivated` tag will be considered a button activated object. By default, button activated objects behave as follows:
 
-| Button State | CanCollide | Transparency | Client Object State |
+| Button State | CanCollide | Transparency | Client Object State
 |:-----:|:-----:|:-----:|:-----:
-| Unpressed | `false` | `0.6` | Disabled |
-| Pressed | `true` | `0` | Enabled |
+| Unpressed | `false` | `0.6` | Disabled
+| Pressed | `true` | `0` | Enabled
 
 These will be inverted if the object has the `Invert` tag.
 
@@ -39,29 +39,29 @@ Please note that if 64 or more parts are toggled at once, there will be a 1 fram
 
 If the following objects are found inside of a button activated object, they will match the object's transparency when toggled:
 
-| Object | Property Affected |
+| Object | Property Affected
 |:-----:|:-----:
-| [`Decal`](https://create.roblox.com/docs/reference/engine/classes/Decal) | `Transparency` |
-| [`Texture`](https://create.roblox.com/docs/reference/engine/classes/Texture) | `Transparency` |
-| [`SelectionBox`](https://create.roblox.com/docs/reference/engine/classes/SelectionBox) | `Transparency` |
-| [`SelectionSphere`](https://create.roblox.com/docs/reference/engine/classes/SelectionSphere) | `Transparency` |
-| [`Frame`](https://create.roblox.com/docs/reference/engine/classes/Frame) | `BackgroundTransparency` |
-| [`CanvasGroup`](https://create.roblox.com/docs/reference/engine/classes/CanvasGroup) | `GroupTransparency` |
-| [`TextLabel`](https://create.roblox.com/docs/reference/engine/classes/TextLabel) | `TextTransparency` |
-| [`ImageLabel`](https://create.roblox.com/docs/reference/engine/classes/ImageLabel) | `ImageTransparency` |
+| [`Decal`](https://create.roblox.com/docs/reference/engine/classes/Decal) | `Transparency`
+| [`Texture`](https://create.roblox.com/docs/reference/engine/classes/Texture) | `Transparency`
+| [`SelectionBox`](https://create.roblox.com/docs/reference/engine/classes/SelectionBox) | `Transparency`
+| [`SelectionSphere`](https://create.roblox.com/docs/reference/engine/classes/SelectionSphere) | `Transparency`
+| [`Frame`](https://create.roblox.com/docs/reference/engine/classes/Frame) | `BackgroundTransparency`
+| [`CanvasGroup`](https://create.roblox.com/docs/reference/engine/classes/CanvasGroup) | `GroupTransparency`
+| [`TextLabel`](https://create.roblox.com/docs/reference/engine/classes/TextLabel) | `TextTransparency`
+| [`ImageLabel`](https://create.roblox.com/docs/reference/engine/classes/ImageLabel) | `ImageTransparency`
 
 If the following objects are found inside of a button activated object, they will have their `Enabled` property toggled to match the button's state:
 
-| Object |
-|---------------------------|
-| [`Beam`](https://create.roblox.com/docs/reference/engine/classes/Beam) |
-| [`ParticleEmitter`](https://create.roblox.com/docs/reference/engine/classes/ParticleEmitter) |
-| [`Fire`](https://create.roblox.com/docs/reference/engine/classes/Fire) |
-| [`Sparkles`](https://create.roblox.com/docs/reference/engine/classes/Sparkles) |
-| [`Smoke`](https://create.roblox.com/docs/reference/engine/classes/Smoke) |
-| [`Trail`](https://create.roblox.com/docs/reference/engine/classes/Trail) |
-| [`UIStroke`](https://create.roblox.com/docs/reference/engine/classes/UIStroke) |
-| [`UIGradient`](https://create.roblox.com/docs/reference/engine/classes/UIGradient) |
+| Object
+|---------------------------
+| [`Beam`](https://create.roblox.com/docs/reference/engine/classes/Beam)
+| [`ParticleEmitter`](https://create.roblox.com/docs/reference/engine/classes/ParticleEmitter)
+| [`Fire`](https://create.roblox.com/docs/reference/engine/classes/Fire)
+| [`Sparkles`](https://create.roblox.com/docs/reference/engine/classes/Sparkles)
+| [`Smoke`](https://create.roblox.com/docs/reference/engine/classes/Smoke)
+| [`Trail`](https://create.roblox.com/docs/reference/engine/classes/Trail)
+| [`UIStroke`](https://create.roblox.com/docs/reference/engine/classes/UIStroke)
+| [`UIGradient`](https://create.roblox.com/docs/reference/engine/classes/UIGradient)
 
 ## Button Activated Object Configurations
 
@@ -84,6 +84,6 @@ Button activated objects have special configurations that can be modified using 
 
 Below is a list of all the client objects that either cannot currently be toggled by a Button, or have known issues regarding them when button activated.
 
-| Unsupported Client Object | Notes |
-|------------| ------------------|
-| [Vanishers](vanishers.md) | Inconsistent behaviour when toggled while vanishing |
+| Unsupported Client Object | Notes
+|------------|-------------------
+| [Vanishers](vanishers.md) | Inconsistent behaviour when toggled while vanishing

@@ -15,30 +15,32 @@ Lighting Changers are configured inside of a `Lighting` ModuleScript that is fou
 You can define either a single object to change or multiple objects to change at once.
 
 Example usage, changing only a single object:
+
 ```lua
 return Change "Lighting" {
-	TweenInfo = TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-	Configuration = {
-		ClockTime = 0,
-	},
+    TweenInfo = TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+    Configuration = {
+        ClockTime = 0,
+    },
 }
 ```
 
 Example usage, changing multiple lighting objects at once:
+
 ```lua
 return {
-	TweenInfo = TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+    TweenInfo = TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 
-	Change "Lighting" {
-		Configuration = {
+    Change "Lighting" {
+        Configuration = {
             ClockTime = 0,
-		},
-	},
-	Change "ColorCorrectionEffect" {
-		Configuration = {
-			TintColor = Color3.fromRGB(255, 0, 0),
-		},
-	},
+        },
+    },
+    Change "ColorCorrectionEffect" {
+        Configuration = {
+            TintColor = Color3.fromRGB(255, 0, 0),
+        },
+    },
 }
 ```
 
@@ -60,11 +62,11 @@ the Lighting service, can be specified as the object to change:
 |:-----:|:-----:|:-----:
 | `Lighting` | Ambient, Brightness, ClockTime, ColorShift_Bottom, ColorShift_Top, EnvironmentDiffuseScale, EnvironmentSpecularScale, ExposureCompensation, FogColor, FogEnd, FogStart, GeographicLatitude, GlobalShadows,  OutdoorAmbient, ShadowSoftness, TimeOfDay | When an `Atmosphere` object is used, fog will automatically be disabled and have no effect.
 | `Atmosphere` | Enabled, Density, Offset, Color, Decay, Glare, Haze | Because `Atmosphere` objects do not have an `Enabled` property, it instead toggles whether the Atmosphere effect is parented to `Lighting`.
-| `BlurEffect` | Size |
-| `BloomEffect` | Intensity, Size, Threshold |
-| `ColorCorrectionEffect` | Brightness, Contrast, Saturation, TintColor |
-| `DepthOfFieldEffect` | FarIntensity, FocusDistance, InFocusRadius, NearIntensity |
-| `Sky` | MoonAngularSize, MoonTextureId, SkyboxBk, SkyboxDn, SkyboxFt, SkyboxLf, SkyboxRt, SkyboxUp, StarCount, SunAngularSize, SunTextureId, SkyboxOrientation |
+| `BlurEffect` | Size
+| `BloomEffect` | Intensity, Size, Threshold
+| `ColorCorrectionEffect` | Brightness, Contrast, Saturation, TintColor
+| `DepthOfFieldEffect` | FarIntensity, FocusDistance, InFocusRadius, NearIntensity
+| `Sky` | MoonAngularSize, MoonTextureId, SkyboxBk, SkyboxDn, SkyboxFt, SkyboxLf, SkyboxRt, SkyboxUp, StarCount, SunAngularSize, SunTextureId, SkyboxOrientation
 
 ### Properties
 

@@ -8,9 +8,10 @@ Beat blocks can be used for gameplay where the player has to time their jumps, o
 
 ## Music Sync
 
-Beat blocks can be synced to the tower's music. This will make the beat blocks toggle on every beat of the currently playing song. See [here](/docs/misc.md#music-sync-configuration) for more information.
+Beat blocks can be synced to the tower's music. This will make the beat blocks toggle on every beat of the currently playing song. See [the documentation on music sync](/docs/misc.md#music-sync-configuration) for more information.
 
 ## Configuration
+
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `Indicator` | true | When true, an indicator will be shown on the next set of parts before they toggle. This will help the player time their movement. It is heavily recommended to leave this enabled if you are using the beat blocks for gameplay purposes.

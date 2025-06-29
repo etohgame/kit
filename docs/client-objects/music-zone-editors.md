@@ -26,6 +26,7 @@ The music zone's priority will be set to this value when triggered.
 
 This table lists properties that will be applied to the music zone's `Sound` object when triggered.
 Example usage:
+
 ```lua
 SoundConfiguration = {
     PlaybackSpeed = 2,
@@ -37,6 +38,7 @@ SoundConfiguration = {
 
 This table lists properties that will be applied to any `SoundEffects` inside the music zone's `Sound` object when triggered. There should be one table per effect, listed by name.
 Example usage:
+
 ```lua
 EffectConfiguration = {
     FlangeSoundEffect = {
@@ -52,6 +54,7 @@ This table holds extra configurations for the music.
 #### KeepTimePosition
 
 When enabled, the music zone will keep the currently playing song's time position plus the defined Offset. Useful for dynamically changing between songs that have multiple versions.
+
 ```lua
 KeepTimePosition = { Enabled = false, Offset = 0 },
 ```
