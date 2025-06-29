@@ -12,7 +12,7 @@ Music Zone Editors can change the priority of a Music Zone as well as any proper
 |:-----:|:-----:|:-----:
 | `Cooldown` | 1 | Time in seconds to wait before the Music Zone Editor can activate again
 | `OneTimeUse` | false | When true, the music zone editor can only be used one time.
-| `ZoneName` | `Floor1` | The name of the music zone to edit.
+| `ZoneName` | `Floor1` | The name of the music zone to edit. For organization purposes, it is highly recommended to have your music zones' names start with the name of your tower.
 
 ## Music Configuration
 

@@ -14,13 +14,12 @@ Do **not** tamper with the lines placed at the top of the script or write non-in
 
 The table contains a list of properties to change, as well as a `Instance` field that is required for the Property Changer to function. For example, the default properties look like this:
 ```lua
-local Properties: Types.Format = {
+local Properties: _C.Format = {
 	{
         Instance = Toucher(),
-        Tween = TweenInfo.new(0.25, Enum.EasingStyle.Linear, Enum.EasingDirection.Out),
-
-        Color = function(_C)
-			return _C.PropertyFromChanger("Color")
+        Tween = TweenInfo.new(0.5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out),
+        Color = function(_E)
+			return _E.PropertyFromChanger("Color")
 		end,
 	},
 }
@@ -30,14 +29,16 @@ This will change the `Color` of any part that touches the Property Changer to th
 The Bullet Velocity Changer (a pre-made PropertyChanger) found in the kit has fields that look like this:
 ```lua
 Instance = Toucher():FindChildOfClass("LinearVelocity"),
-
-VectorVelocity = function(_C)
-    return _C.PropertyFromChanger("CFrame").LookVector * _C.PropertyFromChanger("Speed", "PropertyChangerConfiguration")
+Tween = TweenInfo.new(0.25, Enum.EasingStyle.Linear, Enum.EasingDirection.Out),
+VectorVelocity = function(_E)
+    return _E.PropertyFromChanger("CFrame").LookVector * _E.PropertyFromChanger("Speed", "PropertyChangerConfiguration")
 end,
 ```
 This will search for the `LinearVelocity` inside the touching object and set its `VectorVelocity` to the changer's facing direction multiplied by the `Speed` attribute in the `PropertyChangerConfiguration`. More information on these functions can be found below.
 
-The `Instance` field defines what objects will be affected by the Property Changer, and if present, the `Tween` field will tween these properties. Note that tweens may be laggy if you are affecting a large amount of objects at once.
+* The `Instance` field defines what objects will be affected by the Property Changer.
+* If present, the `Tween` field will tween these properties. Note that tweens may be laggy if you are affecting a large amount of objects at once.
+* If present, the `Condition` function will make the Property Changer not run if the condition is not met. Read [here](#property-checkers) for more info.
 
 Every other field defines properties of the object to change. You can either directly define values or use a function to calculate the value or retrieve the value from another object. More info can be found below.
 
@@ -54,7 +55,7 @@ Example usage:
 Instance = Tagged("MyCoolPart"),
 ```
 
-`TagFromSequenceVariable` is similar to `Tagged`, but the given value is treated as a [Sequence Pointer](sequencers.md#using-sequencers) instead.
+`TagFromSequenceVariable` is similar to `Tagged`, but the given value is treated as a [Sequence Variable](sequencers.md#sequence-variables) instead.
 
 `Changer` will simply affect the Property Changer itself.
 
@@ -79,41 +80,57 @@ This function lets you retrieve certain values for usage in the Property Changer
 | `Distance` | The distance between the player's character and the given position | `_C.GetValue("Distance", Vector3.zero)`
 | `PlayerHealth` | The player's health | `_C.GetValue("Health")`
 
-#### _C.PropertyFromChanger()
+#### _E.PropertyFromChanger()
 
 This function lets you retrieve any property from the Property Changer itself. This example will change the `Color` of any touching Part to the `Color` of the changer itself:
 ```lua
-Color = function(_C)
-    return _C.PropertyFromChanger("Color")
+Color = function(_E)
+    return _E.PropertyFromChanger("Color")
 end,
 ```
 
-#### _C.PropertyFromInstance()
+#### _E.PropertyFromInstance()
 
 This function lets you retrieve any property from the object you are affecting. This example will change the `Transparency` of any affected Part based on how far away you are from it, with a radius of 30 studs:
 ```lua
-Transparency = function(_C)
-    return _C.Value("Distance", _C.PropertyFromInstance("Position")) / 30
+Transparency = function(_E)
+    return _E.Value("Distance", _E.PropertyFromInstance("Position")) / 30
 end,
 ```
 
-#### _C.PropertyFromTag()
+#### _E.PropertyFromTag()
 
 This function lets you retrieve any property from an object with the given [Tag]. This example will retrieve the `Color` of an object that has the tag `MyCoolPart`:
 ```lua
-Color = function(_C)
-    return _C.PropertyFromTag("MyCoolPart", "Color")
+Color = function(_E)
+    return _E.PropertyFromTag("MyCoolPart", "Color")
 end,
 ```
 
-#### _C.SequenceVariable()
+#### _E.SequenceVariable()
 
-This function lets you retrieve the [Sequence Variable](sequencers.md#using-sequencers) with the given name. This example will retrieve the value from the sequence variable `MyAwesomeVariable`:
+This function lets you retrieve the [Sequence Variable](sequencers.md#sequence-variables) with the given name. This example will retrieve the value from the sequence variable `MyAwesomeVariable`:
 ```lua
-Color = function(_C)
-    return _C.SequenceVariable("MyAwesomeVariable")
+Color = function(_E)
+    return _E.SequenceVariable("MyAwesomeVariable")
 end,
 ```
+
+### Property Checkers
+
+Property Checkers are a special type of Property Changer. If the `Condition` function is present, the Property Changer will not run if the condition is not met. This example will make the Property Changer only work if you are within 50 studs of it:
+```lua
+local Properties: _C.CheckerFormat = {
+	{
+		Instance = Changer(),
+		Condition = function(_E)
+			return _E.Value("Distance", _E.PropertyFromInstance("Position")) < 50
+		end,
+	},
+}
+```
+
+If the Property Checker has the `ConditionalEnabled` configuration and is used in a [Sequencer](sequencers.md), its sequence will automatically stop if the condition is not met.
 
 ## Configuration
 

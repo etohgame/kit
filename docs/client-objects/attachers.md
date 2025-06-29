@@ -2,9 +2,11 @@
 
 Attachers are objects that enable players and parts to "attach" a set of parts to themselves upon contact.
 
+When the `Trigger` part is touched, the `WeldModel` will be attached to the object that touched the trigger. The `WeldModel` requires the `SkipObjectLoad` tag and a PrimaryPart in order for the Attacher to function properly.
+
 ## Use Cases
 
-Attaching objects (e.g. trails, lights, or spinning killbricks) to the object that interacted with the Attacher.
+Attaching objects to the object that interacted with the Attacher, or making objects face the player.
 
 ## Configuration
 

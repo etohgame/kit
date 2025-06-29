@@ -6,6 +6,10 @@ Beat blocks are groups of parts that will toggle on and off on a set interval.
 
 Beat blocks can be used for gameplay where the player has to time their jumps, or as animated design.
 
+## Music Sync
+
+Beat blocks can be synced to the tower's music. This will make the beat blocks toggle on every beat of the currently playing song. See [here](/docs/misc.md#music-sync-configuration) for more information.
+
 ## Configuration
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
