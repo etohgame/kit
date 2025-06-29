@@ -4,7 +4,7 @@ Swings are objects that the player can mount and swing around on.
 
 ## Use Cases
 
-Swings can be used to create complex gameplay sections and jumps.
+Swings can be used to create complex gameplay sections and jumps. The player swings in a perfectly circular trajectory around the Swing.
 
 The Swing's sounds can be changed by modifying the `Sound` objects inside the `Sounds` folder.
 

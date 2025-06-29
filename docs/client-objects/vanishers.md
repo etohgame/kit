@@ -5,6 +5,7 @@ Vanishers are objects that disappear and become uncollidable when touched.
 ## Use Cases
 
 Vanishers can be used to create varying types of gameplay, puzzles, or contraptions.
+An example of this is to speed up pacing for a section by requiring the player to move fast.
 
 ## Vanish modes
 

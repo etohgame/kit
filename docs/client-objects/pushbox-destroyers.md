@@ -11,4 +11,5 @@ Pushbox Destroyers can be used to destroy Pushboxes or contraptions parented wit
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `ColorSpecific` | false | When true, the Pushbox part that touches the Destroyer must match the Destroyer's color for it to be destroyed.
+| `DestroyTag` | (empty string) | When set, activating this Destroyer will destroy any Pushbox in the client object folder with the given tag.
 | `DestroyWholeModel` | false | When true, the entire Pushbox model will be destroyed upon touch. Otherwise, only the part that touched the Destroyer will be destroyed.

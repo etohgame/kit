@@ -7,7 +7,7 @@ The Vine's sounds can be changed by modifying the `Sound` objects inside the `So
 
 ## Use Cases
 
-Vines are used in gameplay, for example to swing to platforms that are otherwise impossible to reach.
+Vines are used in gameplay, for example to swing to platforms that are otherwise impossible to reach. They can be combined with fast elevators to make unique momentum jumps.
 The length of the vine can be adjusted by editing the length of the constraint.
 
 ## Configuration
