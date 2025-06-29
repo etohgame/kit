@@ -7,6 +7,7 @@ Dismounters are parts that will dismount you from any other Client Objects you a
 Dismounters can be used to forcefully dismount the player from mounts.
 
 ## Configuration
+
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `Cooldown` | 0 | Delay between being able to use the Dismounter.

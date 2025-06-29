@@ -9,6 +9,7 @@ Welcome to the documentation page for Version 6 of the EToH Tower Building Kit! 
 ## Installation Instructions
 
 The kit is distributed using a pre-made place, making it simple and straight-forward to get started. It can be obtained by:
+
 * Opening the [uncopylocked template place](https://github.com/etohgame/kit) on Roblox **(recommended)**
 * Downloading the .rbxl file from our [GitHub releases page](https://github.com/etohgame/kit)
 
@@ -28,17 +29,17 @@ The Global Configurations category contains documentation for special configurat
 
 ### API Documentation
 
-Documentation for the kit's scripts can be found in the API section found in the top bar. These are meant to assist people that are working on custom scripts for the kit. 
+Documentation for the kit's scripts can be found in the API section found in the top bar. These are meant to assist people that are working on custom scripts for the kit.
 
-See [here](misc.md#writing--editing-repository-scripts) for more information. Please note that you are **not allowed** to use custom scripts unless you have the Verified Builder role or are in a collaboration with someone who has the role.
+See [the docs on writing repository scripts](misc.md#writing--editing-repository-scripts) for more information. Please note that you are **not allowed** to use custom scripts unless you have the Verified Builder role or are in a collaboration with someone who has the role.
 
 ## What's different compared to Version 5?
 
 The kit has been fully reworked, and several objects now work differently.
 If you are experienced with building towers using an old kit, please read through these as it contains important information:
 
-* New client objects: 
-[Attachers](client-objects/attachers.md), 
+* New client objects:
+[Attachers](client-objects/attachers.md),
 [Gradient Parts](client-objects/gradient-parts.md),
 [GUI Displayers](client-objects/gradient-parts.md), <!-- change link later -->
 [Jump Launchers](client-objects/jump-launchers.md),

@@ -10,6 +10,7 @@ The Jump Launcher's sounds can be modified by editing the `Sound` objects found 
 Jump Launchers are most commonly used as double jumps. They can be buffered by holding the jump button before touching them, in order to make timing them easier.
 
 ## Configuration
+
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `Cooldown` | 0.25 | Time in seconds to wait before the Jump Launcher can activate again
