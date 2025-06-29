@@ -29,22 +29,37 @@ Sequence Pointers can also be found in the `Extra Sequencer Stuff` folder. When 
 
 ### Sequence Variables
 
-Every `Activator` part has a `PointerVariables` Configuration object. Any attributes you add to this object can be read by [Property Changers](property-changers.md#bi).
+Every `Activator` part has a `PointerVariables` Configuration object. Any attributes you add to this object can be read by [Property Changers](property-changers.md#_esequencevariable).
 
 ## Sequencer Support
 
 The following objects are currently supported by Sequencers:
 
-| Object |
-|:-----:|
+| Object | Notes |
+|:-----:|:-----:|
+| [Attachers](attachers.md) |
+| [Balloons](balloons.md) |
 | [Boosters](boosters.md) |
 | [Boost Removers](boosters.md) |
 | [Buttons](buttons.md) |
 | [Button Deactivators](button-deactivators.md) |
 | [Dismounters](dismounters.md) |
-| [Emitters](emitters.md) |
+| [Emitters](emitters.md) | Use with [Sequence Pointers] |
 | [GUI Displayers](gui-displayers.md) |
+| [Lighting Changers](lighting-changers.md) |
+| [Morphers](morphers.md) |
+| [Music Zone Editors](music-zone-editors.md) |
 | [Property Changers](property-changers.md) |
+| [Pushbox Spawners](pushbox-spawners.md) |
+| [Pushbox Destroyers](pushbox-destroyers.md) |
+| [Seats](seats.md) | Use with [Sequence Pointers] |
+| [Swings](swings.md) | Use with [Sequence Pointers] |
+| [Teleporters](teleporters.md) | Seamless mode will not function correctly.
+| [Trip Parts](trip-parts.md) |
+| [Turrets](turrets.md) | Use with [Sequence Pointers] |
+| [Vanishers](vanishers.md) | Use with [Sequence Pointers] |
+| [Vines](vines.md) | Use with [Sequence Pointers] |
+| [Ziplines](ziplines.md) | Use with [Sequence Pointers] |
 
 ## Music Sync
 
@@ -62,3 +77,4 @@ Sequencers can be synced to the tower's music. This will adjust the speed of the
 | `Visualize` | true | When true, the Sequencer will move to show it's progress, and color itself to show it's current state. Useful for debugging sequences. |
 
 [Tag]: https://create.roblox.com/docs/studio/properties#instance-tags
+[Sequence Pointers]: #sequence-pointers
