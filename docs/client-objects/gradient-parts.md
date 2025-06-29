@@ -5,10 +5,12 @@ Gradient Parts change their `Color` over time by using a `UIGradient` instance.
 To improve performance, the color shifting of Gradient Parts will temporarily pause when the player is
 further than a set distance away from the `DistancePivot` part.
 
+All color-changing parts must either be named `GradientPart` or have a `GradientPart` tag.
+
 ## Use Cases
 
 Gradient Parts can be used for decoration. A few examples of these are pulsing parts and rainbow parts.
-Unlike `Beam` instances, which use a texture, the `Color` of Gradient Parts are uniform.
+Unlike `Beam`s, which can have multiple colors at once, the color of Gradient Parts is uniform across all parts.
 
 ## Configuration
 

@@ -4,13 +4,15 @@ Buttons are parts that toggle a set of parts between a Pressed and Unpressed sta
 
 ## Use Cases
 
-Buttons may be used to create toggleable parts and objects.
+Buttons may be used to create toggleable parts and objects. This can be used for progression, timed sections, or to activate platforms that make recovery faster.
 
 ## Configuration
 
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `HideGUI` | false | When true, the timer label displayed on the button and the game's UI will not be shown.
+| `PadDistance` | 10 | When `PadMode` is true, the maximum distance above the button the object that activated the button can be before it deactivates.
+| `PadMode` | false | When true, the button will only be activated while an object is actively touching the ButtonPart. If not touching, it will automatically deactivate.
 | `PressedMaterial` | `Neon` | The material of the Button when pressed.
 | `PressOffset` | [`CFrame.new(0, -0.75, 0)`](https://create.roblox.com/docs/reference/engine/datatypes/CFrame) | The offset of the ButtonPart when pressed. Uses the provided [TweenConfiguration](/docs/global-configurations/tween-configurations.md).
 | `Timer` | 0 | The time the button will be activated for before automatically deactivating. If set to 0, the button will not have a timer.

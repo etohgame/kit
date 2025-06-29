@@ -4,7 +4,9 @@ Boost Pads are similar to [Boosters](boosters.md), but the boost is only active 
 
 ## Use Cases
 
-Boost Pads can be used to have a Boost only be active when the player is interacting with the Boost Pad. Boost Pads will instantly end their effect when deactivated rather than having it slowly fade over time.
+Boost Pads can be used to have a Boost only be active when the player is interacting with the Boost Pad. This can be used to prevent the player from moving during cutscenes.
+
+Boost Pads will instantly end their effect when deactivated rather than having it slowly fade over time.
 
 ## Configuration
 

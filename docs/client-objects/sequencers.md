@@ -4,19 +4,50 @@ Sequencers are objects that remotely activate a configured sequence of other cli
 
 ## Use Cases
 
-Sequencers are used as the replacement for [Pushbox contraptions](pushbox-spawners.md) that were widely used in older kits, and have several benefits such as them being much more consistent due to not being prone to physics issues.
+Sequencers are used as the replacement for [Pushbox](pushbox-spawners.md) contraptions that were widely used in older kits, and have several benefits such as them being much more consistent due to not being prone to physics issues.
 
 ## Using Sequencers
 
 Objects activated by Sequencers must be placed in the Sequencer's `Sequence` folder. When activated, the Sequencer will begin moving in the direction it is facing. Objects in the sequence will be activated when the Sequencer passes through the center point of the object.
 
 If a reached object has a `YieldSequence` tag, the Sequencer will pause until that object's function finishes running. In the case of button platforms, it will pause until the button platform activates.
-If a part named `EndPoint` is reached in the sequence. the Sequencer will stop running early. This can be used for debugging purposes.
-
-Sequence Pointers are special objects that can remotely activate objects that are not part of the sequence. When activated, the `Pointer` attribute in the pointer's `PointerConfiguration` will be read and every object that has a [Tag](https://create.roblox.com/docs/studio/properties#instance-tags) corresponding to that value will be activated.
+If a part named `EndPoint` is reached in the sequence, the Sequencer will stop running early. This can be used for debugging purposes.
 
 For performance reasons, Sequencers will not run when the game is running below 10FPS.
 A warning message will also be displayed if the Sequencer is looping at an obscene rate (20+ times per second)
+
+### Sequence Groups
+
+A `SequenceGroup` template can be found in the `Extra Sequencer Stuff` folder in the kit. If you parent objects into this group, they will have special behavior based on the `GroupConfiguration`'s `Mode` when activated in a sequence:
+
+* `Random` will simply select and activate a random object from the group.
+* `And` and `Or` are conditional modes that rely on [Property Checkers](property-changers.md#property-checkers). The Sequencer will activate all Property Checkers in the group and cancel the sequence if their conditions are not met. If using `And`, all conditions have to be met, and if using `Or`, only one condition has to be met.
+
+### Sequence Pointers
+
+Sequence Pointers can also be found in the `Extra Sequencer Stuff` folder. When activated in a sequence, the Sequencer will read its `PointerConfiguration` and activate any Client Object in the tower (not just the ones in the sequence) that has a [Tag] matching the `Pointer` attribute.
+
+### Sequence Variables
+
+Every `Activator` part has a `PointerVariables` Configuration object. Any attributes you add to this object can be read by [Property Changers](property-changers.md#bi).
+
+## Sequencer Support
+
+The following objects are currently supported by Sequencers:
+| Object |
+|:-----:|
+| [Boosters](boosters.md) |
+| [Boost Removers](boosters.md) |
+| [Buttons](buttons.md) |
+| [Button Deactivators](button-deactivators.md) |
+| [Dismounters](dismounters.md) |
+| [Emitters](emitters.md) |
+| [GUI Displayers](gui-displayers.md) |
+| [Property Changers](property-changers.md) |
+
+## Music Sync
+
+Sequencers can be synced to the tower's music. This will adjust the speed of the Sequencer to match the BPM of the currently playing song. See [here](/docs/misc.md#music-sync-configuration) for more information.
 
 ## Configuration
 
@@ -28,3 +59,5 @@ A warning message will also be displayed if the Sequencer is looping at an obsce
 | `RunAtStart` | false | When true, the Sequencer will automatically run when it loads, without it having to be activated by touch.
 | `Speed` | 1 | The speed the Sequencer will move at, in studs per second
 | `Visualize` | true | When true, the Sequencer will move to show it's progress, and color itself to show it's current state. Useful for debugging sequences.
+
+[Tag]: https://create.roblox.com/docs/studio/properties#instance-tags

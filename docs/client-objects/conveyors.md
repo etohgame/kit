@@ -2,9 +2,11 @@
 
 Conveyors are parts that move objects in the direction they are facing.
 
+Conveyors have a Beam that automatically adjust their speed to match the conveyor's speed.
+
 ## Use Cases
 
-Conveyors are useful for quickly moving objects to different places, for example during gameplay or in [Pushbox contraptions](pushbox-spawners.md). They can also be used as obstacles the player has to avoid.
+Conveyors are useful for quickly moving objects to different places. They can also be used as obstacles the player has to avoid.
 
 ## Configuration
 

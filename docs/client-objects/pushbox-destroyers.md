@@ -4,7 +4,7 @@ Pushbox Destroyers are parts that destroy any [Pushbox](pushbox-spawners.md) tha
 
 ## Use Cases
 
-Pushbox Destroyers can be used to destroy Pushboxes or contraptions parented within a Pushbox model.
+Pushbox Destroyers can be used to destroy Pushboxes or contraptions parented within a Pushbox model, or to prevent a Pushbox from going outside its intended use area.
 
 ## Configuration
 

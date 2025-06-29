@@ -4,7 +4,9 @@ Bounce Pads are objects that bounce players and objects when touched.
 
 ## Use Cases
 
-Bounce Pads can be used to launch objects in any direction.
+Bounce Pads can be used to launch objects in any direction. They only apply a single impulse, unlike [Elevators](elevators.md) which continously apply force until the object stops touching the Elevator.
+
+The sounds and particles inside the Boost Pad can be modified to your liking.
 
 ## Configuration
 

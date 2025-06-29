@@ -1,10 +1,10 @@
 # Kill Bricks
 
-Kill Bricks deal damage to characters that come into contact with them. Damage from Kill Bricks are typically dealt in fixed values.
+Kill Bricks deal damage to players that come into contact with them. Damage from Kill Bricks are typically dealt in fixed values.
 
 ## Use Cases
 
-Kill Bricks are used to deal damage to the player. Avoid using them excessively as this can cause annoying gameplay.
+Kill Bricks are used to deal damage to the player, for example to punish the player for falling or to keep them moving. Avoid using them excessively as this can create annoying gameplay.
 
 ## Configuration
 
