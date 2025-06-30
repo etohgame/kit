@@ -20,7 +20,7 @@ local Properties: _C.Format = {
         Instance = Toucher(),
         Tween = TweenInfo.new(0.5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out),
         Color = function(_E)
-            return _E.PropertyFromChanger("Color")
+            return _E.Changer():Property("Color")
         end,
     },
 }
@@ -34,7 +34,7 @@ The Bullet Velocity Changer (a pre-made PropertyChanger) found in the kit has fi
 Instance = Toucher():FindChildOfClass("LinearVelocity"),
 Tween = TweenInfo.new(0.25, Enum.EasingStyle.Linear, Enum.EasingDirection.Out),
 VectorVelocity = function(_E)
-    return _E.PropertyFromChanger("CFrame").LookVector * _E.PropertyFromChanger("Speed", "PropertyChangerConfiguration")
+    return _E.Changer():Property("CFrame").LookVector * _E.Changer():FindChild("PropertyChangerConfiguration"):Property("Speed")
 end,
 ```
 
@@ -71,57 +71,70 @@ children. An example of this is shown in the Bullet Velocity Changer snippet abo
 
 The Property Changer has built-in functions that allow you to retrieve values from other objects. These are listed below.
 
-#### _C.Value()
+#### _E.Value()
 
 This function lets you retrieve certain values for usage in the Property Changer. The list of retrievable values is as follows:
 
 | Value | Description | Example Usage
 |:-----:|:-----:|:-----:
-| `PlayerName` | The player's username | `_C.GetValue("PlayerName")`
-| `DisplayName` | The player's display name | `_C.GetValue("DisplayName")`
-| `UserId` | The player's user ID | `_C.GetValue("UserId")`
-| `CharacterPosition` | The position of the player's character | `_C.GetValue("CharacterPosition")`
-| `CharacterCFrame` | The CFrame of the player's character | `_C.GetValue("CharacterCFrame")`
-| `Distance` | The distance between the player's character and the given position | `_C.GetValue("Distance", Vector3.zero)`
-| `PlayerHealth` | The player's health | `_C.GetValue("Health")`
+| `PlayerName` | The player's username | `_E.GetValue("PlayerName")`
+| `PlayerDisplayName` | The player's display name | `_E.GetValue("PlayerDisplayName")`
+| `UserId` | The player's user ID | `_E.GetValue("UserId")`
+| `Distance` | The distance between the player's character and the given position | `_E.GetValue("Distance", Vector3.zero)`
+| `CharacterPosition` | The position of the player's character | `_E.GetValue("CharacterPosition")`
+| `CharacterCFrame` | The CFrame of the player's character | `_E.GetValue("CharacterCFrame")`
+| `PlayerHealth` | The player's health | `_E.GetValue("Health")`
+| `CameraCFrame` | The camera's CFrame | `_E.GetValue("CameraCFrame")`
+| `HumanoidState` | The player's HumanoidStateType | `_E.GetValue("HumanoidState")`
+| `FormatTimer` | Formats the given timer value with the string. See: [the documentation on formatTimerText](/api/ClientObjects#formatTimerText) | `_E.GetValue("FormatTimer", "{M}:{S}:{MS}", 1, 120)`
+| `SequenceVariable` | This function lets you retrieve the [Sequence Variable](sequencers.md#sequence-variables) with the given name.| `_E.GetValue("SequenceVariable", "MyAwesomeVariable")`
 
-#### _E.PropertyFromChanger()
+#### _E.Changer()
 
 This function lets you retrieve any property from the Property Changer itself. This example will change the `Color` of any touching Part to the `Color` of the changer itself:
 
 ```lua
 Color = function(_E)
-    return _E.PropertyFromChanger("Color")
+    return _E.Changer():Property("Color")
 end,
 ```
 
-#### _E.PropertyFromInstance()
+#### _E.Instance()
 
 This function lets you retrieve any property from the object you are affecting. This example will change the `Transparency` of any affected Part based on how far away you are from it, with a radius of 30 studs:
 
 ```lua
 Transparency = function(_E)
-    return _E.Value("Distance", _E.PropertyFromInstance("Position")) / 30
+    return _E.Value("Distance", _E.Instance():Property("Position")) / 30
 end,
 ```
 
-#### _E.PropertyFromTag()
+#### _E.Tagged()
 
 This function lets you retrieve any property from an object with the given [Tag]. This example will retrieve the `Color` of an object that has the tag `MyCoolPart`:
 
+Note that this function only retrieves one object from the tag.
+
 ```lua
 Color = function(_E)
-    return _E.PropertyFromTag("MyCoolPart", "Color")
+    return _E.Tagged("MyCoolPart"):Property("Color")
 end,
 ```
 
-#### _E.SequenceVariable()
+#### _E.SequenceInstance()
 
-This function lets you retrieve the [Sequence Variable](sequencers.md#sequence-variables) with the given name. This example will retrieve the value from the sequence variable `MyAwesomeVariable`:
+This function lets you retrieve any property from an object provided by a Sequencer.
+
+Sequencers provide two values:
+
+* TouchingPart - The Part that touched the sequencer's activator
+* ActivatingPart - The Activator part that activated the sequencer
+
+This example will retrieve the `Color` of the sequence instance `ActivatingPart`:
 
 ```lua
 Color = function(_E)
-    return _E.SequenceVariable("MyAwesomeVariable")
+    return _E.SequenceInstance("ActivatingPart"):Property("Color")
 end,
 ```
 
@@ -134,7 +147,7 @@ local Properties: _C.CheckerFormat = {
     {
         Instance = Changer(),
         Condition = function(_E)
-            return _E.Value("Distance", _E.PropertyFromInstance("Position")) < 50
+            return _E.Value("Distance", _E.Instance():Property("Position")) < 50
         end,
     },
 }

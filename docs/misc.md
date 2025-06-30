@@ -88,7 +88,7 @@ NOTE: Keep in mind that custom scripts are **not allowed** unless you have the V
 
 When writing custom Client Object repository scripts, PLEASE keep the following things in mind as not following them can and will lead to many issues ingame:
 
-* Do not edit existing scripts under any circumstance. These changes will not carry over ingame and will break your tower. If you want to make slight behavioral edits, copy the script instead, parent it into the `ExternalRepositories.TowerKit` folder in `ReplicatedStorage`, and give it a new name, preferably with your tower's name in it for organization purposes.
+* Do not edit existing scripts under any circumstance. These changes will not carry over ingame and will break your tower. If you want to make slight behavioral edits, copy the script instead, parent it into the `ExternalRepositories.TowerKit` folder in `ReplicatedStorage`, and give it a new name, preferably with your tower's name in it for organization purposes. This `ExternalRepositories.TowerKit` folder must be provided in your tower model upon submission.
 * Make sure to put any events or connections you create into a [Scope](/api/Scope), so that they will automatically be cleaned up when the tower unloads.
 * Make sure to optimize your code as much as you can in order to reduce potential lag issues.
 * Read the [API Documentation](/api/ClientObjects) carefully as these contain many functions to speed up the process of writing repository scripts.
