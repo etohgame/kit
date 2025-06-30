@@ -1,0 +1,169 @@
+/* EToH Logo */
+.navbar__title {
+  background-image: url('/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+
+/* Theme colors */
+[data-theme='dark'] {
+  --ifm-color-primary: #0dacdb;
+  --ifm-color-primary-dark: #0c9bc5;
+  --ifm-color-primary-darker: #0b92ba;
+  --ifm-color-primary-darkest: #097899;
+  --ifm-color-primary-light: #0ebdf1;
+  --ifm-color-primary-lighter: #19c0f1;
+  --ifm-color-primary-lightest: #3ac9f3;
+
+  --ifm-background-color: #1a1a1a;
+  --ifm-font-color-base: #e4e4e4;
+  --ifm-footer-border-color: #2a2a2a;
+}
+
+[data-theme='light'] {
+  --ifm-color-primary: #05495c;
+  --ifm-color-primary-dark: #044253;
+  --ifm-color-primary-darker: #043e4e;
+  --ifm-color-primary-darkest: #043340;
+  --ifm-color-primary-light: #065065;
+  --ifm-color-primary-lighter: #06546a;
+  --ifm-color-primary-lightest: #075f78;
+
+  --ifm-background-color: #ffffff;
+  --ifm-font-color-base: #212121;
+  --ifm-footer-border-color: #e0e0e0;
+}
+
+/* Footer style matching + alignment */
+[data-theme='dark'] .footer,
+[data-theme='light'] .footer {
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  border-top: 1px solid var(--ifm-footer-border-color);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+[data-theme='dark'] .footer__title,
+[data-theme='light'] .footer__title {
+  color: var(--ifm-font-color-base);
+}
+
+.footer a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  min-width: 150px;
+  text-align: center;
+}
+
+/* Navbar shared layout */
+.discord-logo-link,
+.github-logo-link,
+.roblox-logo-link,
+.navbar__link[href*="https://github.com/"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding-left: 28px;
+  position: relative;
+}
+
+/* Discord icon */
+.discord-logo-link::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: var(--ifm-navbar-link-color);
+  -webkit-mask-image: url(/DiscordLogo.svg);
+  mask-image: url(/DiscordLogo.svg);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+/* GitHub icon for auto link */
+.navbar__link[href*="https://github.com/"]::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: var(--ifm-navbar-link-color);
+  -webkit-mask-image: url(/GitHubLogo.svg);
+  mask-image: url(/GitHubLogo.svg);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+/* GitHub icon for custom links */
+.github-logo-link::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: var(--ifm-navbar-link-color);
+  -webkit-mask-image: url(/GitHubLogo.svg);
+  mask-image: url(/GitHubLogo.svg);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+/* Roblox icon */
+.roblox-logo-link::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: var(--ifm-navbar-link-color);
+  -webkit-mask-image: url(/RobloxLogo.svg);
+  mask-image: url(/RobloxLogo.svg);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
