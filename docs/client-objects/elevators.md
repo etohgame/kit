@@ -14,3 +14,4 @@ Elevators can be used to move players and objects around, or launch them away. E
 | `MaxForce` | Infinity | The maximum amount of force the Elevator can use when moving objects. Lower values will give the player more control over their movement while in the Elevator. Please note that the Elevator may not function if set to very low values (~2000 or lower)
 | `Speed` | 40 | The speed the Elevator will move objects at, in studs per second
 | `HitboxMode` | `StaticWholeBody` | The [hitbox mode](/docs/misc.md#hitbox-modes) used by the Elevator.
+| `Vector` | `UpVector` | Which facing direction of the Elevator it will launch objects in. Supported values are `UpVector`, `RightVector` and `LookVector`. Use a negative `Speed` value if you want to reverse these directions

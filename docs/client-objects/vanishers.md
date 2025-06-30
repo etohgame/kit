@@ -16,7 +16,7 @@ Each `VanishMode` has unique logic.
 | `Fade` | Smoothly fades.
 | `Blink` | Flashes multiple times before vanishing.
 | `Constant` | Gradually fades depending on contact. If not in contact, regenerates.
-| `Shrink` | Shrinks the part away in a set direction (`Top`, `Bottom`, `Left`, `Right`, `Front`, `Back`, `Center`).
+| `Shrink` | Shrinks the part away in a set direction (`Top`, `Bottom`, `Left`, `Right`, `Front`, `Back`, `Center`). Does not support trusses and may behave oddly with spheres.
 
 ## Configuration
 
