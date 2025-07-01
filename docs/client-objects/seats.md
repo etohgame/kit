@@ -15,3 +15,4 @@ Keep in mind that the player might interact oddly with other client objects whil
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `Cooldown` | 1 | The time it takes the Seat to be mountable again after dismounting.
+| `SitOffset` | [`CFrame.new(0, 0, 0)`](https://create.roblox.com/docs/reference/engine/datatypes/CFrame) | The offset added to the default sitting position when mounting.

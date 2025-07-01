@@ -13,3 +13,4 @@ Under specific setups, Trip Parts can be used to do high jumps without needing t
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `Cooldown` | 1 | Delay between being able to use the Trip Part again.
+| `StunDuration` | 0 | If above 0, the player will be stunned entirely for a set duration instead of only sitting down.

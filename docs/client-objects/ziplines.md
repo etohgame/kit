@@ -21,6 +21,7 @@ Please note that any configuration related to player input will also apply when 
 |`AllowUserControl` | `false` | When true, moving forwards or backwards will allow the attached object to move themselves along the Zipline. When changing directions, the attached object will accelerate and deccelerate at 4 studs per second squared up to the maximum speed.
 |`GuideColor` | `(255, 255, 0)` | The color of the part that connects the Zipline to the attached object.
 |`KeepMomentum` | `false` | Whether the attached object retains its momentum when dismounted. Note that if a player has negative vertical momentum, it will not be retained because the player performs a jump when dismounting.
+|`Loop` | false | When true, and `AllowEndDismount` is false, the Zipline will reset back to the start of the path when it reaches the end. May behave oddly if the start and end of the path are not at the same location.
 |`RopeLength`| 5 | The length of the rope formed between the attached object and the guide part.
 |`Segments`| 20 | The amount of segments the curve is formed by. Please note that there is a limit of 100 segments in order to reduce lag.
 |`Speed` | 5 | The speed the guide part travels at, in studs per second.

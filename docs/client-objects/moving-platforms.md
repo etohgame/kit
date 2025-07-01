@@ -5,7 +5,7 @@ Moving Platforms are parts that will periodically move between set destinations.
 ## Use Cases
 
 Moving Platforms can be used to transport players and objects between various locations. They can also rotate if the destinations are rotated.
-You can use them to mimic Shoving Platforms from older kits.
+You can use them to mimic Shoving Platforms from older kits by using the `Tween` configuration.
 
 ## Moving Platform Configuration
 

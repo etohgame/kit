@@ -15,7 +15,7 @@ Balloon timers can be customized by editing the `TimerGui` inside the balloon's 
 |:-----:|:-----:|:-----:
 | `AllowJumpDismount` | true | Determines whether the balloon can be dismounted by jumping.
 | `DestroyWhenExpired` | true | When true, balloons are automatically dismounted upon expiring, otherwise they lose their velocity and do not rise.
-| `Force` | 5 | The velocity at which the balloon rises (or falls, if negative).
+| `Speed` | 5 | The velocity at which the balloon rises (or falls, if negative).
 | `KeepMomentum` | true | When true, objects will keep any momentum they had on the balloon after dismounting.
 | `MaxHeight` | 0 | The maximum height difference between the balloon and the dispenser before expiring. Ignored if set to 0.
 | `RopeLength` | 8 | The length of the balloon's [rope][RopeConstraint].

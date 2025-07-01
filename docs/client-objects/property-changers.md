@@ -77,17 +77,20 @@ This function lets you retrieve certain values for usage in the Property Changer
 
 | Value | Description | Example Usage
 |:-----:|:-----:|:-----:
-| `PlayerName` | The player's username | `_E.GetValue("PlayerName")`
-| `PlayerDisplayName` | The player's display name | `_E.GetValue("PlayerDisplayName")`
-| `UserId` | The player's user ID | `_E.GetValue("UserId")`
-| `Distance` | The distance between the player's character and the given position | `_E.GetValue("Distance", Vector3.zero)`
-| `CharacterPosition` | The position of the player's character | `_E.GetValue("CharacterPosition")`
-| `CharacterCFrame` | The CFrame of the player's character | `_E.GetValue("CharacterCFrame")`
-| `PlayerHealth` | The player's health | `_E.GetValue("Health")`
-| `CameraCFrame` | The camera's CFrame | `_E.GetValue("CameraCFrame")`
-| `HumanoidState` | The player's HumanoidStateType | `_E.GetValue("HumanoidState")`
-| `FormatTimer` | Formats the given timer value with the string. See: [the documentation on formatTimerText](/api/ClientObjects#formatTimerText) | `_E.GetValue("FormatTimer", "{M}:{S}:{MS}", 1, 120)`
-| `SequenceVariable` | This function lets you retrieve the [Sequence Variable](sequencers.md#sequence-variables) with the given name.| `_E.GetValue("SequenceVariable", "MyAwesomeVariable")`
+| `PlayerName` | The player's username | `_E.Value("PlayerName")`
+| `PlayerDisplayName` | The player's display name | `_E.Value("PlayerDisplayName")`
+| `UserId` | The player's user ID | `_E.Value("UserId")`
+| `Distance` | The distance between the player's character and the given position | `_E.Value("Distance", Vector3.zero)`
+| `CharacterPosition` | The position of the player's character | `_E.Value("CharacterPosition")`
+| `CharacterCFrame` | The CFrame of the player's character | `_E.Value("CharacterCFrame")`
+| `PlayerHealth` | The player's health | `_E.Value("Health")`
+| `CameraCFrame` | The camera's CFrame | `_E.Value("CameraCFrame")`
+| `HumanoidState` | The player's HumanoidStateType | `_E.Value("HumanoidState")`
+| `FormatTimer` | Formats the given timer value with the string. See: [the documentation on formatTimerText](/api/ClientObjects#formatTimerText) | `_E.Value("FormatTimer", "{M}:{S}:{MS}", 1, 120)`
+| `SequenceVariable` | This function lets you retrieve the [Sequence Variable](sequencers.md#sequence-variables) with the given name.| `_E.Value("SequenceVariable", "MyAwesomeVariable")`
+| `MoveVector` | The player's movement vector | `_E.Value("MoveVector")`
+| `IsShiftLocked` | Whether the player has shift lock active. An extra `true` argument can be used to include first-person mode in this check as well. | `_E.Value("MoveVector")`
+| `IsJumping` | Whether the player is currently jumping. | `_E.Value("IsJumping")`
 
 #### _E.Changer()
 

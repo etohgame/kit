@@ -12,6 +12,8 @@ All color-changing parts must either be named `GradientPart` or have a `Gradient
 Gradient Parts can be used for decoration. A few examples of these are pulsing parts and rainbow parts.
 Unlike `Beam`s, which can have multiple colors at once, the color of Gradient Parts is uniform across all parts.
 
+Gradient Parts automatically any applicable objects inside them as well. This can be disabled by adding a `DoNotColor` tag to any objects you don't want colored.
+
 ## Configuration
 
 | Name | Default Value | Description
