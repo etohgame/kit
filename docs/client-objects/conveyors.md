@@ -12,4 +12,4 @@ Conveyors are useful for quickly moving objects to different places. They can al
 
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
-| `Speed` | 10 | The speed the conveyor will move objects at, measured in studs per second
+| `Speed` | 10 | The speed the conveyor will move objects at, measured in studs per second.

@@ -16,7 +16,7 @@ Turrets can be used to shoot projectiles the player has to avoid, or to shoot ou
 | `FireRate` | 1 | The amount of bullets that will be shot per second.
 | `MaxLifetime` | 5 | The maximum amount of time in seconds that bullets should exist for. Bullets will automatically despawn after this time if they haven't already been destroyed.
 | `Range` | 50 | The turret's maximum activation range, measured in studs. If the player is further away than this value, the turret will not fire.
-| `Speed` | 50 | The speed that fired bullets will move at, measured in studs per second
+| `Speed` | 50 | The speed that fired bullets will move at, measured in studs per second.
 
 ## Activator Parts
 

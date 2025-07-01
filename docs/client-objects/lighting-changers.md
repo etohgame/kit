@@ -62,11 +62,11 @@ the Lighting service, can be specified as the object to change:
 |:-----:|:-----:|:-----:
 | `Lighting` | Ambient, Brightness, ClockTime, ColorShift_Bottom, ColorShift_Top, EnvironmentDiffuseScale, EnvironmentSpecularScale, ExposureCompensation, FogColor, FogEnd, FogStart, GeographicLatitude, GlobalShadows,  OutdoorAmbient, ShadowSoftness, TimeOfDay | When an `Atmosphere` object is used, fog will automatically be disabled and have no effect.
 | `Atmosphere` | Enabled, Density, Offset, Color, Decay, Glare, Haze | Because `Atmosphere` objects do not have an `Enabled` property, it instead toggles whether the Atmosphere effect is parented to `Lighting`.
-| `BlurEffect` | Size
-| `BloomEffect` | Intensity, Size, Threshold
-| `ColorCorrectionEffect` | Brightness, Contrast, Saturation, TintColor
-| `DepthOfFieldEffect` | FarIntensity, FocusDistance, InFocusRadius, NearIntensity
-| `Sky` | MoonAngularSize, MoonTextureId, SkyboxBk, SkyboxDn, SkyboxFt, SkyboxLf, SkyboxRt, SkyboxUp, StarCount, SunAngularSize, SunTextureId, SkyboxOrientation
+| `BlurEffect` | Size.
+| `BloomEffect` | Intensity, Size, Threshold.
+| `ColorCorrectionEffect` | Brightness, Contrast, Saturation, TintColor.
+| `DepthOfFieldEffect` | FarIntensity, FocusDistance, InFocusRadius, NearIntensity.
+| `Sky` | MoonAngularSize, MoonTextureId, SkyboxBk, SkyboxDn, SkyboxFt, SkyboxLf, SkyboxRt, SkyboxUp, StarCount, SunAngularSize, SunTextureId, SkyboxOrientation.
 
 ### Properties
 

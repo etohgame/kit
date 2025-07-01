@@ -30,4 +30,4 @@ Any parts named `ReturnKey` inside of the key group will cause the key to return
 
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
-| `RequiredKeys` | 1 | The amount of keys needed to open the door
+| `RequiredKeys` | 1 | The amount of keys needed to open the door.

@@ -7,7 +7,7 @@ Morphers are objects that can spawn and move parts.
 Morphers can be used to spawn parts the player can interact with.
 If the Morpher has only one NewMorph part, the main Morph part will move to that part's position rather than creating clones. You can weld parts to the main Morph part and use this functionality to create complex mechanics such as moving objects in cutscenes.
 
-The Morpher's sounds can be modifiedd by changing them inside each Morpher button's configuration.
+The Morpher's sounds can be modified by changing them inside each Morpher button's configuration.
 
 ## Configuration
 
