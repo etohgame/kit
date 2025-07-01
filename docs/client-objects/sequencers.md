@@ -78,12 +78,12 @@ Sequencers can be synced to the tower's music. This will adjust the speed of the
 
 | Name | Default Value | Description |
 |:-----:|:-----:|:-----:|
-| `Cooldown` | 0 | The amount of time it will take for the Sequencer to be usable again after it finishes |
+| `Cooldown` | 0 | The amount of time it will take for the Sequencer to be usable again after it finishes. |
 | `LoopAmount` | 0 | The amount of times the Sequencer will run when activated. If set to 0, it will only run once. If set to any negative number, it will keep running forever. |
 | `LoopDelay` | 0 | The amount of time the Sequencer will wait before reactivating after every loop. |
 | `RunAtStart` | false | When true, the Sequencer will automatically run when it loads, without it having to be activated by touch. |
-| `Speed` | 1 | The speed the Sequencer will move at, in studs per second |
-| `Visualize` | true | When true, the Sequencer will move to show it's progress, and color itself to show it's current state. Useful for debugging sequences. |
+| `Speed` | 1 | The speed the Sequencer will move at, in studs per second. |
+| `Visualize` | true | When true, the Sequencer will move to show its progress, and color itself to show its current state. Useful for debugging sequences. |
 
 [Tag]: https://create.roblox.com/docs/studio/properties#instance-tags
 [Sequence Pointers]: #sequence-pointers

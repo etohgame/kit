@@ -22,10 +22,10 @@ Each `VanishMode` has unique logic.
 
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
-| `BlinkCount` | 3 | Amount of blinks in `Blink` mode
-| `ConstantNoRecovery` | false | Prevents recovery in `Constant` mode when not in contact
-| `Invert` | false | Reverses behavior: visible becomes invisible and vice versa
-| `RespawnFade` | false | Whether the part fades in when respawning
-| `RespawnTime` | 2 | Seconds before the part reappears
-| `ShrinkDirection` | `Center` | [Direction of shrinking](#vanish-modes)
-| `VanishMode` | `Fade` | [Vanish behavior](#vanish-modes)
+| `BlinkCount` | 3 | Amount of blinks in `Blink` mode.
+| `ConstantNoRecovery` | false | Prevents recovery in `Constant` mode when not in contact.
+| `Invert` | false | Reverses behavior: visible becomes invisible and vice versa.
+| `RespawnFade` | false | Whether the part fades in when respawning.
+| `RespawnTime` | 2 | Seconds before the part reappears.
+| `ShrinkDirection` | `Center` | [Direction of shrinking](#vanish-modes).
+| `VanishMode` | `Fade` | [Vanish behavior](#vanish-modes).

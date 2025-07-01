@@ -13,5 +13,5 @@ Jump Launchers are most commonly used as double jumps. They can be buffered by h
 
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
-| `Cooldown` | 0.25 | Time in seconds to wait before the Jump Launcher can activate again
-| `Force` | 60 | The speed interacting objects will be launched at when activated
+| `Cooldown` | 0.25 | Time in seconds to wait before the Jump Launcher can activate again.
+| `Force` | 60 | The speed interacting objects will be launched at when activated.
