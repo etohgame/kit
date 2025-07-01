@@ -13,8 +13,6 @@ The kit is distributed using a pre-made place, making it simple and straight-for
 * Opening the [uncopylocked template place](https://www.roblox.com/games/104814418357350) on Roblox **(recommended)**
 * Downloading the .rbxl file from our [GitHub releases page](https://github.com/etohgame/kit/releases/tag/v6.0.0)
 
-TEMPORARY NOTE: actual links tba
-
 ## Website Navigation
 
 The website can be navigated by using the navigation bars on the top side and left side of the site. The top bar is used to switch between different sections of the website, and the left bar is used to navigate through categories within these sections.
