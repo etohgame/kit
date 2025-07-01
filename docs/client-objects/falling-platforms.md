@@ -11,6 +11,7 @@ Falling Platforms can be used for advanced gameplay mechanics or to force the pl
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `ActivateConnectedParts` | true | When true, all other parts welded to the falling platform will also become uncollidable when the main platform touches the `End` part.
+| `ActivateCanCollide` | false | The `CanCollide` of the falling platform when active.
 | `ActiveTime` | 1.5 | Time in seconds the falling platform will be uncollidable for after it touches the `End` part.
 | `ActiveTransparency` | 0.75 | The transparency the falling platform will use while uncollidable.
 | `BaseMass` | 12.6 | The mass of the falling platform, used to set the density of the platform. Higher values will make the platform heavier. Very low values may make the platform unstable.
