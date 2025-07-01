@@ -81,7 +81,7 @@ camera.Focus = CFrame.new(0, 0, 0)
 camera.CameraType = Enum.CameraType.Fixed
 
 --> Force R6
-local StarterPlayer: any = game:GetService("StarterPlayer")
+local StarterPlayer: any = place:GetService("StarterPlayer")
 StarterPlayer.GameSettingsAvatar = Enum.GameAvatarType.R6
 
 --> Save
