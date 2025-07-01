@@ -13,8 +13,38 @@ local PLACE = 122944339391800 -- place is private as of right now CHANGE later
 place = remodel.readPlaceAsset(PLACE)
 
 local ServerStorage = place:GetService("ServerStorage")
+local ReplicatedStorage = place:GetService("ReplicatedStorage")
+local Kit = ReplicatedStorage.Framework.Kit
 local WARNING_MESSAGES = luau.load(ServerStorage.Build.warnings.Source)()
 ServerStorage:ClearAllChildren()
+
+--> Remove excess objects from workspace
+local instanceWhitelist = { "Misc", "TowerKit", "Camera", "Terrain", "READ ME" }
+for _, object in place:GetService("Workspace"):GetChildren() do
+	if not table.find(instanceWhitelist, object.Name) then
+		print("Removing", object.Name)
+		object:Destroy()
+	end
+end
+
+--> Get Version Numbers
+local versionMap = {}
+local function traverseFolders(folder: Instance, startingPath: string?)
+	local rootPath = startingPath or folder:GetFullName()
+	for _, instance in folder:GetChildren() do
+		if instance:IsA("ModuleScript") then
+			local path = instance:GetFullName():gsub(rootPath, ""):gsub("%.", "/"):sub(2)
+			local tag = "CO_" .. path
+			local versionTag = instance.Source:match("@version (.-)%s")
+			local versionString = "v" .. versionTag:match("-(.+)")
+			versionMap[tag] = versionString
+		elseif instance:IsA("Folder") then
+			traverseFolders(instance, rootPath)
+		end
+	end
+end
+
+traverseFolders(Kit.Repository)
 
 --> Fix Message Keys
 for key, value in WARNING_MESSAGES do
@@ -22,21 +52,25 @@ for key, value in WARNING_MESSAGES do
 	WARNING_MESSAGES["--@" .. key:gsub("%-", "%%-")] = `--[[\n{value}\n]]`
 end
 
---> Add Warning messages
-for _, currentScript in place:GetDescendants() do
-	if not (currentScript:IsA("ModuleScript") or currentScript:IsA("BaseScript")) then
-		continue
+for _, instance in place:GetDescendants() do
+	--> Add Version Tags
+	for tag, version in versionMap do
+		if instance:HasTag(tag) then
+			instance:AddTag(version)
+		end
 	end
 
-	local finalSource = currentScript.Source
-	for warningKey, warningMessage in WARNING_MESSAGES do
-		finalSource = finalSource:gsub(warningKey, warningMessage)
-	end
+	--> Add Warning messages
+	if instance:IsA("ModuleScript") or instance:IsA("BaseScript") then
+		local finalSource = instance.Source
+		for warningKey, warningMessage in WARNING_MESSAGES do
+			finalSource = finalSource:gsub(warningKey, warningMessage)
+		end
 
-	if currentScript.Source == finalSource then
-		continue
+		if instance.Source ~= finalSource then
+			instance.Source = finalSource
+		end
 	end
-	currentScript.Source = finalSource
 end
 
 --> Reset Camera

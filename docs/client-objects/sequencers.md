@@ -9,6 +9,13 @@ Sequencers are used as the replacement for [Pushbox](pushbox-spawners.md) contra
 ## Using Sequencers
 
 Objects activated by Sequencers must be placed in the Sequencer's `Sequence` folder. When activated, the Sequencer will begin moving in the direction it is facing. Objects in the sequence will be activated when the Sequencer passes through the center point of the object.
+When placing these objects in the `Sequence` folder, please make sure to do the following (if applicable):
+
+* Set all of the object's `Transparency` to 0.
+* Set all of the object's `CanCollide` & `CanTouch` to `false`.
+* Disable all [TouchConfigurations](../global-configurations/touch-configurations.md#touchconfiguration).
+
+This is to make sure that nothing unwanted or unpredictable happens, and to prevent any sorts of lag.
 
 If a reached object has a `YieldSequence` tag, the Sequencer will pause until that object's function finishes running. In the case of button platforms, it will pause until the button platform activates.
 If a part named `EndPoint` is reached in the sequence, the Sequencer will stop running early. This can be used for debugging purposes.

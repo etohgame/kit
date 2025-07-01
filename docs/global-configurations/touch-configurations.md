@@ -3,6 +3,7 @@
 All client objects that can be interacted with have a `TouchConfiguration` configuration object parented inside of their regular configuration. This object holds extra settings relating to what objects are allowed to interact with the client object.
 
 ## Configuration
+
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `player` | true | When true, the client object can be interacted with by the player.

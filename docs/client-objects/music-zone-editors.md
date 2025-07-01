@@ -18,6 +18,10 @@ Music Zone Editors can change the priority of a Music Zone as well as any proper
 
 The music configuration module can be found inside of the main `Configuration` object. If a configuration listed here is not present, it will be ignored.
 
+### ZoneDisabled
+
+The music zone will be disabled if this value is set to `true`.
+
 ### ZonePriority
 
 The music zone's priority will be set to this value when triggered.

@@ -26,7 +26,6 @@ In Kit v6, value objects are no longer used in favor of `Configuration` objects 
 | Name | Description
 |:-----:|:-----:
 | `Invisible`, `AltInvisible` | Makes parts invisible if present. `Invisible` will use `Transparency` while `AltInvisible` will use [`LocalTransparencyModifier`](https://create.roblox.com/docs/reference/engine/classes/BasePart#LocalTransparencyModifier).
-| `kills`, `double`, `ouch`, `instakills`, `heals` | Used in [Kill Bricks](client-objects/killbricks.md), but can be added to any part.
 | `CanFlip` | If present, the player will be able to perform Corner Flips on the part.
 | `DoNotFlipPlayer` | If present alongside the `CanFlip` tag, performing a Corner Flip on a Part will not move/rotate the player. Useful for flip-activated client objects.
 | `OnlyInStudio` | If present, the object will only be visible in Studio and will automatically be deleted when playing the tower.
