@@ -80,5 +80,9 @@ camera.CFrame = CFrame.new(0, 40, 200) * CFrame.Angles(0, 0, 0)
 camera.Focus = CFrame.new(0, 0, 0)
 camera.CameraType = Enum.CameraType.Fixed
 
+--> Force R6
+local StarterPlayer: any = game:GetService("StarterPlayer")
+StarterPlayer.GameSettingsAvatar = Enum.GameAvatarType.R6
+
 --> Save
 fs.writeFile(PLACE_DIR, roblox.serializePlace(place))
