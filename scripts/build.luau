@@ -8,7 +8,8 @@ local CFrame = (roblox :: any).CFrame :: CFrame
 local Enum = (roblox :: any).Enum :: Enum
 
 local PLACE_DIR = "build.rbxl"
-local PLACE = 122944339391800 -- place is private as of right now CHANGE later
+local PLACE = 122944339391800
+-- place is private (this is our development environment!)
 
 place = remodel.readPlaceAsset(PLACE)
 
