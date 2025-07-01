@@ -1,3 +1,4 @@
+title = "EToH Kit V6"
 gitRepoUrl = "https://github.com/etohgame/kit"
 gitSourceBranch = "main"
 
@@ -13,14 +14,62 @@ section = "Managers"
 classes = ["Scope", "ScopeCommunicator"]
 section = "Scope"
 
+[[navbar.items]]
+href = "https://discord.gg/etoh"
+label = "Discord"
+className = "discord-logo-link"
+position = "right"
+ariaLabel = "Discord Server"
+
+[[navbar.items]]
+to = "/changelog"
+label = "Changelog"
+position = "left"
+
 [home]
 enabled = true
+bannerImage = "ringselect.png"
 includeReadme = false
 
-[docusaurus]
-tagline = "EToH Kit V6 (BETA)"
+[[home.features]]
+title = "Create and Build"
+description = "Design and build your own towers to your heart's content."
 
+[[home.features]]
+title = "Test and Play"
+description = "Effortlessly test and play your own creations."
+
+[[home.features]]
+title = "Share and Discuss"
+description = "Share your towers with supportive community members, or submit them for review."
+
+
+[docusaurus]
+tagline = "Official Tower Building Kit"
+favicon = "favicon.ico"
+trailingSlash = false
+themeConfig = "docusaurus.config.js"
 
 [footer]
-style = "dark"
-copyright = "etohgame"
+copyright = "Built with Moonwave and Docusaurus."
+
+[[footer.links]]
+title = "Community"
+
+  [[footer.links.items]]
+  label = "Discord"
+  className = "discord-logo-link"
+  href = "https://discord.gg/etoh"
+
+[[footer.links]]
+title = "Other"
+
+  [[footer.links.items]]
+  label = "GitHub"
+  className = "github-logo-link"
+  href = "https://github.com/etohgame/kit"
+
+  [[footer.links.items]]
+  className = "roblox-logo-link"
+  label = "Kit"
+  href = "https://roblox.com"
