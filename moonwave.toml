@@ -21,11 +21,6 @@ className = "discord-logo-link"
 position = "right"
 ariaLabel = "Discord Server"
 
-[[navbar.items]]
-to = "/changelog"
-label = "Changelog"
-position = "left"
-
 [home]
 enabled = true
 bannerImage = "ringselect.png"

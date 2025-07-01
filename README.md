@@ -12,32 +12,4 @@ Credit to Elttob for [Vanilla 3 icons](https://elttob.itch.io/vanilla-3-for-robl
 
 ## Kit Download
 
-TODO
-
-## Contributing
-
-Todo
-
-TOdo
-
-TODo
-
-TODO
-
-tODO
-
-toDO
-
-todO
-
-# TODO
-
-## TODO
-
-### TODO
-
-#### TODO
-
-##### TODO
-
-###### TODO
+SOON

@@ -35,4 +35,4 @@ See [the docs on writing repository scripts](misc.md#writing--editing-repository
 
 ## What's different compared to Version 5?
 
-If you are experienced with building towers using an old kit, please read through [the changelog](/changelog.md) as it contains important information. A guide on converting towers made using v5.5 to v6 will be written at a later date.
+If you are experienced with building towers using an old kit, please read through [the changelog](https://etohgame.github.io/kit/changelog) as it contains important information. A guide on converting towers made using v5.5 to v6 will be written at a later date.
