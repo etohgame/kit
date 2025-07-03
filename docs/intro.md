@@ -11,7 +11,13 @@ Welcome to the documentation page for Version 6 of the EToH Tower Building Kit! 
 The kit is distributed using a pre-made place, making it simple and straight-forward to get started. It can be obtained by:
 
 * Opening the [uncopylocked template place](https://www.roblox.com/games/104814418357350) on Roblox **(recommended)**
-* Downloading the .rbxl file from our [GitHub releases page](https://github.com/etohgame/kit/releases/tag/v6.0.0)
+* Downloading the .rbxl file from our [GitHub releases page](https://github.com/etohgame/kit/releases)
+
+## Update Instructions
+
+If you are using a previous version of a kit then you can update it to the latest version by going to our [GitHub releases page](https://github.com/etohgame/kit/releases) and finding the update kit associated with the latest release. Instructions are included in the release and inside of the update kits.
+
+Please note that there is currently no update kit from V5.5 to V6, this will be worked on soon.
 
 ## Website Navigation
 
