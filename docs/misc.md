@@ -92,3 +92,44 @@ When writing custom Client Object repository scripts, PLEASE keep the following 
 * Make sure to optimize your code as much as you can in order to reduce potential lag issues.
 * Read the [API Documentation](/api/ClientObjects) carefully as these contain many functions to speed up the process of writing repository scripts.
 * Read the existing scripts to get a general idea of how your code should be written. Try to maintain a similar style to make your tower easier to bugfix should it get ingame.
+
+<details>
+<summary>Repository Script Template</summary>
+
+```lua
+--!strict
+--!optimize 2
+--@version template-6.0.0
+--@creator you
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local _T = require(ReplicatedStorage.Framework.ClientTypes)
+
+local Module = {
+    -- Determines whether or not the script can be used by client objects
+    CanQueue = true,
+    -- Determines whether or not the script will be loaded upon entering
+    -- (the script will be loaded without an instance attacted to the scope,
+    --  remove the lines that use the "objectConfig" variables if you use this)
+    RunOnStart = false,
+}
+
+-- This function only runs once, and can be used to set up stuff
+-- (e.g. config templates)
+function Module.Init(utility: _T.Utility)
+    -- init code here
+end
+
+function Module.Run(scope: _T.Scope, utility: _T.Utility)
+    local objectConfig = scope.instance
+    if not objectConfig or not objectConfig.Parent then
+        return
+    end
+
+    -- Your client object code goes here
+end
+
+return Module
+```
+
+</details>

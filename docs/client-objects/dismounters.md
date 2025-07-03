@@ -17,4 +17,4 @@ Dismounters can be used to forcefully dismount the player from mounts.
 | `DismountSeats` | true | When true, the Dismounter can dismount you from [Seats](seats.md).
 | `DismountSwings` | true | When true, the Dismounter can dismount you from [Swings](swings.md).
 | `DismountVines` | true | When true, the Dismounter can dismount you from [Vines](vines.md).
-| `DismountZiplines` | true | When true, the Dismounter can dismount you from [Ziplines](ziplines.md).
+| `ForceDismountPlayer` | false | When true, any part touching the dismounter will dismount anything mounted to the Player's character.

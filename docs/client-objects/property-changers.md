@@ -141,7 +141,13 @@ Color = function(_E)
 end,
 ```
 
-### Property Checkers
+## Configuration
+
+| Name | Default Value | Description
+|:-----:|:-----:|:-----:
+| `Cooldown` | 0.5 | Delay between being able to activate the Property Changer again.
+
+## Property Checkers
 
 Property Checkers are a special type of Property Changer. If the `Condition` function is present, the Property Changer will not run if the condition is not met. This example will make the Property Changer only work if you are within 50 studs of it:
 
@@ -157,11 +163,19 @@ local Properties: _C.CheckerFormat = {
 ```
 
 If the Property Checker has the `ConditionalEnabled` configuration and is used in a [Sequencer](sequencers.md), its sequence will automatically stop if the condition is not met.
+Alternatively, you could enable the `ConditionalYieldSequence` to make the sequencer yield until the condition is met, or enable `ConditionalBreakSequence` to completely stop the sequencer and its loop from running.
 
-## Configuration
+Property Checkers also have the ability to yield a sequence until an event is activated, such as a ProximityPrompt trigger, shown in the code example below.
 
-| Name | Default Value | Description
-|:-----:|:-----:|:-----:
-| `Cooldown` | 0.5 | Delay between being able to activate the Property Changer again.
+```lua
+local Properties: _C.CheckerFormat = {
+    {
+        Instance = Tagged("MyProximityPrompt"),
+        Event = function(_E)
+            return _E.Instance():Event("Triggered")
+        end,
+    },
+}
+```
 
 [Tag]: https://create.roblox.com/docs/studio/properties#instance-tags
