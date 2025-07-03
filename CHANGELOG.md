@@ -6,7 +6,8 @@
 
 ### Fixes
 
-- Fixed incorrect default TouchConfigurations used internally
+- Fixed incorrect default TouchConfigurations used internally, breaking a some
+    Client Objects
 - Fixed Teleporters not working
 - Fixed Dismounters not being able to dismount attachers
 
