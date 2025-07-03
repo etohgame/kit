@@ -15,7 +15,7 @@ The kit is distributed using a pre-made place, making it simple and straight-for
 
 ## Update Instructions
 
-If you are using a previous version of a kit then you can update it to the latest version by going to our [GitHub releases page](https://github.com/etohgame/kit/releases) and finding the update kit associated with the latest release. Instructions are included in the release and inside of the update kits.
+If you are using a previous version of a kit, then you can update it to the latest version by going to our [GitHub releases page](https://github.com/etohgame/kit/releases) and finding the update kit associated with the latest release. Instructions are included in the release and inside of the update kits.
 
 Please note that there is currently no update kit from V5.5 to V6, this will be worked on soon.
 
