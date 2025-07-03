@@ -4,6 +4,8 @@ Attachers are objects that enable players and parts to "attach" a set of parts t
 
 When the `Trigger` part is touched, the `WeldModel` will be attached to the object that touched the trigger. The `WeldModel` requires the `SkipObjectLoad` tag and a PrimaryPart in order for the Attacher to function properly.
 
+To avoid physics issues, please make sure that every part in the WeldModel is set to `Massless`.
+
 ## Use Cases
 
 Attaching objects to the object that interacted with the Attacher, or making objects face the player.
