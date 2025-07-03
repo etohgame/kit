@@ -1,5 +1,15 @@
 # Changelog
 
+## [V6.0.2]
+
+(wow not even 30 minutes since V6.0.1 lol)
+
+### Fixes
+
+- Fixed incorrect default TouchConfigurations used internally
+- Fixed Teleporters not working
+- Fixed Dismounters not being able to dismount attachers
+
 ## [V6.0.1]
 
 ### Fixes
