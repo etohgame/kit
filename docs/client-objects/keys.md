@@ -17,6 +17,8 @@ A key door can be destroyed in multiple ways when opened, based on what the part
 
 Any parts named `ReturnKey` inside of the key group will cause the key to return to its original spot upon being touched.
 
+The sound of keys and key doors can be edited by adding a `Sound` named `ReplaceSound` inside the respective object's hitbox part.
+
 ## Key Configuration
 
 | Name | Default Value | Description

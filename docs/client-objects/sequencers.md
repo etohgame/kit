@@ -8,20 +8,28 @@ Sequencers are used as the replacement for [Pushbox](pushbox-spawners.md) contra
 
 ## Using Sequencers
 
-Objects activated by Sequencers must be placed in the Sequencer's `Sequence` folder. When activated, the Sequencer will begin moving in the direction it is facing. Objects in the sequence will be activated when the Sequencer passes through the center point of the object.
+Objects activated by Sequencers must be placed in the Sequencer's `Sequence` folder. When activated by touching any part in the `Activators folder`, the Sequencer will begin moving in the direction it is facing. Objects in the sequence will be activated when the Sequencer passes through the center point of the object. 
+
+The center point of an object is defined by the position of its [Pivot](https://create.roblox.com/docs/studio/pivot-tools). If the object is a `Model`, it is recommended to set the model's `PrimaryPart` to its activator part to properly position the Pivot at the activator's location.
+
 When placing these objects in the `Sequence` folder, please make sure to do the following (if applicable):
-
-* Set all of the object's `Transparency` to 0.
-* Set all of the object's `CanCollide` & `CanTouch` to `false`.
-* Disable all [TouchConfigurations](../global-configurations/touch-configurations.md#touchconfiguration).
-
-This is to make sure that nothing unwanted or unpredictable happens, and to prevent any sorts of lag.
+* Set `CanCollide` & `CanTouch` to `false` on all objects.
+* Disable all [TouchConfigurations](/docs/global-configurations/touch-configurations.md).
+This is to make sure that nothing unwanted or unpredictable happens, and to help reduce lag.
 
 If a reached object has a `YieldSequence` tag, the Sequencer will pause until that object's function finishes running. In the case of button platforms, it will pause until the button platform activates.
 If a part named `EndPoint` is reached in the sequence, the Sequencer will stop running early. This can be used for debugging purposes.
 
 For performance reasons, Sequencers will not run when the game is running below 10FPS.
-A warning message will also be displayed if the Sequencer is looping at an obscene rate (20+ times per second)
+A warning message will also be displayed if the Sequencer is looping at an obscene rate (25+ times per second)
+
+## Stopping Sequencers
+
+A sequence can be ended prematurely by touching any part in the `Stoppers` folder. Stopper parts have a special `StopperConfiguration` object inside of them containing attributes that behave as follows:
+
+| Name | Default Value | Description |
+|:-----:|:-----:|:-----:|
+| `BreakLoop` | true | If enabled, the loop the sequencer is in (configured using LoopAmount) will be cancelled entirely. Otherwise, the sequence will go back to the start of the loop and keep running.
 
 ### Sequence Groups
 
@@ -34,11 +42,11 @@ A `SequenceGroup` template can be found in the `Extra Sequencer Stuff` folder in
 
 Sequence Pointers can also be found in the `Extra Sequencer Stuff` folder. When activated in a sequence, the Sequencer will search for any objects with [Tag]s matching its `Pointer` attribute, and activate those objects.
 
-[Sequence Variables] are also supported, by making the sequence pointer's `Pointer` attribute a sequence variable wrapped around in curly braces.
+[Sequence Variables] are also supported, by making the sequence pointer's `Pointer` attribute a sequence variable wrapped around in curly braces (example: `{VARIABLE}`).
 
 ### Sequence Variables
 
-Every `Activator` part has a `SequenceVariables` Configuration object. Any attributes you add to this object can be read by [Property Changers](property-changers.md#_esequencevariable).
+Every `Activator` part has a `SequenceVariables` Configuration object. Any attributes you add to this object can be read by [Property Changers](property-changers.md#_esequenceinstance).
 
 ## Sequencer Support
 

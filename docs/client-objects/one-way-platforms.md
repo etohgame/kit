@@ -14,4 +14,4 @@ One-Way platforms are useful for making mechanics such as platforms that you can
 | `ActiveTransparency` | 0 | The transparency the platform will use while collidable.
 | `InactiveTransparency` | 0.5 | The transparency the platform will use while uncollidable.
 | `Offset` | [`CFrame.new(0, 0, 0)`](https://create.roblox.com/docs/reference/engine/datatypes/CFrame) | Offset applied to the player's checked position when the platform updates.
-| SetActive | true | When true, toggled platforms will have their Activated attribute update when they toggle their state.
+| `SetActive` | true | When true, toggled platforms will have their Activated attribute update when they toggle their state.
