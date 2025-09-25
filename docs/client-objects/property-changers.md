@@ -10,9 +10,12 @@ Property Changers can be used to change properties of objects. They can be used 
 
 The Property Changer's `Properties` module can be found inside the `PropertyChangerConfiguration` object. This module contains all of the data of the Property Changer.
 
+
 Do **not** tamper with the lines placed at the top of the script or write non-intended custom code in functions. There are restrictions in place in order to prevent doing things that aren't allowed, and doing this will make your tower ineligible for submission according to the Custom Client Objects rule.
 
-The table contains a list of properties to change, as well as a `Instance` field that is required for the Property Changer to function. For example, the default properties look like this:
+Calculations are allowed (and recommended if used, to make the function easier to read/understand) to simplify the `return` statement, but anything else (such as directly indexing instances or properties without using the provided property changer functions) are not.
+
+The table contains a list of properties to change, as well as an `Instance` field that is required for the Property Changer to function. For example, the default properties look like this:
 
 ```lua
 local Properties: _C.Format = {
@@ -54,13 +57,17 @@ There are multiple ways to retrieve the set of objects to affect: `Toucher`, `Ta
 
 `Tagged` will look through all Client Objects and affect any objects that have the given [Tag].
 Example usage:
-
 ```lua
 -- This will affect any object in the Client Object folder that has the tag "MyCoolPart"
 Instance = Tagged("MyCoolPart"),
 ```
 
 `TagFromSequenceVariable` is similar to `Tagged`, but the given value is treated as a [Sequence Variable](sequencers.md#sequence-variables) instead.
+Example usage (also see [here](#_esequenceinstance) for more information):
+```lua
+-- If there is a Sequence Variable named "MyCoolVariable" with the value "MyCoolPart", this will affect any object in the Client Object folder that has the tag "MyCoolPart"
+Instance = TagFromSequenceVariable("MyCoolVariable"),
+```
 
 `Changer` will simply affect the Property Changer itself.
 
@@ -89,7 +96,7 @@ This function lets you retrieve certain values for usage in the Property Changer
 | `FormatTimer` | Formats the given timer value with the string. See: [the documentation on formatTimerText](/api/ClientObjects#formatTimerText) | `_E.Value("FormatTimer", "{M}:{S}:{MS}", 1, 120)`
 | `SequenceVariable` | This function lets you retrieve the [Sequence Variable](sequencers.md#sequence-variables) with the given name.| `_E.Value("SequenceVariable", "MyAwesomeVariable")`
 | `MoveVector` | The player's movement vector | `_E.Value("MoveVector")`
-| `IsShiftLocked` | Whether the player has shift lock active. An extra `true` argument can be used to include first-person mode in this check as well. | `_E.Value("MoveVector")`
+| `IsShiftLocked` | Whether the player has shift lock active. An extra `true` argument can be used to include first-person mode in this check as well. | `_E.Value("IsShiftLocked", true)`
 | `IsJumping` | Whether the player is currently jumping. | `_E.Value("IsJumping")`
 
 #### _E.Changer()
@@ -126,9 +133,9 @@ end,
 
 #### _E.SequenceInstance()
 
-This function lets you retrieve any property from an object provided by a Sequencer.
+This function lets you retrieve any property from an object provided by a Sequencer. These variables are defined as any Attributes added to the Sequencer activator's `SequenceVariables` configuration.
 
-Sequencers provide two values:
+Along with any user-defined variables, Sequencers also provide two default values:
 
 * TouchingPart - The Part that touched the sequencer's activator
 * ActivatingPart - The Activator part that activated the sequencer
