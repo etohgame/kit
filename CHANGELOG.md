@@ -44,6 +44,7 @@ The update kit will not automatically perform this conversion to avoid potential
 - Morphers with the `CarryObjects` configuration enabled now also affect
 	orientation
 - Added a visible Corner Flip button on mobile
+- Added `IndicatorScaleMultiplier` configuration to Beat Blocks
 
 ## [v6.0.2 - July 3rd 2025]
 

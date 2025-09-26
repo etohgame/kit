@@ -15,6 +15,9 @@ Beat blocks can be synced to the tower's music. This will make the beat blocks t
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `Indicator` | true | When true, an indicator will be shown on the next set of parts before they toggle. This will help the player time their movement. It is heavily recommended to leave this enabled if you are using the beat blocks for gameplay purposes.
+| `IndicatorInterval` | 0.5 | The interval in seconds the beatblock indicator will appear for.
+| `IndicatorScaleMultiplier` | 1 | If set to any value other than 1, instead of using `IndicatorSize`, the indicator's size will be the part's size multiplied by this value.
+| `IndicatorSize` | `(3, 3, 3)` | If `IndicatorScaleMultiplier` is set to 1, the beatblock indicator will change the part's size to this value.
 | `Interval` | 1 | The interval in seconds between the beat blocks toggling on and off.
 | `MaterialIndicator` | SmoothPlastic | When the `Indicator` configuration is enabled, the indicator will use this material.
 | `OffCanCollide` | false | When a beat block is off, its CanCollide property will be set to this value.
