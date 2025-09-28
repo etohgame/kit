@@ -31,7 +31,7 @@ When 2 parts of different zones overlap, the zone with higher priority will play
 
 ## Music Zone Configuration
 
-All configurations (except IntroMusic) can either be attributes of the zone model or value objects inside of it.
+All configurations can either be attributes of the zone model or value objects inside of it.
 
 | Name | Type | Default Value | Description
 |------|------|---------------|------------
