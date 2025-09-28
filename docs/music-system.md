@@ -42,8 +42,7 @@ All configurations (except IntroMusic) can either be attributes of the zone mode
 | `ExitZoneBehavior` | "Stop" or "Pause" | "Stop" | Pause will resume music from where it left off when a zone is re-entered, Stop will reset them instead.
 | `Disabled` | boolean | false | Disables a zone entirely (including its priority effects).
 | `ButtonActivated` | Color3 | none | **DEPRECATED**, use [Music Zone Editors](client-objects/music-zone-editors.md) to simulate button activated behavior.
-| `Invert` | boolean | false | Swaps the zone's Button Activated state.
-| `IntroMusic` | Sound | - | Any sound in the `Music` folder with this name will always be the first to play and will never play again unless the zone is re-entered.
+| `Invert` | boolean | false | **DEPRECATED**, swaps the zone's Button Activated state.
 
 ## Sound Configuration
 
@@ -55,6 +54,8 @@ Just like music zones, all of these can be attributes of the sound or values in 
 | `StartAt` | number | 0 | Used as a replacement for the `TimePosition` property (which does not work due to songs looping when they end)
 | `FadeIncrement` | number | 30 | Determines how fast the sound fades in & out. The formula to calculate the exact time is $0.1 * FadeIncrement$
 | `MusicName` | string | - | A custom name that will be displayed instead of the sound asset's name (not to be confused with the Sound object's name in studio).
+
+In addition to this, when a sound is named `IntroMusic`, it will always be the first to play and will never play again unless the zone is re-entered. This can be used for better song loops.
 
 ## Settings Module
 
