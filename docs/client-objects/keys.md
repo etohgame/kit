@@ -23,7 +23,7 @@ The sound of keys and key doors can be edited by adding a `Sound` named `Replace
 
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
-| `SpinSpeed` | 5 | How fast the key will spin, measured in radians per second.
+| `SpinSpeed` | 2.5 | How fast the key will spin, measured in radians per second.
 | `Timer` | 0 | The amount of time you can pick this key up for before it'll return to its original spot. If set to 0, the key will not have a timer
 | `TimerDecimalPlaces` | 1 | The amount of decimals that will be shown on the timer.
 | `ViewportOffset` | [`CFrame.new(0, 0, 0)`](https://create.roblox.com/docs/reference/engine/datatypes/CFrame) | Offset applied to the key's model in its viewport when collected.

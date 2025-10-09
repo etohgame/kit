@@ -15,5 +15,7 @@ The length of the Vine can be adjusted by editing the length of the constraint.
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `AllowJumpDismount` | true | Determines whether the Vine can be dismounted by jumping.
+| `HandleAnimation` | true | When true, the player will have an animation of holding on to the vine.
+| `JumpOnDismount` | true | When true, the player will jump when dismounting from the vine.
 | `KeepMomentum` | true | When true, objects will retain their momentum upon grabbing the Vine.
 | `RespawnTime` | 1 | The time it takes for the Vine's `AttachmentPart` to re-appear after the player dismounts it.

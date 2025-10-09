@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Miscellaneous
@@ -81,7 +81,7 @@ When writing custom Client Object repository scripts, PLEASE keep the following 
 ```lua
 --!strict
 --!optimize 2
---@version template-6.0.0
+--@version template-6.X.X
 --@creator you
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")

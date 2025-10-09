@@ -1,0 +1,1 @@
+You may only use the V6 kit when building for EToH or a fangame of similar nature. Do not use our kit for any other games.
