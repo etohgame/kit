@@ -45,7 +45,7 @@ Custom boosts can be created by creating a new module inside `ReplicatedStorage.
 * **Boost.End()** runs whenever the boost ends.
 * **Boost.GetMultiplier()** calculates the multiplier value that is shown in the boost's GUI.
 
-To make your boost usable, give your boost module an unique name and change your booster's `Type` configuration to that newly set name. It is recommended to include your tower's acronym in the name to ensure there are no naming conflicts.
+To make your boost usable, give your boost module an unique name and change your booster's `Type` configuration to that newly set name. It is recommended to include your tower's acronym in the name to ensure there are no naming conflicts. All custom boost modules are to be provided with your tower model upon submission.
 
 <details>
 <summary>Boost Module Template</summary>

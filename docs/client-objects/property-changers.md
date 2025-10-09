@@ -10,10 +10,9 @@ Property Changers can be used to change properties of objects. They can be used 
 
 The Property Changer's `Properties` module can be found inside the `PropertyChangerConfiguration` object. This module contains all of the data of the Property Changer.
 
-
 Do **not** tamper with the lines placed at the top of the script or write non-intended custom code in functions. There are restrictions in place in order to prevent doing things that aren't allowed, and doing this will make your tower ineligible for submission according to the Custom Client Objects rule.
 
-Calculations are allowed (and recommended if used, to make the function easier to read/understand) to simplify the `return` statement, but anything else (such as directly indexing instances or properties without using the provided property changer functions) are not.
+Calculations are allowed (and recommended if used, to make the function easier to read/understand) to simplify the `return` statement, but anything else (such as directly indexing instances or properties without using the provided property changer functions) is not.
 
 The table contains a list of properties to change, as well as an `Instance` field that is required for the Property Changer to function. For example, the default properties look like this:
 
@@ -44,7 +43,7 @@ end,
 This will search for the `LinearVelocity` inside the touching object and set its `VectorVelocity` to the changer's facing direction multiplied by the `Speed` attribute in the `PropertyChangerConfiguration`. More information on these functions can be found below.
 
 * The `Instance` field defines what objects will be affected by the Property Changer.
-* If present, the `Tween` field will tween these properties. Note that tweens may be laggy if you are affecting a large amount of objects at once.
+* If present, the `Tween` field will tween these properties. Note that tweens may be laggy if you are affecting a large amount of objects at once. All `TweenInfo` fields, including `RepeatCount`, `Reverses` and `Delay` are supported.
 * If present, the `Condition` function will make the Property Changer not run if the condition is not met. Read [the documentation on property checkers](#property-checkers) for more info.
 
 Every other field defines properties of the object to change. You can either directly define values or use a function to calculate the value or retrieve the value from another object. More info can be found below.

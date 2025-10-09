@@ -8,6 +8,7 @@ Vanishers can be used to create varying types of gameplay, puzzles, or contrapti
 An example of this is to speed up pacing for a section by requiring the player to move fast.
 
 All Vanisher parts in the `VanisherGroup` model will be activated when any part in the model is touched.
+Single-part vanishers without a model can be made by ungrouping the model and moving the `VanisherConfiguration` into the part.
 
 ## Vanish modes
 

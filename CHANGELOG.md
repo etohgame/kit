@@ -1,50 +1,60 @@
 # Changelog
 
-## [v6.0.3 - September 25th 2025]
+## [v6.1.0 - October 9th 2025]
 
 **IMPORTANT NOTE**: Boost Pads have been deprecated and are no longer included in the kit.
 The regular Booster object now includes a `Pad` mode that has matching behavior.
 
 Old Boost Pads will still function in towers that use them, but they will no longer be maintained.
 Please convert old Boost Pads to regular Boosters after using the update kit.
-The update kit will not automatically perform this conversion to avoid potential problems.
+To avoid potential problems, the update kit will not automatically perform this conversion.
 
 ### Fixes
-- Fixed Dismounters not respecting `AllowJumpDismount` on Balloons, Vines and 
-    Ziplines
-- Fixed Morpher buttons not changing colors when activated
-- Fixed Morpher's main part having weird movement behavior if unanchored
-- Fixed Morpher's `NewMorph` parts not updating their material correctly
-- Fixed an issue where Morphers keep running their movement code even after
+* Fixed Morpher buttons not changing colors when activated
+* Fixed Morpher's main part having weird movement behavior if unanchored
+* Fixed Morpher's `NewMorph` parts not updating their material correctly
+* Fixed an issue where Morphers keep running their movement code even after
 	they finish moving
-- Fixed some Client Objects not working randomly
-- Actually changed the configuration version tag this time
-- Added a sound pool to BeatBlocks to prevent memory leaks
-- Fixed a typo in the Property Changer script that made the `SequenceVariable`
+* Fixed some Client Objects not working randomly
+* Actually changed the configuration version tag this time
+* Added a sound pool to BeatBlocks to prevent memory leaks
+* Fixed a typo in the Property Changer script that made the `SequenceVariable`
 	function not work
-- Fixed TouchConfigurations for Gui Displayers not working properly
-- Fixed Sequencers using RunOnStart and SyncEnabled not working when music is
+* Fixed TouchConfigurations for Gui Displayers not working properly
+* Fixed Sequencers using RunOnStart and SyncEnabled not working when music is
 	not preloaded
-- Fixed Turrets not registering touch events at all unless DestroyOnTouch is
+* Fixed Turrets not registering touch events at all unless DestroyOnTouch is
 	enabled
+* Fixed state desync issues with button activated falling platforms
+* Fixed button-activated pad Boosters having their hitbox visible	
+* Fixed incorrect deactivation behavior if there are multiple Buttons of the
+	same color active at the same time
 
 ### Improvements
-- Added `OutlineColor` and `ShrinkToZero` configuration to Vanishers
-- Added `IgnoreCanCollide` and `IgnoreTransparency` tag support to Vanishers
-- Added Transparency support for Gradient Parts
-- Added Stopper parts to Sequencers
-- Replaced `HitboxMode` configuration on client objects with a
+* **Added a new client object: Dialog System**
+* Added `JumpOnDismount` configuration to Balloons, Vines and Ziplines
+* Added `OutlineColor` and `ShrinkToZero` configuration to Vanishers
+* Added `IgnoreCanCollide` and `IgnoreTransparency` tag support to Vanishers
+* Added Transparency support for Gradient Parts
+* Added Stopper parts to Sequencers
+* Replaced `HitboxMode` configuration on client objects with a
 	`playerHitboxMode` attribute on TouchConfigurations
-- Improved Property Changer Functionality & warnings
-- Updates to Boosters:
-	- Updated boost system, allowing for custom boosts through custom modules
-	- `Pad` mode added to regular Boosters. **BoostPads are now deprecated and
+* Improved Property Changer Functionality & warnings
+* Updates to Boosters:
+	* Updated boost system, allowing for custom boosts through custom modules
+	* `Pad` mode added to regular Boosters. **BoostPads are now deprecated and
 	should be replaced with regular Boosters**
-- Slightly optimized Morphers
-- Morphers with the `CarryObjects` configuration enabled now also affect
+* Slightly optimized Morphers
+* Morphers with the `CarryObjects` configuration enabled now also affect
 	orientation
-- Added a visible Corner Flip button on mobile
-- Added `IndicatorScaleMultiplier` configuration to Beat Blocks
+* Added a visible Corner Flip button on mobile
+* Added a `IndicatorScaleMultiplier` configuration to Beat Blocks
+* Added support for `RepeatCount`, `Reverses`, and `DelayTime` in
+	Property Changer tweens
+* Added `UseWeld` and `StartInCenter` configuration to Ziplines
+* Zipline segments can now be customized by adding a part named `BaseSegment`
+	to the Zipline model
+* Vanishers can now be a single part without a model
 
 ## [v6.0.2 - July 3rd 2025]
 
