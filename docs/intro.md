@@ -35,7 +35,7 @@ The Global Configurations category contains documentation for special configurat
 
 Documentation for the kit's scripts can be found in the API section found in the top bar. These are meant to assist people that are working on custom scripts for the kit.
 
-See [the docs on writing repository scripts](misc.md#writing--editing-repository-scripts) for more information. Please note that you are **not allowed** to use custom scripts in towers meant for EToH unless you have the Verified Builder role or are in a collaboration with someone who has the role.
+See [the docs on writing repository scripts](misc.md#writingediting-repository-scripts) for more information. Please note that you are **not allowed** to use custom scripts in towers meant for EToH unless you have the Verified Builder role or are in a collaboration with someone who has the role.
 
 ## What's different compared to Version 5?
 

@@ -40,7 +40,7 @@ A `SequenceGroup` template can be found in the `Extra Sequencer Stuff` folder in
 
 ### Sequence Pointers
 
-Sequence Pointers can also be found in the `Extra Sequencer Stuff` folder. When activated in a sequence, the Sequencer will search for any objects with [Tag]s matching its `Pointer` attribute, and activate those objects.
+Sequence Pointers can also be found in the `Extra Sequencer Stuff` folder. When activated in a sequence, the Sequencer will search for any objects with [Tag]s matching its `Pointer` attribute, and activate those objects. For example, if you have a client object with the tag `RemoteObject` and add a Sequence Pointer set to the value `RemoteObject` to the sequence, that object will get activated when the Sequencer passes through the pointer object.
 
 [Sequence Variables] are also supported, by making the sequence pointer's `Pointer` attribute a sequence variable wrapped around in curly braces (example: `{VARIABLE}`).
 
@@ -60,6 +60,7 @@ The following objects are currently supported by Sequencers:
 | [Boost Removers](boosters.md) | |
 | [Buttons](buttons.md) | |
 | [Button Deactivators](button-deactivators.md) | |
+| [Dialog System](dialog-system.md) | You must have an entire `Dialog System` folder in the Sequence for it to function correctly. |
 | [Dismounters](dismounters.md) | |
 | [Emitters](emitters.md) | Use with [Sequence Pointers] |
 | [GUI Displayers](gui-displayers.md) | |
@@ -87,9 +88,10 @@ Sequencers can be synced to the tower's music. This will adjust the speed of the
 | Name | Default Value | Description |
 |:-----:|:-----:|:-----:|
 | `Cooldown` | 0 | The amount of time it will take for the Sequencer to be usable again after it finishes. |
+| `HideSequence` | false | When true, and `Visualize` is false, the `Sequence` folder will be parented elsewhere and fully hidden from view. Note that when enabled, any Property Changers in the sequence may not work if instances are not accessed via [Tags](Tag). |
 | `LoopAmount` | 0 | The amount of times the Sequencer will run when activated. If set to 0, it will only run once. If set to any negative number, it will keep running forever. |
 | `LoopDelay` | 0 | The amount of time the Sequencer will wait before reactivating after every loop. |
-| `RunAtStart` | false | When true, the Sequencer will automatically run when it loads, without it having to be activated by touch. |
+| `RunAtStart` | false | When true, the Sequencer will automatically run when the tower is entered, without it having to be activated by touch. |
 | `Speed` | 1 | The speed the Sequencer will move at, in studs per second. |
 | `Visualize` | true | When true, the Sequencer will move to show its progress, and color itself to show its current state. Useful for debugging sequences. |
 

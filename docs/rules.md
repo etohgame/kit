@@ -52,14 +52,15 @@ Ensure Dyno on Discord can message you as we use it to alert users of deleted su
 * Be cautious with resubmitting passing towers, as a failing verdict will result in your tower being removed from the whitelist.
 * Provide credit to all users who built at least 10% of the tower’s total gameplay, unless they wish to not be credited.
 * Do not submit towers specifically with the intent of becoming a monthly.
-* Steeple submissions are only allowed if:
+* Steeple submissions are only allowed if at least one of the following is applicable:
     * Steeple submissions for an unreleased area are open
     * There is an ongoing contest
-* Citadel submissions are only allowed if:
+* Citadel submissions are only allowed if you meet at least one of the following requirements:
     * You have the Verified Builder role or are in a collab with someone who has the role
     * You have at least one tower ingame with 2 or fewer builders credited (including monthly towers)
 * Do not repost submissions. Please be patient as we work on our own time.
 * Do not submit joke/low effort/old towers without the intent of it passing.
+* By submitting your tower, you agree to give us the rights to your tower. Should it get ingame, you are no longer allowed to request its removal from the game.
 
 ## Naming
 

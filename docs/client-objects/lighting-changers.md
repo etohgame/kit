@@ -8,6 +8,12 @@ Lighting Changers are used for cinematic effects and help bring together the
 mood of towers. For example, dark lighting can create a gloomy feel. In contrast, bright and
 vibrant lighting can heighten intense or upbeat sections of towers.
 
+## Configuration
+
+| Name | Default Value | Description
+|:-----:|:-----:|:-----:
+| `ChangeOnLoad` | true (Multi Lighting Changers) / false (any other changer) | Automatically changes the lighting to the configured lighting when the tower is entered. Be sure to turn this off for any lighting changer that isn't directly at the spawn point 
+
 ## `Lighting` Module
 
 Lighting Changers are configured inside of a `Lighting` ModuleScript that is found inside the

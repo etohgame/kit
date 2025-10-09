@@ -1,5 +1,22 @@
 # Changelog
 
+## [v6.1.1 - October 9th 2025]
+
+### Fixes
+
+* Reverted some changes to Sequencers that broke some complex contraptions.
+	Some of the previous behavior can be retained by using the new
+	`HideSequence` configuration
+* Fixed default zipline segments not changing color to the zipline's color
+* Fixed the first zipline segment not connecting to the zipline itself when it should
+* Fixed Morpher buttons with a move time of 0 not working
+
+### Improvements
+* Added a `HideSequence` configuration to Sequencers
+* The `Loop` configuration on Ziplines now also works in reverse
+
+### Improvements
+
 ## [v6.1.0 - October 9th 2025]
 
 **IMPORTANT NOTE**: Boost Pads have been deprecated and are no longer included in the kit.

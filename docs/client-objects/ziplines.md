@@ -24,9 +24,9 @@ Please note that any configuration related to player input will also apply when 
 | `HandleAnimation` | true | When true, the player will have an animation of holding on to the zipline.
 | `JumpOnDismount` | true | When true, the player will jump when dismounting from the zipline.
 | `KeepMomentum` | false | Whether the attached object retains its momentum when dismounted. Note that if a player has negative vertical momentum, it will not be retained because the player performs a jump when dismounting.
-| `Loop` | false | When true, and `AllowEndDismount` is false, the Zipline will reset back to the start of the path when it reaches the end. May behave oddly if the start and end of the path are not at the same location.
+| `Loop` | false | When true, and `AllowEndDismount` is false, the Zipline will act like a loop, moving the player between the start and end when passing them. May behave oddly if the position of the zipline and the first point do not match or the position of the first and last points do not match.
 | `RopeLength`| 5 | The length of the rope formed between the attached object and the guide part.
-| `Segments`| 20 | The amount of segments the curve is formed by. Please note that there is a limit of 100 segments in order to reduce lag.
+| `Segments`| 20 | The amount of segments the curve is formed by. Please note that there is a segment limit in order to reduce lag. The limit is 200 if anchored and 100 if unanchored.
 | `Speed` | 5 | The speed the guide part travels at, in studs per second.
 | `StartInCenter` | false | When true, the attached object will be warped to the mid-way point of the zipline's path when mounting.
 | `UseWeld` | false | When true, mounted objects will be directly welded to the rope bar using a `WeldConstraint` instead of being connected by a `RopeConstraint`. Please note that the player will not interact with any client objects they touch while welded.
