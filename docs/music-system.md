@@ -16,7 +16,7 @@ The music system itself can be found [on the creator marketplace][music-system],
 If you are not using publicly available music, you **must** reupload the songs yourself for them to play.
 To avoid false moderation action on Roblox, it is **heavily recommended** to upload all audio on an alt account, then give your main account permission to use it.
 
-Songs can be uploaded via the [Asset Manager](https://create.roblox.com/docs/projects/assets/manager) in Studio or via the [Creator Dashboard](https://create.roblox.com/dashboard/creations?activeTab=Audio). After uploading your audio, you can find its asset ID by going to its page and copying the number found in the URL. After this, find the `Sound` object inside the music zone you want the song to play in and change the `SoundId` property to the ID of the audio.
+Songs can be uploaded via the [Asset Manager](https://create.roblox.com/docs/projects/assets/manager) in Studio or via the [Creator Dashboard](https://create.roblox.com/dashboard/creations?activeTab=Audio). After uploading your audio, you can find its asset ID by going to its page and copying the number found in the URL (or by clicking the dots to the right of its name and clicking "Copy Asset ID"). After this, find the `Sound` object inside the music zone you want the song to play in and change the `SoundId` property to the asset ID of the audio.
 
 If the asset is uploaded on an alt, you can share permission with your main account to use the song in your tower. Go to the `Permissions` tab on the asset's page, click on the `Add Collaborators` button and type in your main account's username. Note that your main account and your alt account must be friends in order to share asset permissions.
 
