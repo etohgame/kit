@@ -6,7 +6,7 @@ sidebar_position: 3
 
 The music system allows you to play background music in your tower.  
 
-The only thing you'll need for your tower to have music is the `Music` folder, which should be placed in `ServerScriptService`.  
+The only thing required for your tower to have music is the `Music` folder, which should be placed in `ServerScriptService`.  
 (or alternatively `Workspace`, if you would like to manipulate the size/position of zones).  
 The `Insert` script inside of this folder will automatically load in the music system for you, so you do not need to update it.
 
@@ -17,9 +17,9 @@ The music system itself can be found [on the creator marketplace][music-system] 
 If you are not using publicly available music, you **must** reupload the songs yourself for them to play.
 To avoid false moderation action on Roblox, it is **heavily recommended** to upload all audio on an alt account, then give your main account permission to use the songs.
 
-Songs can be uploaded via the Asset Manager in Studio or via the [Creator Dashboard](https://create.roblox.com/dashboard/creations?activeTab=Audio). After uploading your audio, you can find the ID of the asset by going to its page and copying the number found in the link. After this, find the `Audio` object inside the music zone you want to edit and change the `SoundId` to the ID of the audio.
+Songs can be uploaded via the Asset Manager in Studio or via the [Creator Dashboard](https://create.roblox.com/dashboard/creations?activeTab=Audio). After uploading your audio, you can find the ID of the asset by going to its page and copying the number found in the link. After this, find the `Sound` object inside the music zone you want to edit and change the `SoundId` property to the ID of the audio.
 
-If the asset is uploaded on an alt, you can share permission with your main account to use the song in your tower. Go to the `Permissions` tab on the asset's page, click on the `Add Collaborators` button and type in your main account's username. Note that your main account and your alt account must be friended in order to share asset permissions.
+If the asset is uploaded on an alt, you can share permission with your main account to use the song in your tower. Go to the `Permissions` tab on the asset's page, click on the `Add Collaborators` button and type in your main account's username. Note that your main account and your alt account must be friends in order to share asset permissions.
 
 ## Music Folder
 
@@ -44,14 +44,14 @@ All configurations can either be attributes of the zone model or value objects i
 
 | Name | Type | Default Value | Description
 |------|------|---------------|------------
-| `Priority` | number | 1 | Determines a zone's priority value. (For explanation on priority, see [Music Zones](#music-zones))
-| `NoFadeIn` | boolean | false | Determines whether music fades in or instantly plays when entering a zone.
-| `NoFadeOut` | boolean | false | Determines whether music fades out or instantly stops when exiting a zone
-| `OrderedTracklist` | boolean | false | When true, songs will play in order based on their name, instead of randomly.
-| `ExitZoneBehavior` | "Stop" or "Pause" | "Stop" | Pause will resume music from where it left off when a zone is re-entered, Stop will reset them instead.
+| `Priority` | number | 1 | Determines a zone's priority value (for explanation on priority, see [Music Zones](#music-zones)).
+| `NoFadeIn` | boolean | false | Determines whether music fades in or instantly plays when entering a zone and the previous song has stopped playing.
+| `NoFadeOut` | boolean | false | Determines whether music fades out or instantly stops when exiting a zone.
+| `OrderedTracklist` | boolean | false | When true, songs will play in order based on their corresponding `Sound` object's name, instead of playing randomly.
+| `ExitZoneBehavior` | "Stop" or "Pause" | "Stop" | Pause will resume music from where it left off when a zone is re-entered, Stop will reset it instead.
 | `Disabled` | boolean | false | Disables a zone entirely (including its priority effects).
-| `ButtonActivated` | Color3 | none | **DEPRECATED**, use [Music Zone Editors](client-objects/music-zone-editors.md) to simulate button activated behavior.
-| `Invert` | boolean | false | **DEPRECATED**, swaps the zone's Button Activated state.
+| `ButtonActivated` | Color3 | none | **DEPRECATED, use [Music Zone Editors](client-objects/music-zone-editors.md) to simulate button activated behavior.** Allows zones to be activated via the use of the v5.2/5.3 kit's buttons.
+| `Invert` | boolean | false | **DEPRECATED**, swaps the zone's button activated state.
 
 ## Sound Configuration
 
@@ -69,7 +69,7 @@ In addition to this, when a sound is named `IntroMusic`, it will always be the f
 ## Settings Module
 
 **Note: This section is meant for people with some scripting knowledge**  
-An optional ModuleScript named `Settings` can be passed as the 2nd parameter of the function returned by requiring the module's AssetID.  
+An optional ModuleScript named `Settings` can be passed as the 2nd parameter to the function returned by the `require` call.  
 This module should return a table with the following optional keys.
 
 | Key | Type | Default Value | Description
