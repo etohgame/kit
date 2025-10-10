@@ -6,17 +6,17 @@ sidebar_position: 3
 
 The music system allows you to play background music in your tower.  
 
-The only requirement for your tower to have music is the `Music` folder, which should be located in `ServerScriptService` (or `Workspace`, if you would like to manipulate the size/position of zones).  
+The only requirement for your tower to have music is the `Music` folder, which should be placed in `ServerScriptService` (or `Workspace`, if you would like to manipulate the size/position of zones).  
 The `Insert` script inside of this folder will automatically load in the most up-to-date version of the music system.
 
-The music system itself can be found [on the creator marketplace][music-system], though it lacks the `Insert` script so as to avoid false Roblox moderation (reminder: you do _not_ need to have this in your game for the music system to work, this link is here for those looking to work more in-depth with the system).
+The music system itself can be found [on the creator marketplace][music-system], though it lacks the `Insert` script so as to avoid false Roblox moderation **(reminder: you do _not_ need to have this in your game for the music system to work, this link is here for those looking to work more in-depth with it)**.
 
 ## Uploading Music
 
 If you are not using publicly available music, you **must** reupload the songs yourself for them to play.
 To avoid false moderation action on Roblox, it is **heavily recommended** to upload all audio on an alt account, then give your main account permission to use it.
 
-Songs can be uploaded via the [Asset Manager](https://create.roblox.com/docs/projects/assets/manager) in Studio or via the [Creator Dashboard](https://create.roblox.com/dashboard/creations?activeTab=Audio). After uploading your audio, you can find its asset ID by going to its page and copying the number found in the URL (or by clicking the dots to the right of its name and clicking "Copy Asset ID"). After this, find the `Sound` object inside the music zone you want the song to play in and change the `SoundId` property to the asset ID of the audio.
+Songs can be uploaded via the [Asset Manager](https://create.roblox.com/docs/projects/assets/manager) in Studio or via the [Creator Dashboard](https://create.roblox.com/dashboard/creations?activeTab=Audio). After uploading your audio, you can find its asset ID by going to its page and copying the number found in the URL (or by clicking the dots to the right of its name and clicking "Copy Asset ID"). After this, find the `Sound` object inside the music zone you'd like the song to play in and change the `SoundId` property to the asset ID of the audio.
 
 If the asset is uploaded on an alt, you can share permission with your main account to use the song in your tower. Go to the `Permissions` tab on the asset's page, click on the `Add Collaborators` button and type in your main account's username. Note that your main account and your alt account must be friends in order to share asset permissions.
 
@@ -39,7 +39,7 @@ When multiple zones overlap with eachother, the zone with the highest priority w
 
 ## Music Zone Configuration
 
-All configurations can either be attributes of the zone model or value objects inside of it.
+All configurations can either be attributes of the zone model or `Value` objects inside of it.
 
 | Name | Type | Default Value | Description
 |------|------|---------------|------------
@@ -55,13 +55,13 @@ All configurations can either be attributes of the zone model or value objects i
 ## Sound Configuration
 
 Sounds in the `Music` folder (and `GlobalBackgroundMusic`) can also be configured.
-Just like music zones, all of these can be attributes of the sound or values in it.
+Just like music zones, all of these can either be attributes of the sound or `Value` objects inside of it.
 
 | Name | Type | Default Value | Description
 |------|------|---------------|------------
-| `StartAt` | number | 0 | Used as a replacement for the `TimePosition` property (which does not work due to songs looping when they end)
-| `FadeIncrement` | number | 30 | Determines how fast the sound fades in & out. The formula to calculate the exact fade time is `0.1 * FadeIncrement`
-| `MusicName` | string | - | A custom name that will be displayed instead of the sound asset's name (not to be confused with the Sound object's name in studio).
+| `StartAt` | number | 0 | Used as a replacement for the `TimePosition` property (which does not work due to songs looping when they end).
+| `FadeIncrement` | number | 30 | Determines how fast the sound fades in & out. The formula to calculate the exact fade time is: `0.1 * FadeIncrement`
+| `MusicName` | string | - | A custom name that will be displayed instead of the sound asset's name (not to be confused with the sound object's name in studio).
 
 In addition to this, when a sound is named `IntroMusic`, it will always be the first to play and will never play again unless the zone is re-entered. This can be used for better song loops.
 
