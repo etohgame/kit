@@ -48,6 +48,8 @@ This will search for the `LinearVelocity` inside the touching object and set its
 
 Every other field defines properties of the object to change. You can either directly define values or use a function to calculate the value or retrieve the value from another object. More info can be found below.
 
+Attributes of objects can be changed in the same way as any other property. If a given property does not exist on an object, it will change (or create) the attribute with the given name instead.
+
 ### Instance Field
 
 There are multiple ways to retrieve the set of objects to affect: `Toucher`, `Tagged`, `TagFromSequenceVariable`, and `Changer`.
@@ -152,10 +154,11 @@ end,
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `Cooldown` | 0.5 | Delay between being able to activate the Property Changer again.
+| `SilenceWarnings` | false | When true, the Property Changer will not print out any non-essential warnings into the console (i.e. when there are no instances to affect). Enable if you want to keep the output clean and you know what you're doing
 
 ## Property Checkers
 
-Property Checkers are a special type of Property Changer. If the `Condition` function is present, the Property Changer will not run if the condition is not met. This example will make the Property Changer only work if you are within 50 studs of it:
+Property Checkers are preconfigured Property Changers that feature Condition parameters. If the `Condition` function is present in the Properties module, the Property Changer will not run if the condition is not met. This example will make the Property Changer only work if you are within 50 studs of it:
 
 ```lua
 local Properties: _C.CheckerFormat = {
@@ -168,10 +171,14 @@ local Properties: _C.CheckerFormat = {
 }
 ```
 
-If the Property Checker has the `ConditionalEnabled` configuration and is used in a [Sequencer](sequencers.md), its sequence will automatically stop if the condition is not met.
-Alternatively, you could enable the `ConditionalYieldSequence` to make the sequencer yield until the condition is met, or enable `ConditionalBreakSequence` to completely stop the sequencer and its loop from running.
+If `ConditionalEnabled` is used in combination with a [Sequencer](sequencers.md), failing conditions will have different behavior depending on the Property Changer's configuration.
+- `ConditionalYieldSequence` will make the sequencer wait until the condition is met before continuing the sequence.
+- `ConditionalBreakSequence` will completely cancel the sequencer and any of its remaining loops.
+- If neither are enabled, the Sequencer's current loop will be cancelled, and will either stop or restart depending on the amount of loops left.
 
-Property Checkers also have the ability to yield a sequence until an event is activated, such as a ProximityPrompt trigger, shown in the code example below.
+Property Checkers also have the ability to yield a sequence until an event is activated, such as a `ProximityPrompt` trigger, shown in the code example below.
+
+Watch out: Turning on `ConditionalEnabled` without specifying a condition will cause the Property Changer to never activate.
 
 ```lua
 local Properties: _C.CheckerFormat = {

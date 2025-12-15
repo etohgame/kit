@@ -11,6 +11,8 @@ If the `PushboxSpawnConfiguration` contains a `Sound` named `SpawnSound`, it wil
 
 They can be used to respawn physics objects, to provide consistent setups and prevent them getting stuck in impassable positions.
 
+Starting in v6.1.2, all parts of the Pushbox model will be automatically unanchored when spawned unless they have the `BoxAnchor` tag. It is heavily recommended to keep the entire Pushbox model anchored in Studio to prevent issues caused by delays in client object loading.
+
 ## Configuration
 
 | Name | Default Value | Description

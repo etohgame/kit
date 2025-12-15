@@ -8,7 +8,7 @@ This page contains the rules you must follow when building and submitting towers
 
 Once your tower is submitted, it will be reviewed by a curator, who will provide feedback and suggestions for improvement, and will give the verdict on it passing. If your tower fails to pass, you must wait 3 days before resubmission. You can ask our curation team if you have any questions or advice regarding the guidelines or your tower via DM's or mentioning them.
 
-Ensure Dyno on Discord can message you as we use it to alert users of deleted submissions.
+<h3>🔵 Ensure Dyno on Discord can message you as we use it to alert users of deleted submissions.</h3>
 
 ## What to include in your submission
 
@@ -23,9 +23,9 @@ Ensure Dyno on Discord can message you as we use it to alert users of deleted su
 * Your place must include the `Noclip` and `Heal` tools that are included by default in the kit. We also recommend adding a godmode tool if your tower heavily relies on killbricks, especially instakills
 * Your place must include the modified `PlayerModule` script included in the kit.
 * Your tower should be easily enterable when joining the place.
-* Upload your tower's intended music and include the audio in the place using the provided music module. Refer to [the music system documentation](music-system.md) for help in adding music and [this guide](https://discord.com/channels/551741409624064011/628681282565570590/1373382166448439507) if you are having trouble getting the audio past moderation
+* Upload your tower's intended music and include the audio in the place using the provided music module. Refer to [the music system documentation](music-system.md) for help in adding music
 * You may include terrain or other decoration in the tower’s place if you wish, but ensure it does not interfere with gameplay and please be aware that the terrain may not be included ingame.
-* The tower place must be public and accessible to everybody, including no paid access fees or age restrictions.
+* The tower's place must be public and accessible to everybody, including no paid access fees or age/country restrictions.
 
 ## Tower Building
 
@@ -33,7 +33,7 @@ Ensure Dyno on Discord can message you as we use it to alert users of deleted su
 * The tower floor count must be within the range of the tower type being built. Towers are 10 floors, Steeples are 5-6, and Citadels are 12-25.
     * A “floor” is generally defined as a 100x100x100 box with clear boundaries. Floors may be moved or rotated into orientations that differ from the default frame in the kit, and may be expanded up to 75 studs to the side in any direction. There is no limit on how far “outside sections” may extend from the tower’s frame, and enclosed spaces significantly smaller than a floor in at least one dimension (i.e. droppers or small basements) are not considered floors.
     * We still suggest that you aim to make your tower feel like a tower and ensure that floors are clearly distinguishable and taken into consideration in the tower’s progression, as this will increase your chances of approval.
-    * Your tower must have a presentable frame that contains at least a portion of the gameplay. Towers without a visible frame or towers that have nothing resembling a frame are not allowed. A "fake" frame may be used in place of the actual frame as long as it contains at least a portion of the tower's gameplay.
+    * Your tower must have a presentable frame that contains at least a portion of the gameplay. Towers without a visible frame or towers that have nothing resembling a frame are not allowed. A "fake / placeholder" frame may be used in place of the actual frame as long as it contains at least a portion of the tower's gameplay.
 
 * Your tower must not have more than 7500 server-sided (obby + frame) parts. Citadels may use 750 additional parts per extra floor. Do not place static parts in the client object folder to circumvent this requirement; this includes making parts button-activated if there is no direct purpose for gameplay.
 * No free models should be in your tower.
@@ -60,7 +60,7 @@ Ensure Dyno on Discord can message you as we use it to alert users of deleted su
     * You have at least one tower ingame with 2 or fewer builders credited (including monthly towers)
 * Do not repost submissions. Please be patient as we work on our own time.
 * Do not submit joke/low effort/old towers without the intent of it passing.
-* By submitting your tower, you agree to give us the rights to your tower. Should it get ingame, you are no longer allowed to request its removal from the game.
+* By submitting your tower, you agree that you are not allowed to request its removal from the game once confirmed.
 
 ## Naming
 
@@ -69,7 +69,7 @@ Ensure Dyno on Discord can message you as we use it to alert users of deleted su
 
 ## Useful 3rd-party tools:
 
-* [Oozle Draw](https://www.roblox.com/library/172311381/Oozle-Draw-Modified-by-Quenty) (use this to make ropes)
+* [Oozle Draw](https://www.roblox.com/library/172311381/Oozle-Draw-Modified-by-Quenty) (use this to make tightropes)
 * [Portal Kit](https://www.roblox.com/library/9032948967/JToH-Portal-Kit)
 * [Surface Tool](https://www.roblox.com/library/5070921519/Surface-Tool)
 * [bLocker's Tools](https://www.roblox.com/library/7358862449/bLockers-tools) (use this to generate frame gradients and randomly color & rotate parts)

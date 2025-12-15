@@ -31,7 +31,9 @@ Each dialog object has attributes that control how the text displays, and also c
 | Name | Default Value | Description
 |:-----:|:-----:|:-----:
 | `ActivateButtonBeforeDialog` | N/A (Color3 Attribute) | Activates any button (before the dialog plays) that is the same color as the attribute.
+| `ActivateButtonTag` | N/A (string) | Activates any button (before the dialog plays) that has a Tag matching the attribute.
 | `ActivateButton` | N/A (Color3 Attribute) | Activates any button that is the same color as the attribute.
+| `ActivateButtonTag` | N/A (string) | Activates any button that has a Tag matching the attribute.
 | `AwaitFinish` | true | Determines whether the dialog will wait for the text to finish typing.
 | `AwaitTextFade` | false | Determines whether the dialog will wait for the text to fade out.
 | `ClearInterval` | 0.02 | How long it takes for each letter in the dialog to play the fade-out animation.

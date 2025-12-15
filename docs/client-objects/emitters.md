@@ -7,7 +7,7 @@ Emitters play all `Sound` objects inside of them and emit all `ParticleEmitter` 
 Emitters can be used for cinematic effects and gameplay cues. They can be limited by the
 `Uses` configuration as to not emit more than the specified number of times.
 
-`Sound` and `ParticleEmitter` objects have an optional `EmitDelay` attribute that specifies how long the Emitter should wait for before emitting those objects. `ParticleEmitter`s also have an optional `EmitCount` attribute that specifies how many particles to emit.
+`Sound` and `ParticleEmitter` objects have an optional `EmitDelay` attribute that specifies how long the Emitter should wait for before emitting those objects. `ParticleEmitter`s also have an optional `EmitCount` attribute that specifies how many particles to emit, and `Sound`s have an optional `PitchRange` NumberRange attribute that specifies a random pitch the sound should play at.
 
 ## Configuration
 

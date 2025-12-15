@@ -1,5 +1,38 @@
 # Changelog
 
+## [v6.1.2 - December 15th 2025]
+
+### Fixes
+
+- Fixed `Light`s, `Highlight`s and all constraints not being toggled when button activated
+- Fixed Boosters returning you to the incorrect power when a boost ends while
+	multiple boosts of the same type are active
+- Fixed MusicZoneEditors not resetting Priority & Disabled attributes back to 
+	their defaults
+- Fixed MusicZoneEditors not working if the Priority value is added via an Attribute
+- Fixed a memory leak inside of Property Changers
+- Fixed inverted Vanishers having incorrect transparency when activated
+- Fixed Emitters with GlobalSound enabled continuing to play any emitted sounds
+	after being destroyed
+- Actually fixed memory leak with Beat Block sounds
+
+### Improvements
+
+- Added a `ToggleChildren` configuration to Beat Blocks
+- The kit now has a template for Pad Boosters with standardized indication
+- Added support for activating buttons based on tags to Dialog Parts
+- Changed the way custom boosts are set up
+- Added a `SilenceWarnings` configuration to Property Changers
+- Added `PitchRange` configuration for sounds in Emitters
+- Bullets will now ignore parts that have a `IgnoreBullets` Tag
+- Added `SetInactiveTransparency` attribute to Button Platforms, it acts the same
+	as `SetTransparency` but for when the platform is deactivated
+- All parts of a Pushbox model will now be automatically unanchored when spawned
+	unless they have the `BoxAnchor` tag. It is recommended to keep the entire
+	Pushbox model anchored in Studio to prevent issues caused by delays in
+	client object loading. The update kit will automatically convert
+	existing Pushboxes.
+
 ## [v6.1.1 - October 9th 2025]
 
 ### Fixes

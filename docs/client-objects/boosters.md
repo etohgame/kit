@@ -33,19 +33,21 @@ Boosters can be used to give the player a movement boost. These can be either te
 | `Zone` | The boost will automatically end once the player stops interacting with the booster.
 | `Pad` | Similar to `Zone`, but the booster's range extends upwards by a set amount controlled by `PadDistance`.
 
+Unlike older kits, when using the `Pad` mode, the booster will still respect its `TweenConfiguration`s. To replicate the older behavior (instant changes), set both of the `TweenConfiguration`s to a length of 0.
+
 # Creating Custom Boosts
 
 NOTE: Keep in mind that custom scripts are **not allowed** in towers meant for EToH unless you have the Verified Builder role or are in a collaboration with someone who has the role.
 
-Custom boosts can be created by creating a new module inside `ReplicatedStorage.Framework.Kit.Managers.CharacterManager.Boosts`. There is a template below that you can use.
+Custom boosts can be created by creating a module and registering it using the [Character utility]. The required components are listed below:
 
-* **Boost.Information** holds the information of the boost displayed on its GUI, such as the icon and color.
+* **Boost.Information** holds the information of the boost displayed on its GUI, such as the `Icon` asset ID and `Color`.
 * **Boost.Start()** runs whenever the boost starts.
 * **Boost.Update()** runs whenever the boost updates. This happens when first started, or when it gets refreshed by touching the booster again while the boost is still active
 * **Boost.End()** runs whenever the boost ends.
 * **Boost.GetMultiplier()** calculates the multiplier value that is shown in the boost's GUI.
 
-To make your boost usable, give your boost module an unique name and change your booster's `Type` configuration to that newly set name. It is recommended to include your tower's acronym in the name to ensure there are no naming conflicts. All custom boost modules are to be provided with your tower model upon submission.
+To make your boost usable, register the boost using the Character utility's `registerCustomBoost` function and change your booster's `Type` configuration to that newly set name. Note that any registered boosts will automatically be unregistered when the player respawns.
 
 <details>
 <summary>Boost Module Template</summary>
@@ -53,8 +55,11 @@ To make your boost usable, give your boost module an unique name and change your
 ```lua
 --!strict
 --!optimize 2
+--!@version 6.X.X
 
-local _TDefs = require(script.Parent.Parent.TypeDefs)
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local _TDefs = require(ReplicatedStorage.Framework.Kit.Managers.CharacterManager.TypeDefs)
 
 local Boost = {}
 
@@ -91,3 +96,5 @@ return Boost
 ```
 
 </details>
+
+[Character utility]: /api/Character#registerCustomBoost

@@ -6,6 +6,8 @@ Beat blocks are groups of parts that will toggle on and off on a set interval.
 
 Beat blocks can be used for gameplay where the player has to time their jumps, or as animated design.
 
+The sounds of Beat Blocks can be customized by adding a `Sound` named `DingSound` inside of the `BeatBlockConfiguration`. If present, that sound will be used instead of the default sound.
+
 ## Music Sync
 
 Beat blocks can be synced to the tower's music. This will make the beat blocks toggle on every beat of the currently playing song. See [the documentation on music sync](/docs/misc.md#music-sync-configuration) for more information.
@@ -26,3 +28,4 @@ Beat blocks can be synced to the tower's music. This will make the beat blocks t
 | `OnCanCollide` | true | When a beat block is on, its CanCollide property will be set to this value.
 | `OnCanTouch` | true | When a beat block is on, its CanTouch property will be set to this value.
 | `OnTransparency` | 0 | When a beat block is on, its Transparency property will be set to this value.
+| `ToggleChildren` | false | When true, any supported Instances inside a beatblock part will also be toggled along with the beatblock itself.

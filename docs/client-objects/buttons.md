@@ -71,7 +71,8 @@ Button activated objects have special configurations that can be modified using 
 |:-----:|:-----:|:-----:
 | `ColorOverride` | `Color3` Attribute | The object will behave as if it is linked to that `Color` rather than the object's actual color. If a `ButtonPart` has this attribute, its functionality may be toggled by other Buttons.
 | `FullHide` | Tag | Sets the Unpressed `Transparency` to 1.
-| `SetTransparency` | `number` Attribute | Changes the `Transparency` of the object in the Unpressed state.
+| `SetTransparency` | `number` Attribute | Changes the `Transparency` of the object in the Pressed state.
+| `SetInactiveTransparency` | `number` Attribute | Changes the `Transparency` of the object in the Unpressed state.
 | `IgnoreTransparency` | Tag | The `Transparency` of the object will not be changed and remains in its default state from Studio.
 | `IgnoreCanCollide` | Tag | The `CanCollide` of the object will not be changed and remains in its default state from Studio.
 | `IgnoreEnabled` | Tag | The `Enabled` property of the object will not be changed and remains in its default state from Studio.
