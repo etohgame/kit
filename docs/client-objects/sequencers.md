@@ -44,11 +44,13 @@ A `SequenceGroup` template can be found in the `Extra Sequencer Stuff` folder in
 
 Sequence Pointers can also be found in the `Extra Sequencer Stuff` folder. When activated in a sequence, the Sequencer will search for any objects with Tags matching its `Pointer` attribute, and activate those objects. For example, if you have a client object with the tag `RemoteObject` and add a Sequence Pointer set to the value `RemoteObject` to the sequence, that object will get activated when the Sequencer passes through the pointer object.
 
-[Sequence Variables] are also supported, by making the sequence pointer's `Pointer` attribute a sequence variable wrapped around in curly braces (example: `{VARIABLE}`).
+[Sequence Variables] are also supported, by making the sequence pointer's `Pointer` attribute a sequence variable wrapped around in curly braces. An example can be found in that section of this page.
 
 ### Sequence Variables
 
 Every `Activator` part has a `SequenceVariables` Configuration object. Any attributes you add to this object can be read by [Property Changers](property-changers.md#_esequenceinstance).
+
+Using [Sequence Pointers], they can be used to have a Sequencer perform different behavior based on which Activator you touch. For example, if you have a client object with the tag `RemoteObject`, the Activator's `SequenceVariables` has an attribute named `ObjectToActivate` with the value `RemoteObject`, and the Sequence Pointer has the pointer configuration set to `{ObjectToActivate}`, it will activate the client object that has that `RemoteObject` tag.
 
 ## Sequencer Support
 
@@ -62,28 +64,33 @@ The following objects are currently supported by Sequencers:
 | [Boost Removers](boosters.md) | |
 | [Buttons](buttons.md) | |
 | [Button Deactivators](button-deactivators.md) | |
-| [Dialog System](dialog-system.md) | You must have an entire `Dialog System` folder in the Sequence for it to function correctly. |
+| [Damage Bricks](damage-bricks.md) | Damage bricks passed in a sequencer will damage the player |
+| [Dialog System](dialog-system.md) | If used with [Sequence Pointers], seperate tags must be applied to each individual `DialogPart`. Otherwise, you must have an entire `Dialog System` folder in the Sequence for it to function correctly. |
 | [Dismounters](dismounters.md) | |
-| [Emitters](emitters.md) | Use with [Sequence Pointers] |
+| [Emitters](emitters.md) | |
 | [GUI Displayers](gui-displayers.md) | |
 | [Lighting Changers](lighting-changers.md) | |
-| [Morphers](morphers.md) | |
+| [Morphers](morphers.md) | If used with [Sequence Pointers], seperate tags must be applied to each individual `Button` model. Otherwise, you must have an entire `Morpher Group` folder in the Sequence for it to function correctly.  |
 | [Music Zone Editors](music-zone-editors.md) | |
 | [Property Changers](property-changers.md) | |
 | [Pushbox Spawners](pushbox-spawners.md) | |
 | [Pushbox Destroyers](pushbox-destroyers.md) | |
-| [Seats](seats.md) | Use with [Sequence Pointers] |
-| [Swings](swings.md) | Use with [Sequence Pointers] |
+| [Seats](seats.md) | |
+| Sequencers | Recommended to use with [Sequence Pointers]. If directly nested inside another sequencer, set the model's `PrimaryPart` to the `Base` part.
+| [Swings](swings.md) | |
 | [Teleporters](teleporters.md) | Seamless mode will not function correctly. |
 | [Trip Parts](trip-parts.md) | |
-| [Turrets](turrets.md) | Use with [Sequence Pointers] |
-| [Vanishers](vanishers.md) | Use with [Sequence Pointers] |
-| [Vines](vines.md) | Use with [Sequence Pointers] |
-| [Ziplines](ziplines.md) | Use with [Sequence Pointers] |
+| [Turrets](turrets.md) | |
+| [Vanishers](vanishers.md) | |
+| [Vines](vines.md) | |
+| [Ziplines](ziplines.md) | |
+
+For any object that should be used, interacted with or seen by the player (mountables, Emitters, etc), it is recommended to use [Sequence Pointers] instead of having the object parented to the Sequencer.
 
 ## Music Sync
 
-Sequencers can be synced to the tower's music. This will adjust the speed of the Sequencer to match the BPM of the currently playing song. See [the documentation on music sync](/docs/misc.md#music-sync-configuration) for more information.
+Sequencers can be synced to the tower's music. This will adjust the speed of the Sequencer to match the BPM of the currently playing song (1 stud per beat). 
+See [the documentation on music sync](/docs/misc.md#music-sync-configuration) for more information. Note that music-synced sequencers will continue moving forward until the end of the song and do not support looping.
 
 ## Configuration
 

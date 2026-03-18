@@ -14,7 +14,7 @@ The music system itself can be found [on the creator marketplace][music-system],
 ## Uploading Music
 
 If you are not using publicly available music, you **must** reupload the songs yourself for them to play.
-To avoid false moderation action on Roblox, it is **heavily recommended** to upload all audio on an alt account, then give your main account permission to use it.
+To avoid moderation action on Roblox, it is **heavily recommended** to upload all audio on an alt account, then give your main account permission to use it.
 
 Songs can be uploaded via the [Asset Manager](https://create.roblox.com/docs/projects/assets/manager) in Studio or via the [Creator Dashboard](https://create.roblox.com/dashboard/creations?activeTab=Audio). After uploading your audio, you can find its asset ID by going to its page and copying the number found in the URL (or by clicking the dots to the right of its name and clicking "Copy Asset ID"). After this, find the `Sound` object inside the music zone you'd like the song to play in and change the `SoundId` property to the asset ID of the audio.
 
@@ -47,7 +47,7 @@ All configurations can either be attributes of the zone model or `Value` objects
 | `NoFadeIn` | boolean | false | Determines whether music fades in or instantly plays when entering a zone and the previous song has stopped playing.
 | `NoFadeOut` | boolean | false | Determines whether music fades out or instantly stops when exiting a zone.
 | `OrderedTracklist` | boolean | false | When true, songs will play in order based on their corresponding `Sound` object's name, instead of playing in random order.
-| `ExitZoneBehavior` | "Stop" or "Pause" | "Stop" | Pause will resume music from where it left off when a zone is re-entered, Stop will reset it instead.
+| `ExitZoneBehavior` | `Stop` or `Pause` | `Stop` | `Pause` will resume music from where it left off when a zone is re-entered, `Stop` will reset it instead.
 | `Disabled` | boolean | false | Disables a zone entirely (including its priority effects).
 | `ButtonActivated` | Color3 | none | **DEPRECATED, use [Music Zone Editors](client-objects/music-zone-editors.md) to simulate button activated behavior.** Allows zones to be activated via the use of the v5.2/5.3 kit's buttons.
 | `Invert` | boolean | false | **DEPRECATED**, swaps the zone's button activated state.

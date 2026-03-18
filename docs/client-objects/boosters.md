@@ -35,7 +35,18 @@ Boosters can be used to give the player a movement boost. These can be either te
 
 Unlike older kits, when using the `Pad` mode, the booster will still respect its `TweenConfiguration`s. To replicate the older behavior (instant changes), set both of the `TweenConfiguration`s to a length of 0.
 
-# Creating Custom Boosts
+## Boost Removers
+
+Boost Removers are objects that will remove any active Boosts upon touch.
+
+### Configuration
+
+| Name | Default Value | Description
+|:-----:|:-----:|:-----:
+| `Mode` | `(empty)` | The [mode](#modes) of the boost to remove. If set to an empty string, boosts will be removed regardless of mode.
+| `Type` | Speed | The [type](#types) of the boost to remove.
+
+## Creating Custom Boosts
 
 NOTE: Keep in mind that custom scripts are **not allowed** in towers meant for EToH unless you have the Verified Builder role or are in a collaboration with someone who has the role.
 
@@ -45,9 +56,11 @@ Custom boosts can be created by creating a module and registering it using the [
 * **Boost.Start()** runs whenever the boost starts.
 * **Boost.Update()** runs whenever the boost updates. This happens when first started, or when it gets refreshed by touching the booster again while the boost is still active
 * **Boost.End()** runs whenever the boost ends.
-* **Boost.GetMultiplier()** calculates the multiplier value that is shown in the boost's GUI.
+* **Boost.GetMultiplier()** calculates the multiplier value that is shown in the boost's GUI. A value of -1 will hide the label.
 
 To make your boost usable, register the boost using the Character utility's `registerCustomBoost` function and change your booster's `Type` configuration to that newly set name. Note that any registered boosts will automatically be unregistered when the player respawns.
+
+Extra variables can be added to custom boosts by adding a `ExtraVariables` configuration object inside the `BoosterConfiguration`. Any attributes on this object can be retrieved from the `extraVariables` table inside `boostData`.
 
 <details>
 <summary>Boost Module Template</summary>
@@ -55,7 +68,7 @@ To make your boost usable, register the boost using the Character utility's `reg
 ```lua
 --!strict
 --!optimize 2
---!@version 6.X.X
+--@version 6.X.X
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 

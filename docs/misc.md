@@ -21,7 +21,7 @@ There is a `KitSettings` module found in `ReplicatedStorage` that allows you to 
 
 In Kit v6, value objects are no longer used in favor of `Configuration` objects for settings, and [Tags](https://create.roblox.com/docs/studio/properties#instance-tags) for object flags. Below is a table of all usable tags.
 
-## General
+### General
 
 | Name | Description
 |:-----:|:-----:
@@ -30,12 +30,29 @@ In Kit v6, value objects are no longer used in favor of `Configuration` objects 
 | `DoNotFlipPlayer` | If present alongside the `CanFlip` tag, performing a Corner Flip on a Part will not move/rotate the player. Useful for flip-activated client objects.
 | `OnlyInStudio` | If present, the object will only be present while building in Studio and will automatically be deleted at runtime.
 
-## Client Object Specific
+### Client Object Specific
 
 | Name | Description
 |:-----:|:-----:
 | `ButtonActivated` | If present, the client object will become inactive until activated by a [Button](client-objects/buttons.md).
 | `SkipObjectLoad` | If present inside a client object, it will not be automatically loaded when the tower loads. Required for client objects that have the capability of spawning other client objects, such as [Pushboxes](/docs/client-objects/pushbox-spawners.md) or [Turrets](/docs/client-objects/turrets.md)
+
+## Collision Groups
+
+The kit has several built in collision groups that can be used to control what collides with what. A list of all collision groups is given below:
+
+| Name | Doesn't Collide With
+|:-----:|:-----:
+| `OnlyCollideWithPlayers` | `OnlyCollideWithPlayers`, `Default`, `DoNotCollideWithPlayers`, `ClientObjects`, `OnlyCollideWithPlayers2`, `NeverCollide` `OnlyCollideWithDefault`, `DoNotCollideWithSelf`
+| `OnlyCollideWithPlayers2` | `Default`,  `DoNotCollideWithPlayers`, `ClientObjects`, `NeverCollide`, `OnlyCollideWithDefault`, `DoNotCollideWithSelf`
+| `OnlyCollideWithDefault` | `NeverCollide`, `ClientObjects`, `DoNotCollideWithPlayers`, `DoNotCollideWithSelf`
+| `DoNotCollideWithPlayers` |
+| `AlwaysCollide` |
+| `Player` | `OtherPlayers`, `DoNotCollideWithPlayers`, `NeverCollide`, `OnlyCollideWithDefault`
+| `OtherPlayers` |  `ClientObjects`, `DoNotCollideWithPlayers`, `OnlyCollideWithPlayers`, `OnlyCollideWithPlayers2`, `NeverCollide`, `AlwaysCollide` `OnlyCollideWithDefault`, `DoNotCollideWithSelf`
+| `DoNotCollideWithSelf` | `DoNotCollideWithSelf`
+| `NeverCollide` | `NeverCollide`, `Default`, `ClientObjects`, `DoNotCollideWithPlayers`, `DoNotCollideWithSelf`, `AlwaysCollide`
+| `ClientObjects` |
 
 ## Music Sync Configuration
 

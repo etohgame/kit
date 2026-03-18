@@ -1,39 +1,78 @@
 # Changelog
 
-## [v6.1.2 - December 15th 2025]
+## [v6.1.3 - March 18th 2026](https://github.com/etohgame/kit/releases/tag/v6.1.3)
 
 ### Fixes
 
-- Fixed `Light`s, `Highlight`s and all constraints not being toggled when button activated
-- Fixed Boosters returning you to the incorrect power when a boost ends while
-	multiple boosts of the same type are active
-- Fixed MusicZoneEditors not resetting Priority & Disabled attributes back to 
-	their defaults
-- Fixed MusicZoneEditors not working if the Priority value is added via an Attribute
-- Fixed a memory leak inside of Property Changers
-- Fixed inverted Vanishers having incorrect transparency when activated
-- Fixed Emitters with GlobalSound enabled continuing to play any emitted sounds
-	after being destroyed
-- Actually fixed memory leak with Beat Block sounds
+* Fixed SunRays not being modifiable with Lighting Changers
+* Fixed `PitchRange` on Emitters always overriding `PlaybackSpeed` of Sounds
+	even when not specified
+* Emitters now attempt to preload sounds, hopefully fixing issues where sounds wouldn't play
+* Fixed Zone Boosters having a timer
+* Replaced usage of `Debris`, hopefully fixing some issues where sounds would cut off
+* Fixed the kit template place having broken `CustomPhysicalProperties`
+* Fixed activating buttons via tags in Dialog System not working
+* Fixed box-activated dialog parts potentially not working
+* Fixed toggling button platforms being delayed if there are a lot of button platforms
+	in the tower, even if they aren't the same color as the button that activated
+* Fixed being able to avoid Trip Parts that stun you by holding jump
+* Fixed weird behavior with Buttons when multiple buttons have the same color and
+	a button using PadMode is involved
+* Potentially fixed client objects sometimes not working
+* Fixed incorrectly dismounting from mounts if you're mounted to multiple mounts at once
+* Fixed the `SilenceWarnings` configuration on Property Changers silencing all property changers
+	rather than only the one that was configured to be silenced
+* Fixed Morphers with `CarryObjects` sometimes retaining velocity after their movement finishes
+* Fixed incorrect outline thickness for Vanishers using Blink mode
 
 ### Improvements
 
-- Added a `ToggleChildren` configuration to Beat Blocks
-- The kit now has a template for Pad Boosters with standardized indication
-- Added support for activating buttons based on tags to Dialog Parts
-- Changed the way custom boosts are set up
-- Added a `SilenceWarnings` configuration to Property Changers
-- Added `PitchRange` configuration for sounds in Emitters
-- Bullets will now ignore parts that have a `IgnoreBullets` Tag
-- Added `SetInactiveTransparency` attribute to Button Platforms, it acts the same
+* Cleaned up the code for boosts
+* Added support for extra configurable variables in custom boosts
+* Added support for `TweenTime` attribute on button-activated objects
+* Added new values to _E.Value in Property Changers:
+	`ViewportSize`, `IsKeyDown`, `PreferredInput`
+* Changed button-activated constraints, now requires a tag to toggle rather than
+	requiring a tag to not toggle
+* Added `CurveMode` configuration to Ziplines
+* Reverted the controls for corner flips on mobile back to how it works ingame
+* Added support for specifying a custom distance pivot in Distance Culling
+* Added `ManualAdvance` configuration to Dialog Parts
+
+## [v6.1.2 - December 15th 2025](https://github.com/etohgame/kit/releases/tag/v6.1.2)
+
+### Fixes
+
+* Fixed `Light`s, `Highlight`s and all constraints not being toggled when button activated
+* Fixed Boosters returning you to the incorrect power when a boost ends while
+	multiple boosts of the same type are active
+* Fixed MusicZoneEditors not resetting Priority & Disabled attributes back to 
+	their defaults
+* Fixed MusicZoneEditors not working if the Priority value is added via an Attribute
+* Fixed a memory leak inside of Property Changers
+* Fixed inverted Vanishers having incorrect transparency when activated
+* Fixed Emitters with GlobalSound enabled continuing to play any emitted sounds
+	after being destroyed
+* Actually fixed memory leak with Beat Block sounds
+
+### Improvements
+
+* Added a `ToggleChildren` configuration to Beat Blocks
+* The kit now has a template for Pad Boosters with standardized indication
+* Added support for activating buttons based on tags to Dialog Parts
+* Changed the way custom boosts are set up
+* Added a `SilenceWarnings` configuration to Property Changers
+* Added `PitchRange` configuration for sounds in Emitters
+* Bullets will now ignore parts that have a `IgnoreBullets` Tag
+* Added `SetInactiveTransparency` attribute to Button Platforms, it acts the same
 	as `SetTransparency` but for when the platform is deactivated
-- All parts of a Pushbox model will now be automatically unanchored when spawned
+* All parts of a Pushbox model will now be automatically unanchored when spawned
 	unless they have the `BoxAnchor` tag. It is recommended to keep the entire
 	Pushbox model anchored in Studio to prevent issues caused by delays in
 	client object loading. The update kit will automatically convert
 	existing Pushboxes.
 
-## [v6.1.1 - October 9th 2025]
+## [v6.1.1 - October 9th 2025](https://github.com/etohgame/kit/releases/tag/v6.1.1)
 
 ### Fixes
 
@@ -48,7 +87,7 @@
 * Added a `HideSequence` configuration to Sequencers
 * The `Loop` configuration on Ziplines now also works in reverse
 
-## [v6.1.0 - October 9th 2025]
+## [v6.1.0 - October 9th 2025](https://github.com/etohgame/kit/releases/tag/v6.1.0)
 
 **IMPORTANT NOTE**: Boost Pads have been deprecated and are no longer included in the kit.
 The regular Booster object now includes a `Pad` mode that has matching behavior.
@@ -104,7 +143,7 @@ To avoid potential problems, the update kit will not automatically perform this 
 	to the Zipline model
 * Vanishers can now be a single part without a model
 
-## [v6.0.2 - July 3rd 2025]
+## [v6.0.2 - July 3rd 2025](https://github.com/etohgame/kit/releases/tag/v6.0.2)
 
 ### Fixes
 
@@ -112,7 +151,7 @@ To avoid potential problems, the update kit will not automatically perform this 
 * Fixed Teleporters not working
 * Fixed Dismounters not being able to dismount Attachers
 
-## [v6.0.1 - July 3rd 2025]
+## [v6.0.1 - July 3rd 2025](https://github.com/etohgame/kit/releases/tag/v6.0.1)
 
 ### Fixes
 
@@ -154,7 +193,7 @@ To avoid potential problems, the update kit will not automatically perform this 
 * Added a `FlipCooldown` Attribute to flips
 * Added `CollisionGroup` support to TouchConfiguration
 
-## [v6.0.0 - June 30th 2025]
+## [v6.0.0 - June 30th 2025](https://github.com/etohgame/kit/releases/tag/v6.0.0)
 
 The kit has been fully reworked, being fully rescripted from scratch. This brings a lot of changes to what's inside the kit, such as client object functionality, as well as various other things such as optimization and script readability.
 
