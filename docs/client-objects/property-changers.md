@@ -154,7 +154,7 @@ More functions can be appended to these to instead affect the object's parent or
 
 An example of this is shown in the Bullet Velocity Changer snippet above, with the function grabbing the `LinearVelocity` inside the bullet which touched:
 
-```luau
+```lua
 Instance = Toucher():FindChildOfClass("LinearVelocity"),
 ```
 
@@ -272,7 +272,7 @@ This function returns a `RBXScriptSignal` based on hardcoded retrieval. The curr
 
 | Value | Description |
 |:-----:|:-----:|
-|`JumpRequest`|Fires when the player attempts to jump. <br>This is able to trigger if the player is midair and tries to jump.<br>*On mobile, JumpRequest cannot fire if the player's JumpPower is set to 0, as the jump button is hidden.*|
+|`JumpRequest`|Fires when the player attempts to jump. This is able to trigger if the player is midair and tries to jump.<br/>*On mobile, JumpRequest cannot fire if the player's JumpPower is set to 0, as the jump button is hidden.*|
 
 Property Checkers with `ConditionalYield` also have the ability to yield a sequence until a `RBXScriptSignal` (commonly known as an event) is fired. Both a `Condition` and `Event` can be used within the same `CheckerFormat`. For obtaining `RBXScriptSignal` to pass through the `Event` function definition, `:Event()` must be appended to the end of instances to filter for `RBXScriptSignal` outside of the ones queryable from `_E.Event()`. One example of such signal is `ProximityPrompt.Triggered`, shown in the code example below.
 
