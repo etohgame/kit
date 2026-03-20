@@ -63,13 +63,13 @@ local NEW_COLOR = Color3.fromRGB(91, 154, 76)
 -- this function will return the distance between the player and the current instance,
 -- mapped to a number between 0 and 1 based on the min and max arguments
 function getDistance(_E: _C.Evaluator, min: number, max: number): number
-	local distance = _E.Value("Distance", _E.Instance():Property("Position"))
-	local fraction = math.clamp(
-		math.map(distance, min, max, 0, 1),
-		0, 1
-	)
-	
-	return fraction
+    local distance = _E.Value("Distance", _E.Instance():Property("Position"))
+    local fraction = math.clamp(
+        math.map(distance, min, max, 0, 1),
+        0, 1
+    )
+    
+    return fraction
 end
 
 local Properties: _C.Format = {
@@ -266,10 +266,12 @@ Grid of parts that change color, transparency & position based on their distance
 
 ![](/examples/property-changers/dancefloor/preview.gif)
 
-### [Button Timer Changer](/examples/property-changers/button-timer-changer/button-timer-change.rbxm)
+### [Button Timer Changer](/examples/property-changers/button-timer-changer/button-timer-changer.rbxm)
 
 Contains a set of Property Changers that manipulate the timer of a currently activated button. The property changers can only be activated while the button is active, this is controlled by the provided Sequencer.  
 Made by: FinnZ
+
+![](/examples/property-changers/button-timer-changer/preview.gif)
 
 ### [Slope Angle Changer](/examples/property-changers/slope-angle-changer/slope-angle-changer.rbxm)
 
