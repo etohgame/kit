@@ -57,6 +57,8 @@ Every other field defines properties of the object to change. You can either dir
 -- * delete the part (lol)
 
 local NEW_COLOR = Color3.fromRGB(91, 154, 76)
+local NEW_COLOR_A = Color3.fromRGB(91, 255, 76)
+local NEW_COLOR_B = Color3.fromRGB(255, 255, 76)
 
 -- using external functions like this are allowed if they simply calculate & return values!
 -- this is helpful for reducing copy paste between different properties
@@ -76,9 +78,18 @@ local Properties: _C.Format = {
     {
         Instance = Toucher(),
 
-        -- these will both work!
-        Color = NEW_COLOR
+        -- these will work!
+        Color = NEW_COLOR,
         Color = function(_E)
+            return NEW_COLOR
+        end,
+        Color = function(_E)
+            -- conditional statements can be added within functions!
+            if getDistance(_E, 0, 10) < 1 then
+                return NEW_COLOR_A
+            elseif getDistance(_E, 10, 20) < 1 then
+                return NEW_COLOR_B
+            end
             return NEW_COLOR
         end,
 
@@ -233,7 +244,17 @@ end,
 
 ## Property Checkers
 
-If the `Condition` function is present in the Properties module, the Property Changer will not run if the condition is not met. This example will make the Property Changer only work if you are within 50 studs of it:
+Conditions use `boolean` configuration attributes that are not present by default. **These must be manually added to the PropertyChangerConfiguration.**
+When `Condition` is used in combination with a [Sequencer](sequencers.md), failing conditions will have different behavior on the sequencer depending on the attribute. 
+* `ConditionalEnabled` disables its ability to set any properties in the same `Properties` module, so a separate `Property Changer` must be used after the checker instance. When this attribute is true and the condition is false in runtime, `Sequencer` cancels the current loop and restarts its remaining loops.
+
+`ConditionalEnabled` is required for the following modifiers:
+* `ConditionalBreakSequence` will completely cancel the sequencer and any of its remaining loops.
+* `ConditionalYield` will make the sequencer wait until the condition is met before continuing the sequence. The condition waits 1/60th of a second, so conditions such as `_E.Value("IsJumping")` may be missed if the player jumps off the cycle. This conditional checking cycle is not synced to any framerate, and is instead on its own timer.
+
+**Watch out:** Turning on `ConditionalEnabled` without specifying a condition will cause the Property Changer to never activate.
+
+This example will allow the sequencer pass if the player is within 50 studs of it:
 
 ```lua
 local Properties: _C.CheckerFormat = {
@@ -246,24 +267,35 @@ local Properties: _C.CheckerFormat = {
 }
 ```
 
-Conditions use `boolean` configuration attributes that are not present by default. These can be manually added.
-If `ConditionalEnabled` is used in combination with a [Sequencer](sequencers.md), failing conditions will have different behavior depending on the Property
-* `ConditionalYield` will make the sequencer wait until the condition is met before continuing the sequence.
-* `ConditionalBreakSequence` will completely cancel the sequencer and any of its remaining loops.
-* If neither are enabled, the Sequencer's current loop will be cancelled, and will either stop or restart depending on the amount of loops left.
+#### _E.Event()
+This function returns a `RBXScriptSignal` based on hardcoded retrieval. The current list of queryable events from `_E.Event()` specifically are shown below.
 
-Watch out: Turning on `ConditionalEnabled` without specifying a condition will cause the Property Changer to never activate.
+| Value | Description |
+|:-----:|:-----:|
+|`JumpRequest`|Fires when the player attempts to jump. <br>This is able to trigger if the player is midair and tries to jump.<br>*On mobile, JumpRequest cannot fire if the player's JumpPower is set to 0, as the jump button is hidden.*|
 
-Property Checkers also have the ability to yield a sequence until an event is activated, such as a `ProximityPrompt` trigger, shown in the code example below.
+Property Checkers with `ConditionalYield` also have the ability to yield a sequence until a `RBXScriptSignal` (commonly known as an event) is fired. Both a `Condition` and `Event` can be used within the same `CheckerFormat`. For obtaining `RBXScriptSignal` to pass through the `Event` function definition, `:Event()` must be appended to the end of instances to filter for `RBXScriptSignal` outside of the ones queryable from `_E.Event()`. One example of such signal is `ProximityPrompt.Triggered`, shown in the code example below.
 
 ```lua
 local Properties: _C.CheckerFormat = {
     {
+        -- Proximity Prompt with "MyProximityPrompt" Tag
         Instance = Tagged("MyProximityPrompt"),
         Event = function(_E)
             return _E.Instance():Event("Triggered")
         end,
     },
+}
+```
+ The following example shows how to detect whenever the player jumps, as `JumpRequest` does not fire multiple times if the player is holding jump. This uses the `Jumping` signal, as the `StateChanged` `Event` with a `_E.Value("HumanoidState")` `Condition` can fail if the condition is not captured in the 1/60th of a second's refresh window.
+```lua
+local Properties: _C.CheckerFormat = {
+	{
+		Instance = Changer(),
+		Event = function(_E)
+			return _E.Character():FindChild("Humanoid"):Event("Jumping")
+		end,
+	},
 }
 ```
 
