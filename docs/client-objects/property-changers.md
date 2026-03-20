@@ -125,16 +125,27 @@ Instance = TagFromSequenceVariable("MyCoolVariable"),
 
 `Changer` will simply affect the Property Changer itself.
 
-More functions can be appended to these to instead affect the object's parent or
-children. An example of this is shown in the Bullet Velocity Changer snippet above, with the function grabbing the `LinearVelocity` inside the bullet. A list is provided below:
+#### Specifiers
 
-* :FindChild()
-* :FindDescendant()
-* :FindChildOfClass()
-* :FindDescendantOfClass()
-* :FindAncestor()
-* :FindAncestorOfClass()
-* :Parent()
+More functions can be appended to these to instead affect the object's parent or children. The list of provided methods is as follows:
+
+| Value | Description |
+|-|-|
+| `:FindChild("Name")` | Returns the first direct child of the current instance with the specified name. |
+| `:FindDescendant("Name")` | Returns the first descendant (child, grandchild, etc.) with the specified name. |
+| `:FindChildOfClass("ClassName")` | Returns the first direct child of the current instance whose class matches the given class name. |
+| `:FindDescendantOfClass("ClassName")` | Returns the first descendant (child, grandchild, etc.) whose class matches the given class name. |
+| `:FindAncestor("Name")` | Searches upward through the instance’s parents and returns the first ancestor with the specified name. This can be used to obtain the `ClientSidedObjects` folder. |
+| `:FindAncestorOfClass("ClassName")` | Searches upward through the instance’s parents and returns the first ancestor whose class matches the given class name. |
+| `:Parent()` | Returns the parent of the current instance. |
+| `:GetChildren()` | Returns all direct children of the current instance. |
+| `:GetDescendants()` | Returns all descendants of the current instance recursively (children, grandchildren, etc.). |
+
+An example of this is shown in the Bullet Velocity Changer snippet above, with the function grabbing the `LinearVelocity` inside the bullet which touched:
+
+```luau
+Instance = Toucher():FindChildOfClass("LinearVelocity"),
+```
 
 ### Built-In Functions
 
