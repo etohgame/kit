@@ -15,6 +15,7 @@ Once your tower is submitted, it will be reviewed by a curator, who will provide
 * The tower's name
 * Link to the tower place. Must be a standalone place, do not use places like hubs.
 * The difficulty you think is applicable.
+    * The tower must be between Easy and Catastrophic difficulty.
 * Part count of the tower, including the frame and all parts in the `Obby` folder. Note that all parts (excluding NegativeParts) that comprise an union also count towards the limit.
 * Optionally, include a video or other notes that you think would be helpful.
 
@@ -24,12 +25,14 @@ Once your tower is submitted, it will be reviewed by a curator, who will provide
 * Your place must include the modified `PlayerModule` script included in the kit.
 * Your tower should be easily enterable when joining the place.
 * Upload your tower's intended music and include the audio in the place using the provided music module. Refer to [the music system documentation](music-system.md) for help in adding music
+    * Music used in your tower can not be OST from another Roblox game, unless you have permission from its composer.
 * You may include terrain or other decoration in the tower’s place if you wish, but ensure it does not interfere with gameplay and please be aware that the terrain may not be included ingame.
 * The tower's place must be public and accessible to everybody, including no paid access fees or age/country restrictions.
 
 ## Tower Building
 
 * Towers must be built in Roblox Studio, using the official kit only. Your tower must be built with the latest available version of the kit, unless it was started before the release of said version.
+    * It is recommended to keep your tower up-to-date with the latest kit version in order to reduce the amount of issues when inserted ingame. Your tower can be updated to the latest version using the provided [update kits](/changelog).
 * The tower floor count must be within the range of the tower type being built. Towers are 10 floors, Steeples are 5-6, and Citadels are 12-25.
     * A “floor” is generally defined as a 100x100x100 box with clear boundaries. Floors may be moved or rotated into orientations that differ from the default frame in the kit, and may be expanded up to 75 studs to the side in any direction. There is no limit on how far “outside sections” may extend from the tower’s frame, and enclosed spaces significantly smaller than a floor in at least one dimension (i.e. droppers or small basements) are not considered floors.
     * We still suggest that you aim to make your tower feel like a tower and ensure that floors are clearly distinguishable and taken into consideration in the tower’s progression, as this will increase your chances of approval.
@@ -60,6 +63,8 @@ Once your tower is submitted, it will be reviewed by a curator, who will provide
     * You have at least one tower ingame with 2 or fewer builders credited (including monthly towers)
 * Do not repost submissions. Please be patient as we work on our own time.
 * Do not submit joke/low effort/old towers without the intent of it passing.
+* You may only submit revamps of existing ingame towers if you are the builder of said tower. Revamps not by the original creator are exclusively made/commissioned by staff and are not eligible for submission.
+* The Builder role is only given to creators of whitelisted towers with 3 or less creators credited.
 * By submitting your tower, you agree that you are not allowed to request its removal from the game once confirmed.
 
 ## Naming

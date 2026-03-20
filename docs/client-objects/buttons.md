@@ -61,7 +61,14 @@ If the following objects are found inside of a button activated object, they wil
 | [`Smoke`](https://create.roblox.com/docs/reference/engine/classes/Smoke)
 | [`Trail`](https://create.roblox.com/docs/reference/engine/classes/Trail)
 | [`UIStroke`](https://create.roblox.com/docs/reference/engine/classes/UIStroke)
-| [`UIGradient`](https://create.roblox.com/docs/reference/engine/classes/UIGradient)
+| Any [`Light`](https://create.roblox.com/docs/reference/engine/classes/Light)
+| [`Highlight`](https://create.roblox.com/docs/reference/engine/classes/Highlight)
+
+The following objects will also have their `Enabled` property toggled, but only if they have the `ToggleEnabled` tag:
+
+| Object
+|---------------------------
+| Any [`Constraint`](https://create.roblox.com/docs/reference/engine/classes/Constraint)
 
 ## Button Activated Object Configurations
 
@@ -76,10 +83,12 @@ Button activated objects have special configurations that can be modified using 
 | `IgnoreTransparency` | Tag | The `Transparency` of the object will not be changed and remains in its default state from Studio.
 | `IgnoreCanCollide` | Tag | The `CanCollide` of the object will not be changed and remains in its default state from Studio.
 | `IgnoreEnabled` | Tag | The `Enabled` property of the object will not be changed and remains in its default state from Studio.
+| `ToggleEnabled` | Tag | As listed in [this section](#supported-visual-instances), some objects must have this tag in order for their `Enabled` property to toggle.
 | `Invisible` | Tag | The `Transparency` of the object will always be 1 no matter the button state.
 | `Invert` | Tag | Swaps the properties of the Pressed and Unpressed states.
 | `IgnoreInitialActivate` | Tag | The object will not be affected by the first update that happens when the Button initially loads. It will still be affected by further updates.
 | `IgnoreAll` | Tag | The object will act as if the `IgnoreTransparency`, `IgnoreCanCollide` and `IgnoreEnabled` tags are all present.
+| `TweenTime` | `number` Attribute | Controls how long button-activated objects take to fade. Defaults to 0.3 if not set.
 
 ## Unsupported Client Objects
 

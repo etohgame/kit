@@ -10,6 +10,8 @@ You can disable Distance Culling on a per-object basis by dragging them out of t
 
 Objects inside Distance Culling must have a `PrimaryPart` in order for them to function.
 
+By default, the distance is calculated between the character and the object's `PrimaryPart`. A custom distance pivot can be specified by adding an `ObjectValue` named `DistancePivot` into the object and setting its value to any `Part`.
+
 ## Configuration
 
 | Name | Default Value | Description
