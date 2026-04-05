@@ -22,10 +22,10 @@ Towers often use multiple songs from an assortment of different artists, with ea
 The community that builds these towers need explicit permission to use your work, so your thoughts would be greatly appreciated!
 
 I am not affiliated with the dev team, but with proof of your permission or denial, the developers will uphold your requests.
-You will be credited as the composer, with the name of the track used on display as it plays in game.
-You also may specify which songs, or albums, are allowed to be used by the game (originals, remix/bootleg, record labels, etc.), as well as request any other terms of use.
-You can view how artists and their usage terms are listed here: https://docs.google.com/spreadsheets/d/1tXtXoZtSqnov08G_gp5T72wplvI-iEkA0muLyNDCI8g/edit?usp=sharing
-You may revoke permission or update any terms at anytime by contacting their email at (etohofficialcontact@gmail.com).
+* You will be credited as the composer, with the name of the track used on display as it plays in game.
+* You also may specify which songs, or albums, are allowed to be used by the game (originals, remix/bootleg, record labels, etc.), as well as request any other terms of use.
+* You can view how artists and their usage terms are listed here: https://docs.google.com/spreadsheets/d/1tXtXoZtSqnov08G_gp5T72wplvI-iEkA0muLyNDCI8g/edit?usp=sharing
+* You may revoke permission or update any terms at anytime by contacting their email at (etohofficialcontact@gmail.com).
 
 The game is free to play with optional microtransactions to support the developers.
 Individual towers where your songs will be used do not generate revenue, but Roblox has playtime revenue (robux) which is out of the games' control.
