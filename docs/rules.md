@@ -25,7 +25,7 @@ Once your tower is submitted, it will be reviewed by a curator, who will provide
 * Your place must include the modified `PlayerModule` script included in the kit.
 * Your tower should be easily enterable when joining the place.
 * Upload your tower's intended music and include the audio in the place using the provided music module. Refer to [the music system documentation](music-system.md) for help in adding music
-    * Music used in your tower can not be OST from another Roblox game, unless you have permission from its composer.
+    * Music used in your tower must be either copyright-free or be approved for use by its composer. Refer to [this spreadsheet](https://docs.google.com/spreadsheets/d/1tXtXoZtSqnov08G_gp5T72wplvI-iEkA0muLyNDCI8g/edit?usp=sharing) for a list of approved artists and [this page](music-permission-template.md) for a template to aid in asking artists for permission
 * You may include terrain or other decoration in the tower’s place if you wish, but ensure it does not interfere with gameplay and please be aware that the terrain may not be included ingame.
 * The tower's place must be public and accessible to everybody, including no paid access fees or age/country restrictions.
 
