@@ -73,7 +73,7 @@ the Lighting service, can be specified as the object to change:
 | `ColorCorrectionEffect` | Enabled, Brightness, Contrast, Saturation, TintColor.
 | `DepthOfFieldEffect` | Enabled, FarIntensity, FocusDistance, InFocusRadius, NearIntensity.
 | `Sky` | MoonAngularSize, MoonTextureId, SkyboxBk, SkyboxDn, SkyboxFt, SkyboxLf, SkyboxRt, SkyboxUp, StarCount, SunAngularSize, SunTextureId, SkyboxOrientation.
-| `SunRaysEffect` | Enabled, Enabled, Intensity, Spread.
+| `SunRaysEffect` | Enabled, Intensity, Spread.
 
 ### Properties
 
