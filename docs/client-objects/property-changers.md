@@ -114,6 +114,8 @@ Attributes of objects can be changed in the same way as any other property. If a
 * :PivotTo() (only usable with `Model`s)
 * :ScaleTo() (only usable with `Model`s)
 
+Multiple property changers can be linked to the same module by replacing the `Properties` module inside of it with an `Properties` ObjectValue with its Value set to the module it should use. This is useful to avoid duplicated property changers containing the same instructions.
+
 ### Instance Field
 
 There are multiple ways to retrieve the set of objects to affect: `Toucher`, `Tagged`, `TagFromSequenceVariable`, and `Changer`.
