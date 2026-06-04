@@ -26,6 +26,15 @@ If you do not have access to a GitHub account or would prefer using alternate me
 
 The channel won't be getting deleted until we are confident that the guides provided here are better and more insightful than the guides within `#building-tutorials`.
 
+## Can I edit any of the existing guides?
+
+Yes! If you have anything you want to change or add, [make a pull request](https://github.com/etohgame/kit/pulls) with the edits, where we can review and approve them. You may also [make an issue report](https://github.com/etohgame/kit/issues) too. Most of the stuff here is pretty new, so there is bound to be some errors and mishaps along the way.
+
+Currently wanted edits include:
+- More content within the `Using Studio Correctly` guide.
+- Updates to the `Working With Parts` guide to be more concise and accurate, along with a more precise description for `CustomPhysicalProperties`.
+- Building style guides.
+
 ## Resources
 
 * [Tower Theory](https://docs.google.com/document/d/1vLhS-dHPZjxy59igqfzvHPXMQkptlbqvn5u1_rSrV4k/edit?usp=sharing) - A document by emflamed that contains advice pertaining to tower building. Feel free to suggest additions.
