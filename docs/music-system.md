@@ -62,6 +62,7 @@ Just like music zones, all of these can either be attributes of the sound or `Va
 | `StartAt` | number | 0 | Used as a replacement for the `TimePosition` property (which does not work due to songs looping when they end).
 | `FadeIncrement` | number | 30 | Determines how fast the sound fades in & out. The formula to calculate the exact fade time is: `0.1 * FadeIncrement`
 | `MusicName` | string | - | A custom name that will be displayed instead of the sound asset's name (not to be confused with the sound object's name in studio).
+| `Artist` | string | - | The song artist's name (only visible on `Modern` music GUI)
 
 In addition to this, when a sound is named `IntroMusic`, it will always be the first to play and will never play again unless the zone is re-entered. This can be used for better song loops.
 
@@ -73,7 +74,7 @@ This module should return a table with the following optional keys.
 
 | Key | Type | Default Value | Description
 |-----|------|---------------|------------
-| `UseDefaultMuteButton` | boolean | false | Disables the default mute button. Allows for custom mute buttons, a template for which is provided in the [music system model][music-system].
-| `UseSmoothAsDefaultTransition` | boolean | true | Determines whether to transition music using the Smooth or Classic style, like the EToH setting.
+| `UseSmoothAsDefaultTransition` | boolean | true | Determines whether to transition music using the Smooth or Classic style, same as the EToH setting.
+| `GuiMode` | string | `Modern` | Determines the look of the default music GUI, either `Modern`, `Legacy` or `None`.
 
 [music-system]: https://create.roblox.com/store/asset/16989944963
