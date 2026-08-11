@@ -5,11 +5,9 @@ sidebar_position: 3
 # Music System
 
 The music system allows you to play background music in your tower.  
-
-The only requirement for your tower to have music is the `Music` folder, which should be placed in `ServerScriptService` (or `Workspace`, if you would like to manipulate the size/position of zones).  
-The `Insert` script inside of this folder will automatically load in the most up-to-date version of the music system.
-
-The music system itself can be found [on the creator marketplace][music-system], though it lacks the `Insert` script so as to avoid false Roblox moderation **(reminder: you do _not_ need to have this in your game for the music system to work, this link is here for those looking to work more in-depth with it)**.
+It is automatically loaded by the `Insert` script located in the `Music` folder in `ServerScriptService`. Both of these objects are included in the kit place.  
+If you would like to work more in-depth with the system (or are missing any of its components for whatever reason), its model can be found [on the creator marketplace][music-system]
+(be aware that it lacks the `Insert` script, since Roblox does not allow its code in free models)
 
 ## Uploading Music
 
@@ -22,20 +20,21 @@ If the asset is uploaded on an alt, you can share permission with your main acco
 
 ## Music Folder
 
-The music folder should contain 3 objects:
+The music folder contains 3 objects:
 
 * The `BackgroundMusicZones` folder, which contains all music zones that play in the tower
 * The `GlobalBackgroundMusic` folder, which contains Sounds that are played when the player is not within any music zone
 * The `Insert` script, which loads in the music system from its AssetID, so it is always up-to-date
 
+If you'd like to edit the properties of music zone parts, feel free to move this folder to `Workspace`, the music system will still function properly (and zone parts will have their transparency set to 1 in-game).
+
 ## Music Zones
 
 Music zones are models placed inside the `BackgroundMusicZones` folder, which contain parts and a `Music` folder.  
-The `Music` folder contains all songs (`Sound` objects) which will play when the player is inside of any part in the zone model.  
-
-When multiple songs are present, the next is chosen randomly when the current song stops playing. This can be changed by configuring `OrderedTracklist`, see [Music Zone Configuration](#music-zone-configuration) for more information.
-
-When multiple zones overlap with eachother, the zone with the highest priority will play its music.
+Whenever the player is standing inside a zone's parts, said zone's music will play.  
+If several music zones overlap with each other, the zone with the highest priority will play its music.  
+The `Music` folder stores all songs as `Sound` objects. If multiple are present, the order in which they play is random.  
+This can be changed by configuring `OrderedTracklist`, see [Music Zone Configuration](#music-zone-configuration) for more information.
 
 ## Music Zone Configuration
 
@@ -64,7 +63,7 @@ Just like music zones, all of these can either be attributes of the sound or `Va
 | `MusicName` | string | - | A custom name that will be displayed instead of the sound asset's name (not to be confused with the sound object's name in studio).
 | `Artist` | string | - | The song artist's name (only visible on `Modern` music GUI)
 
-In addition to this, when a sound is named `IntroMusic`, it will always be the first to play and will never play again unless the zone is re-entered. This can be used for better song loops.
+In addition to this, if a sound is named `IntroMusic`, it will always be the first to play and will never play again unless the zone is re-entered. This can be used for better song loops.
 
 ## Settings Module
 
