@@ -12,14 +12,14 @@ Single-part vanishers without a model can be made by ungrouping the model and mo
 
 ## Vanish modes
 
-Each `VanishMode` has unique logic.
+Each `VanishMode` has unique logic. In addition, the `TweenConfiguration` will have different effects depending on the mode.
 
 | Mode |  Description
 |:-----:|:-----:
 | `Fade` | Smoothly fades.
-| `Blink` | Flashes multiple times before vanishing.
+| `Blink` | Flashes multiple times before vanishing. Sound can be overwritten with a `BlinkSound` in the vanisher part.
 | `Constant` | Gradually fades depending on contact. If not in contact, regenerates.
-| `Shrink` | Shrinks the part away in a set direction (`Top`, `Bottom`, `Left`, `Right`, `Front`, `Back`, `Center`). Does not support trusses and may behave oddly with spheres.
+| `Shrink` | Shrinks the part in a direction (`Top`, `Bottom`, `Left`, `Right`, `Front`, `Back`, `Center`). Does not support trusses and may behave oddly with spheres.
 
 ## Configuration
 
