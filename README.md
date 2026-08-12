@@ -16,6 +16,7 @@ Issue reports and suggestions (for the kit or the documentation) are welcomed!
 For issue reports:
 * Make sure you are using the latest kit version
 * Give clear instructions on what the bug is, how to reproduce it, preferably including footage
+* If you know a fix for the issue, you are welcome to open a pull request with code changes that fix the issue
 
 For kit suggestions:
 * At the moment, we are not looking for suggestions regarding new client objects to add to the kit
@@ -28,6 +29,9 @@ For documentation changes:
 
 To run the documentation site locally, make sure you have [Rokit](https://github.com/rojo-rbx/rokit), [Lune](https://github.com/lune-org/lune) and [Moonwave](https://github.com/evaera/moonwave) installed.
 
-Clone this repository, download a copy of the kit place to the repository's folder, and rename the file to `place.rbxl`. Extract the scripts from the place by running the command `lune run scripts/extract-scripts`. You can then view the website by running the command `moonwave dev --code mirror`
+Clone this repository, then repeat the following steps each time you want to run/build the documentation site:
+1. Download a copy of the kit place to the repository's folder and rename the file to `place.rbxl`
+2. Extract the scripts from the place by running the command `lune run scripts/extract-scripts`
+3. You can then view the website by running the command `moonwave dev --code mirror`
 
 Credit to Elttob for [Vanilla 3 icons](https://elttob.itch.io/vanilla-3-for-roblox-studio) (curated list of icons are being used under `.moonwave/static/vanilla_icons`)

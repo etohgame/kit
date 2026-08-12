@@ -27,7 +27,7 @@ Once your tower is submitted, it will be reviewed by a curator, who will provide
 * Upload your tower's intended music and include the audio in the place using the provided music module. Refer to [the music system documentation](music-system.md) for help in adding music
     * Music used in your tower must be either copyright-free or be approved for use by its composer. Refer to [this spreadsheet](https://docs.google.com/spreadsheets/d/1tXtXoZtSqnov08G_gp5T72wplvI-iEkA0muLyNDCI8g/edit?usp=sharing) for a list of approved artists and [this page](music-permission-template.md) for a template to aid in asking artists for permission
 * You may include terrain or other decoration in the tower’s place if you wish, but ensure it does not interfere with gameplay and please be aware that the terrain may not be included ingame.
-* The tower's place must be public and accessible to everybody, including no paid access fees or age/country restrictions.
+* The tower's place must be publicly accessible, including no paid access fees, country restrictions, or age restrictions (excluding Roblox's default 16+ lock)
 
 ## Tower Building
 
@@ -37,11 +37,9 @@ Once your tower is submitted, it will be reviewed by a curator, who will provide
     * A “floor” is generally defined as a 100x100x100 box with clear boundaries. Floors may be moved or rotated into orientations that differ from the default frame in the kit, and may be expanded up to 75 studs to the side in any direction. There is no limit on how far “outside sections” may extend from the tower’s frame, and enclosed spaces significantly smaller than a floor in at least one dimension (i.e. droppers or small basements) are not considered floors.
     * We still suggest that you aim to make your tower feel like a tower and ensure that floors are clearly distinguishable and taken into consideration in the tower’s progression, as this will increase your chances of approval.
     * Your tower must have a presentable frame that contains at least a portion of the gameplay. Towers without a visible frame or towers that have nothing resembling a frame are not allowed. A "fake / placeholder" frame may be used in place of the actual frame as long as it contains at least a portion of the tower's gameplay.
-
 * Your tower must not have more than 7500 server-sided (obby + frame) parts. Citadels may use 750 additional parts per extra floor. Do not place static parts in the client object folder to circumvent this requirement; this includes making parts button-activated if there is no direct purpose for gameplay.
 * No free models should be in your tower.
 * For performance reasons, it's recommended to use meshes, textures, unusual materials, etc. sparingly.
-
 * Custom scripts, or CCO's (Custom Client Objects) cannot be used unless you have the Verified Builder role or are in a collab with someone who has the role.
     * Minor edits are allowed as long as they do not change the core functionality of an object, including making heavy edits to repository scripts in the kit. “Heavy” edits are defined as the addition of new lines or major changes to existing lines in a script; changes to number values, etc. are fine.
     * Script edits that are not blatantly noticeable are usually allowed, for example: edits made to bugfix complex contraptions. If client object contraptions are difficult to explain without script edits, we may inquire to explain what you did and likely request to replace certain sections if there is a problem. Feel free to reach out to curators while building towers to ask if certain edits are acceptable.
@@ -52,7 +50,7 @@ Once your tower is submitted, it will be reviewed by a curator, who will provide
 ## Tower Submission
 
 * You may only submit a tower three times in total unless it is given a major revamp. (i.e. the majority of the tower’s gameplay has been replaced)
-* Be cautious with resubmitting passing towers, as a failing verdict will result in your tower being removed from the whitelist.
+    * Be cautious with resubmitting passing towers, as a failing verdict will result in your tower being removed from the whitelist.
 * Provide credit to all users who built at least 10% of the tower’s total gameplay, unless they wish to not be credited.
 * Do not submit towers specifically with the intent of becoming a monthly.
 * Steeple submissions are only allowed if at least one of the following is applicable:
@@ -63,9 +61,10 @@ Once your tower is submitted, it will be reviewed by a curator, who will provide
     * You have at least one tower ingame with 2 or fewer builders credited (including monthly towers)
 * Do not repost submissions. Please be patient as we work on our own time.
 * Do not submit joke/low effort/old towers without the intent of it passing.
-* You may only submit revamps of existing ingame towers if you are the builder of said tower. Revamps not by the original creator are exclusively made/commissioned by staff and are not eligible for submission.
+* You may only submit revamps of existing ingame towers if you are a builder of said tower. Revamps not by the original creator are exclusively made/commissioned by staff and are not eligible for submission.
 * The Builder role is only given to creators of whitelisted towers with 3 or less creators credited.
 * By submitting your tower, you agree that you are not allowed to request its removal from the game once confirmed.
+    * An exception to this rule is granted if your tower is in a currently unreleased area
 
 ## Naming
 

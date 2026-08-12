@@ -4,7 +4,7 @@ local remodel = require("./remodel")
 
 local TMP_DIR = "mirror"
 local PLACE_DIR = "place.rbxl"
-local PLACE = 122944339391800 -- place is private as of right now CHANGE later
+local PLACE = 91797072976026 -- place is private (this is our development environment!) -- old palce 122944339391800
 
 if fs.isDir(TMP_DIR) then
 	fs.removeDir(TMP_DIR)

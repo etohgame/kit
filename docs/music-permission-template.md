@@ -140,6 +140,37 @@ If uncertain (i.e. just certain the artist is Chinese), first try see if you can
 敬颂艺安，
 (Sender)
 
+## 🇩🇰 Danish
+
+Translated by will67723, proofread by HelmerGuy
+
+### Subject
+
+Anmodning om tilladelse til brug af musik i et Roblox spil.
+
+### Body
+
+Hej (Artist),
+
+Jeg skriver til dig, da jeg vil høre dine tanker om at bruge dine sange i Roblox spillet "Eternal Towers of Hell", også kendt som "EToH". Spillet har flere forskellige 3D platforms-baner som hedder "tårne", der bliver lavet af forskellige byggere i et fælleskab. Fordi at spillet ikke har strenge rammer, fungerer det meget som et "niveau bygnings-system" som nemlig betyder at alle kan bygge, uploade eller dele deres eget tårn. Ud af disse tårne, vælges kun et par af dem af EToH's udviklere som herefter fremviser dem i udvalgte områder i et privat ejet spil med spotlight på dem.
+
+Tårne bruger ofte flere forskellige sange fra  forskellige kunstnere, hvor hver eneste "etage" af tårnet bruger dets eget sang. Måden sangene er brugt i spillet er lignende med at hver tårn har sin egen tilpasset playliste. Dine sange vil ikke kun bruges som baggrundslyd til spillet, men vil i stedet spille på specifikke tidspunkter af et tårn i et lille stykke tid, hvor kombineret med flere forskellige sange skaber en komplet oplevelse. (https://youtu.be/zCEJkmVJDfE https://youtu.be/lZfSUqDhBKI)
+
+Fælleskabet der bygger disse tårne har brug for eksplicit tilladelse til at bruge dine værk, så dine tanker ville sættes stor pris på!
+
+Jeg er ikke en del af udviklingsholdet bag spillet, men med beviser af din tilladelse eller eventuelt afslag, vil udviklerne imødekomme dine anmodninger.
+* Du vil blive krediteret som komponisten af sangen, med navnet brugt på display i spillet.
+* Du må også gerne være specifik med hvilke sange, eller albums der er tilladt at bruge i spillet (originalversioner, remix/bootlegs, pladeselskab, osv.) samt at anmode andre vilkår af brug.
+* Du kan se hvordan andre kunstnere giver vilkår af brug for deres sange her: https://docs.google.com/spreadsheets/d/1tXtXoZtSqnov08G_gp5T72wplvI-iEkA0muLyNDCI8g/edit?usp=sharing
+* Du har muligheden for at tilbagekalde tilladelse, eller at opdatere vilkårene når som helst ved at kontakte deres mail på: (etohofficialcontact@gmail.com).
+
+Spillet er gratis at spille med valgfrie mikrotransaktioner som direkte støtter udviklerne. Individuelle tårne hvor dine sange bliver brugt, vil ikke generere indtægter, dog har Roblox spilletidsindtægter (robux) hvilket er ude af spillets kontrol.
+
+Tusind tak for at bruge din tid på at overveje dette. Hvis du har nogle spørgsmål, så bare spørg. Dog skal du vide at dit svar muligvis offentliggøres. Medmindre du ønsker at dit svar holdes privat, skal du skrive det til os, hvor vi så holder det privat mellem mig og resten af udvikleren bag EToH.
+
+Venlig hilsen, 
+(Sender)
+
 ## 🇳🇱 Dutch
 
 Translated by MrT4gs, proofread by Camille
@@ -245,6 +276,110 @@ Kiitos, että käytät aikaasi tämän harkitsemiseen. Jos sinulla on kysyttäv�
 Ystävällisin terveisin,
 (Sender)
 
+## 🇫🇷 French
+
+Translated by thisaintusn, Alemcoko, plasmapulsar, Prototane, fishhtaken
+
+### Subject
+
+Demande de permission pour utiliser votre musique dans un jeu Roblox
+
+### Body
+
+Bonjour (Artist),
+
+Je vous contacte afin d'obtenir votre permission pour utiliser vos chansons dans un jeu Roblox nommé « Eternal Towers of Hell », aussi connu sous le nom de « EToH ». Le jeu est composé d'un assortiment de niveaux de platforming 3D qui sont appelés des « tours », celles-ci étant créées par une communauté de créateurs différents. Le jeu est comparable à un éditeur de niveaux: tout le monde peut créer, publier et partager leurs propres tours. De toutes les créations, une petite sélection est choisie par les développeurs de EToH pour être incluse dans des mondes spéciaux d'un jeu privé qui les mettent en valeur.
+
+Les tours utilisent souvent de multiples titres produits par un grand assortiment de divers artistes, chaque « étage » de la tour utilisant un titre différent des autres : la façon dont les titres sont utilisés dans le jeu est comme si chaque tour possède sa propre playlist. Vos titres ne seront pas utilisés pour remplir tout l’audio d’arrière-plan du jeu, mais plutôt pour être joués à des moments précis d’une tour pendant une assez courte durée. Vos titres seront donc combinés avec des titres d’autres artistes pour créer une expérience complète.
+
+Exemples: https://youtu.be/zCEJkmVJDfE, https://youtu.be/lZfSUqDhBKI
+
+La communauté qui construit ces tours a besoin de permission explicite d'utiliser votre travail, donc votre avis serait très apprécié!
+
+Je ne suis pas affilié avec l'équipe des développeurs, mais avec preuve de votre accord ou rejet, les développeurs vont maintenir vos requêtes.
+
+* Vous serez crédité en tant que compositeur, avec le nom du titre utilisé en exposition pendant que cela joue dans le jeu.
+* Vous pouvez aussi spécifier quels chansons ou albums sont autorisés d'être utilisés dans le jeu (originales, remix/bootleg, disques, etc.), ainsi de suggérer d'autres termes d'utilisation en plus.
+* Vous pouvez voir comment les artistes et leurs termes d'usage sont listés ici: https://docs.google.com/spreadsheets/d/1tXtXoZtSqnov08G_gp5T72wplvI-iEkA0muLyNDCI8g/edit?usp=sharing
+* Vous pouvez révoquer votre permission ou la mettre à jour en contactant leur boite courriel: (etohofficialcontact@gmail.com).
+
+Le jeu est gratuit, avec des microtransactions optionnelles pour aider les développeurs. Les tours individuels dans lesquels vos chansons seront utilisées ne génèrent pas de revenus, mais des « Robux » (la monnaie de Roblox) payés selon le temps jeu, ce qui est hors du contrôle du jeu.
+
+Merci de prendre le temps de considérer le tout. Si vous avez des questions, s’il vous plaît demandez. Pour mémoire, notez que votre réponse pourrait être publique, mais si vous voulez que votre réponse soit privée, s’il vous plaît, demandez et ce sera entre moi et les développeurs d’EToH.
+
+J'apprécie énormément vos temps  
+(Sender)
+
+## 🇩🇪 German
+
+Translated by Theeldersoul, littlekkitsune, Tris463
+
+### Subject
+
+Die Erlaubnis für die Nutzung ihrer/eurer Musik in einem Roblox Spiel
+
+(„Ihrer“ is used if there is a singular standalone artist who made the Song. „Eurer“ is used if the email is directed towards multiple people, a team or a band.)
+
+### Body
+
+Important note: All multiple-choice versions based on gender or group size are enclosed in curly brackets \{\}. Please select the appropriate phrase and remove the hints, brackets and the other options before sending.
+
+\{  
+Sehr geehrte/-r (Artist),
+\[Standard gender-neutral and inclusive option. Use this if the artist's gender is unknown or to be as inclusive as possible. The "-r" ending covers both masculine and feminine forms.\]
+
+Sehr geehrter (Artist),
+\[Use this specifically if the artist is known to be male.\]
+
+Sehr geehrte (Artist),
+\[Use this specifically if the artist is known to be female.\]
+
+Sehr geehrtes Team von (Artist),
+\[Use this if you are contacting a band, a musical collective, or the artist's management team.\]  
+\}
+
+Ich kontaktiere Sie, um Erlaubnis über die Nutzung Ihrer Songs in dem Roblox Spiel „Eternal Towers of Hell“, auch bekannt als „EToH“, zu bitten.
+Das Spiel besteht aus einer großen Menge an 3D Platformer-Leveln welche „Towers“ genannt werden und welche von einer offenen Subcommunity der Fanbase, genannt „Builders“, erstellt werden. Dies bedeutet, dass das Spiel eine Art „Level-Creator“ -System um sich erbaut hat: 
+Jeder kann einen „Tower“ bauen, hochladen und in der Community teilen. Eine Handvoll dieser „Tower“ werden dann in unregelmäßigen Abständen von den EToH-Entwicklern ausgewählt und in von ihnen erstellten Arealen „ausgestellt“, was das Spiel, welches sich in Privatbesitz befindet, zu einer Art „Showcase“- oder „Spotlight“ -Spiel macht.
+
+Die „Towers“ benutzen oft mehrere Songs von den verschiedensten Künstlern, jeder „Floor“ oder auch Abschnitt eines „Towers“ nutzt meist einen separaten Song. Die Art und Weise, wie die Songs in jedem „Tower“ benutzt werden, ist so, als würde jeder „Tower“ eine selbsterstellte Playlist abspielen. 
+Ihre Songs werden, falls Sie der Nutzung zustimmen, nicht die gesamte Hintergrundmusik des Spiels ausmachen, sondern nur an bestimmten Punkten in den „Towers“ abgespielt werden, wo sie gemeinsam mit den anderen Songs eine eigenständige Spielerfahrung kreieren, welche das Spielgeschehen unterstützt. 
+Im Folgenden finden Sie zwei Beispiele in Form von Videos, wie Musik in EToH verwendet wird: https://youtu.be/zCEJkmVJDfE; https://youtu.be/lZfSUqDhBKI.
+
+Die Community, welche diese Türme baut, benötigt Ihr explizites Einverständnis, um Ihre Musik in den Türmen verwenden zu dürfen. Dementsprechend ist Ihr Einverständnis für uns von großer Bedeutung.
+
+Ich selbst stehe mit dem Entwicklerteam nicht direkt in Verbindung. Trotzdem wird Ihre Genehmigung oder Ihr Verbot an jene Entwickler weitergeleitet, welche sich nach Ihren persönlichen Wünschen bezüglich des Umgangs mit Ihrer Musik richten werden.
+
+\{  
+* Sie werden als Künstler/-in bzw. Komponist/-in des jeweiligen Audios genannt werden, zusammen mit dem Titel des Audios, welcher im Spiel gezeigt wird, während dieser abgespielt wird.
+\[Standard gender-neutral option. Use this if the artist's gender is unknown or to ensure inclusivity.\]
+
+* Sie werden als Künstler/Komponist des jeweiligen Audios genannt werden, zusammen mit dem Titel des Audios, welcher im Spiel gezeigt wird, während dieser abgespielt wird.
+\[Use this specifically if the artist is known to be male.\]
+
+* Sie werden als Künstlerin/Komponistin des jeweiligen Audios genannt werden, zusammen mit dem Titel des Audios, welcher im Spiel gezeigt wird, während dieser abgespielt wird.
+\[Use this specifically if the artist is known to be female.\]
+
+* Sie werden als die Künstler/Komponisten des jeweiligen Audios genannt werden, zusammen mit dem Titel des Audios, welcher im Spiel gezeigt wird, während dieser abgespielt wird.
+\[Use this if the music was created by a band, duo, or multiple people (plural form).\]  
+\}
+
+* Weiterhin steht es Ihnen frei, festzulegen, welche Art der von Ihnen produzierten Lieder/Audios im Rahmen des Spiels benutzt werden dürfen (Originale, Remixes, Bootlegs, Veröffentlichungen über bestimmte Musiklabels etc.), sowie anderweitige spezifische Regeln zur Nutzung Ihrer Musik aufzustellen.
+* Über folgenden Link können Sie einsehen, unter welchen Auflagen/Bedingungen Künstler*innen die Nutzung ihrer Musik freigegeben/verboten haben (Bitte beachten Sie, dass das genannte Dokument in englischer Sprache verfasst wurde): https://docs.google.com/spreadsheets/d/1tXtXoZtSqnov08G_gp5T72wplvI-iEkA0muLyNDCI8g/edit?usp=sharing
+* Selbstverständlich ist es Ihnen jederzeit möglich, Ihre Nutzungsgenehmigung zurückzuziehen oder die entsprechenden Nutzungsbedingungen abzuändern, indem Sie eine entsprechende Anfrage an folgende E-Mail-Adresse senden: etohofficialcontact@gmail.com
+
+Das Spiel selbst ist kostenfrei mit optionalen Mikrotransaktionen, die zur Unterstützung des Entwicklerteams dienen. Einzelne Türme, unter anderem auch die, welche Ihre Musik verwenden würden, generieren keine separaten Einnahmen. Jedoch werden Einnahmen durch aktive Spielzeit automatisch von Roblox in Form von Robux (einer digitalen Spielwährung) generiert. Dies kann nicht von den Entwicklern von EToH beeinflusst werden.   
+
+Ich möchte mich schon mal recht herzlich dafür bedanken, dass Sie diese Anfrage in Erwägung ziehen. Sollten Sie Fragen haben, können Sie sich gerne an mich wenden. 
+
+Ebenfalls möchte ich Sie darüber informieren, dass Ihre Antwort auf diese Anfrage eventuell der Öffentlichkeit zur Verfügung gestellt wird. Sollten Sie wünschen, dass dies nicht passiert, bitte ich hier um eine kurze Rückmeldung. 
+Ihre Antwort wird dementsprechend nur dem Entwicklerteam weitergeleitet.
+
+Ich bedanke mich recht herzlich für Ihre Zeit und verbleibe
+
+Mit freundlichen Grüßen,  
+(Sender)
+
 ## 🇬🇷 Greek
 
 Translated by captainchris204, proofread by discorRIBO
@@ -275,8 +410,12 @@ Translated by captainchris204, proofread by discorRIBO
 Σας ευχαριστώ που αφιερώσατε την ώρα να το σκεφτείτε. Άμα έχετε άλλες απορίες, παρακαλώ ρωτήστε. Επίσης να ξέρετε ότι ή απάντηση σας μπορεί να είναι δημόσια για τώρα, όμως άμα θελήσετε να μείνει ιδιωτική, παρακαλώ ρωτήστε και θα μείνει μεταξύ εμένα και τους δημιουργούς του EToH.
 
 Εκτιμώ ιδιαίτερα τον χρόνο σας,
-(Sender) 
+(Sender)
 
+## 🇮🇳 Hindi
+
+Translated by midsummerfires  
+Refer to [this document](https://docs.google.com/document/d/1rk3JQYaH9pAF-OO6X15yA7Pn85DIWtQCJ5vPrMA0Crc/edit?tab=t.p2h2yh81sx9p).
 
 ## 🇮🇩 Indonesian
 
@@ -659,6 +798,39 @@ Cheers fae taking yer tim tae considoer thas. If yae hay anyy quoestions, pleas 
 
 Cheers mate,
 (Sender)
+
+## 🇪🇸 Spanish
+
+Translated by n64briel, something.sh, Tai_muri, JCguero2012
+
+### Subject
+
+Solicitud por permiso para usar música en un juego de Roblox.
+
+### Body
+
+Hola (Artist)
+
+Te estoy contactando para preguntarte sobre tu opinión con el uso de tu música dentro del juego de Roblox, “Eternal Towers of Hell”, también conocido como “EToH”. Este juego consiste de una variedad de niveles 3d llamadas “Torres”, la creación de estas siendo realizada por una comunidad de creadores distintos. Como el juego no tiene límites fijos, es semejante a una sistema de creador de niveles: cualquiera tiene la posibilidad construir, subir, y compartir su propia torre. De estas torres, una selección pequeña es después elegida por los desarrolladores de EToH para exhibirlas dentro de áreas para destacar.
+
+Estas torres usualmente usan una variedad de música hechos por artistas diferentes, con cada “piso” de una torre usando una canción diferente: la forma de que las canciones son usadas es similar a que las torres usen su propia “playlist”. Tus canciones no constituirán la totalidad del audio de fondo del juego, pero se van a reproducir por una cantidad de tiempo breve, la cual con otras canciones se hace de una experiencia completa. (https://youtu.be/zCEJkmVJDfEhttps://youtu.be/lZfSUqDhBKI)
+
+¡La comunidad que crea estas torres necesitan permiso explícito para usar tus canciones, asi que tu opinión se agradece un montón!
+
+No estoy afiliado con el equipo de desarrollo, pero con evidencia de tu permiso o negación, los desarrolladores pueden llevar a cabo tu solicitud.
+
+* Vas a recibir crédito como el artista de la canción, con el nombre de la canción siendo presentada mientras se oye dentro del juego.
+* También puedes especificar cuales canciones o álbumes, son permitidos para que se puedan usar en el juego (originales, remixes/bootlegs, sellos discográficos, etc.), así como solicitar cualquier otro término de uso.
+* Puedes revisar como se listan las artistas y sus términos aquí: https://docs.google.com/spreadsheets/d/1tXtXoZtSqnov08G_gp5T72wplvI-iEkA0muLyNDCI8g/edit?usp=sharing
+* Puedes revocar o actualizar cualquier término o permiso cuando quieras, contactando directamente por su correo electrónico (etohofficialcontact@gmail.com).
+
+El juego es completamente gratis para jugar con compras virtuales opcionales para soportar a los desarrolladores. Torres individuales en donde tus canciones van a ser usadas no generan ganancias, pero Roblox tiene ganancias por tiempo de juego (robux) lo cual está fuera de control del juego actual.
+
+Gracias por tomarte el tiempo para considerar esto. Si tienes cualquier pregunta, por favor hazla. Considera que tu respuesta será pública por el récord, pero si deseas que tu respuesta sea privada, por favor dímelo y quedará solamente entre yo y los desarrolladores de EToH.
+
+Se agradece mucho tu tiempo.  
+(Sender)
+
 
 ## 🇸🇪 Swedish
 
