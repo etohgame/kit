@@ -16,7 +16,7 @@ Issue reports and suggestions (for the kit or the documentation) are welcomed!
 For issue reports:
 * Make sure you are using the latest kit version
 * Give clear instructions on what the bug is, how to reproduce it, preferably including footage
-* If you know a fix for the issue, you are welcome to open a pull request with code changes that fix the issue
+* If you know a fix for the issue, you are welcome to provide that fix in the report or open a pull request with code changes
 
 For kit suggestions:
 * At the moment, we are not looking for suggestions regarding new client objects to add to the kit
