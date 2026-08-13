@@ -78,22 +78,16 @@ local KeyGroup = {
 	RunOnStart = false,
 }
 
-local KEY_CONFIG_TEMPLATE
-local DOOR_CONFIG_TEMPLATE
-
-function KeyGroup.Init(utility: _T.Utility)
-	local Config = utility.Config
-	KEY_CONFIG_TEMPLATE = {
-		SpinSpeed = 5,
-		Timer = 0,
-		TimerDecimalPlaces = 1,
-		ViewportOffset = CFrame.identity,
-		TimerText = "{T}",
-	}
-	DOOR_CONFIG_TEMPLATE = {
-		RequiredKeys = 1,
-	}
-end
+local KEY_CONFIG_TEMPLATE = {
+	SpinSpeed = 5,
+	Timer = 0,
+	TimerDecimalPlaces = 1,
+	ViewportOffset = CFrame.identity,
+	TimerText = "{T}",
+}
+local DOOR_CONFIG_TEMPLATE = {
+	RequiredKeys = 1,
+}
 
 local _TDefs = require(script.TypeDefs)
 type Key = _TDefs.Key

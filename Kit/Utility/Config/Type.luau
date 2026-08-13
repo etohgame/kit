@@ -36,24 +36,7 @@ Type.Some = function(...): any?
 end
 
 Type.Enum = function<T>(enum: T & EnumItem): T
-	return {
-		type = "EnumItem",
-		ignoreType = true,
-		check = function(value: EnumItem): (boolean, string?)
-			local valueType = typeof(value)
-			local check = valueType == "EnumItem" and value.EnumType == enum.EnumType
-			if not check then
-				return check,
-					`Enum.{enum.EnumType} expected, got {if valueType == "EnumItem"
-						then `Enum.{value.EnumType}`
-						else valueType}`
-			end
-			return check
-		end,
-		checkFailedProcessor = function()
-			return enum
-		end,
-	} :: any
+	return enum
 end
 
 Type.integer = (

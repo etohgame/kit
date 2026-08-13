@@ -31,16 +31,12 @@ local JumpLauncher = {
 	RunOnStart = false,
 }
 
-local LAUNCHER_CONFIG_TEMPLATE
-function JumpLauncher.Init(utility: _T.Utility)
-	local Config = utility.Config
-	LAUNCHER_CONFIG_TEMPLATE = {
-		Cooldown = 0.25,
-		Force = 60,
-		SizeReduction = Vector3.one,
-		Transparency = Config.Type.number,
-	}
-end
+local LAUNCHER_CONFIG_TEMPLATE = {
+	Cooldown = 0.25,
+	Force = 60,
+	SizeReduction = Vector3.one,
+	Transparency = Config.Type.number,
+}
 
 local player = Players.LocalPlayer
 local function handleCache(rootScope: _T.Scope, utility: _T.Utility)
@@ -202,7 +198,7 @@ function JumpLauncher.Run(scope: _T.Scope, utility: _T.Utility)
 					utility.Functions.playSoundFromInstance(jumpLauncher, soundsFolder, "Bounce")
 					local targetTransparency = if invisible
 						then 1
-						else configuration.Transparency or originalTransparency
+						else (if not math.isnan(configuration.Transparency) then configuration.Transparency else originalTransparency)
 					jumpLauncher.Transparency = if invisible then 1 else targetTransparency / 4
 					utility.Functions.tween(jumpLauncher, 0.5, { Transparency = targetTransparency })
 					if bounceParticle then

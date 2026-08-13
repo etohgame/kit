@@ -34,14 +34,14 @@ local MusicZoneEditor = {
 	RunOnStart = false,
 }
 
-local EDITOR_CONFIG_TEMPLATE
+local EDITOR_CONFIG_TEMPLATE = {
+	ZoneName = "",
+	OneTimeUse = false,
+	Cooldown = 1,
+}
 function MusicZoneEditor.Init(utility: _T.Utility)
 	local Config = utility.Config
-	EDITOR_CONFIG_TEMPLATE = {
-		ZoneName = "",
-		OneTimeUse = false,
-		Cooldown = 1,
-	}
+	
 end
 
 local SequencerSupport = require(script.SequencerSupport)

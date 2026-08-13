@@ -44,16 +44,16 @@ local OneWayPlatform = {
 
 local ACTIVE_KEY = "OneWayPlatform_Activated"
 local ACTIVE_CHECK_IGNORES = { [ACTIVE_KEY] = true }
-local PLATFORM_CONFIG_TEMPLATE
+local PLATFORM_CONFIG_TEMPLATE = {
+	SetActivated = true,
+	Offset = CFrame.identity,
+	ActiveTransparency = math.nan,
+	InactiveTransparency = math.nan,
+	ActivateConnectedParts = false,
+}
 function OneWayPlatform.Init(utility: _T.Utility)
 	local Config = utility.Config
-	PLATFORM_CONFIG_TEMPLATE = {
-		SetActivated = true,
-		Offset = CFrame.identity,
-		ActiveTransparency = Config.Type.number,
-		InactiveTransparency = Config.Type.number,
-		ActivateConnectedParts = false,
-	}
+	
 end
 
 local function handleCache(rootScope: _T.Scope, utility: _T.Utility)
@@ -83,8 +83,8 @@ local function handleCache(rootScope: _T.Scope, utility: _T.Utility)
 			local active = data.Active and upVector:Dot(look) > 0
 			local originalTransparency = data.OriginalTransparency
 			local transparency = if active
-				then data.ActiveTransparency or originalTransparency
-				else data.InactiveTransparency or originalTransparency
+				then (if not math.isnan(data.ActiveTransparency) then data.ActiveTransparency else originalTransparency)
+				else (if not math.isnan(data.InactiveTransparency) then data.InactiveTransparency else originalTransparency)
 
 			for _, otherPart in data.Parts do
 				if otherPart.CanCollide ~= active then

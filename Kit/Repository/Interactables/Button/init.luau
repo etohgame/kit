@@ -92,21 +92,17 @@ local Button = {
 	Communicator = COMMUNICATOR,
 }
 
-local BUTTON_CONFIG_TEMPLATE
-function Button.Init(utility: _T.Utility)
-	local Config = utility.Config
-	BUTTON_CONFIG_TEMPLATE = {
-		Timer = 0,
-		TimerDecimalPlaces = 1,
-		TimerText = "{T}",
-		PressOffset = CFrame.new(Vector3.yAxis * 0.75),
-		PressedMaterial = Config.Type.Enum(Enum.Material.Neon),
-		HideGUI = false,
+local BUTTON_CONFIG_TEMPLATE = {
+	Timer = 0,
+	TimerDecimalPlaces = 1,
+	TimerText = "{T}",
+	PressOffset = CFrame.new(Vector3.yAxis * 0.75),
+	PressedMaterial = Enum.Material.Neon,
+	HideGUI = false,
 
-		PadMode = false,
-		PadDistance = 5,
-	}
-end
+	PadMode = false,
+	PadDistance = 5,
+}
 
 type ConfigTemplate = typeof(BUTTON_CONFIG_TEMPLATE)
 type Button = _TDefs.Button<ConfigTemplate>

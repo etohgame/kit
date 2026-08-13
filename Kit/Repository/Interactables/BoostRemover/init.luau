@@ -29,14 +29,10 @@ local BoostRemover = {
 	RunOnStart = false,
 }
 
-local REMOVER_CONFIG_TEMPLATE
-function BoostRemover.Init(utility: _T.Utility)
-	local Config = utility.Config
-	REMOVER_CONFIG_TEMPLATE = {
-		Type = "Unknown",
-		Mode = "",
-	}
-end
+local REMOVER_CONFIG_TEMPLATE = {
+	Type = "Unknown",
+	Mode = "",
+}
 
 local SequencerSupport = require(script.SequencerSupport)
 local function setupCache(rootScope: _T.Scope, utility: _T.Utility)

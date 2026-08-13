@@ -29,15 +29,11 @@ local BouncePad = {
 	RunOnStart = false,
 }
 
-local PAD_CONFIG_TEMPLATE
-function BouncePad.Init(utility: _T.Utility)
-	local Config = utility.Config
-	PAD_CONFIG_TEMPLATE = {
-		Power = 100,
-		Cooldown = 0.05,
-		RelativeForce = false,
-	}
-end
+local PAD_CONFIG_TEMPLATE = {
+	Power = 100,
+	Cooldown = 0.05,
+	RelativeForce = false,
+}
 
 function BouncePad.Run(scope: _T.Scope, utility: _T.Utility)
 	--> Setup
