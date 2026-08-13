@@ -35,7 +35,7 @@ local LAUNCHER_CONFIG_TEMPLATE = {
 	Cooldown = 0.25,
 	Force = 60,
 	SizeReduction = Vector3.one,
-	Transparency = Config.Type.number,
+	Transparency = math.nan,
 }
 
 local player = Players.LocalPlayer

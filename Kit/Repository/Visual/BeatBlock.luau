@@ -103,7 +103,7 @@ function BeatBlock.Run(scope: _T.Scope, utility: _T.Utility)
 	local syncConfiguration = Config.GetConfig(scope, musicSyncConfig, MUSIC_SYNC_CONFIG_TEMPLATE):ObserveChanges()
 
 	local syncData
-	if syncConfiguration.SyncEnabled and syncConfiguration.ZoneName then
+	if syncConfiguration.SyncEnabled then
 		local syncPointer = utility.Instance.getPointer(musicSyncConfig:FindFirstChild("Sync"))
 		if syncPointer then
 			syncData = utility.SongTime.BuildSyncCache(require(syncPointer) :: any)

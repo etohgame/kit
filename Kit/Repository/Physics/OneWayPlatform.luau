@@ -51,10 +51,6 @@ local PLATFORM_CONFIG_TEMPLATE = {
 	InactiveTransparency = math.nan,
 	ActivateConnectedParts = false,
 }
-function OneWayPlatform.Init(utility: _T.Utility)
-	local Config = utility.Config
-	
-end
 
 local function handleCache(rootScope: _T.Scope, utility: _T.Utility)
 	local cache = {} :: PlatformCache
