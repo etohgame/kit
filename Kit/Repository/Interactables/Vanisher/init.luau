@@ -50,8 +50,8 @@ local SHRINK_DIRECTION_OFFSETS = {
 	Center = Vector3.zero,
 	Top = Vector3.yAxis,
 	Bottom = -Vector3.yAxis,
-	Front = Vector3.zAxis,
-	Back = -Vector3.zAxis,
+	Front = -Vector3.zAxis,
+	Back = Vector3.zAxis,
 	Left = -Vector3.xAxis,
 	Right = Vector3.xAxis,
 }
@@ -105,6 +105,13 @@ function Vanisher.Run(scope: _T.Scope, utility: _T.Utility)
 	local vanisherChildren: { Instance } = if vanisherObject:IsA("BasePart")
 		then { vanisherObject }
 		else vanisherObject:GetChildren()
+
+	--> Fix a silly issue
+	local invertZDirections: boolean
+	do
+		local coVersion = utility.ClientObjects.getCOVersion(vanisherConfig)
+		invertZDirections = not utility.ClientObjects.isVersionOrHigher(coVersion, "v6.1.4")
+	end
 	---------------
 
 	for _, part in vanisherChildren do
@@ -319,19 +326,21 @@ function Vanisher.Run(scope: _T.Scope, utility: _T.Utility)
 		local direction = SHRINK_DIRECTION_OFFSETS[configuration.ShrinkDirection]
 		local startSize = vanisher.Size
 		local endSize = Vector3.zero
-		local relativeOffset = CFrame.identity
+		local shrinkPartCFrame = vanisher.CFrame
 		if configuration.ShrinkDirection ~= "Center" then
-			local offset = (0.5 * startSize) * direction
 			if direction.X ~= 0 then
 				endSize = Vector3.new(0, startSize.Y, startSize.Z)
-				relativeOffset = CFrame.new(-offset)
 			elseif direction.Y ~= 0 then
-				relativeOffset = CFrame.new(offset)
 				endSize = Vector3.new(startSize.X, 0, startSize.Z)
 			elseif direction.Z ~= 0 then
-				relativeOffset = CFrame.new(-offset)
+				if invertZDirections then
+					direction *= -1
+				end
 				endSize = Vector3.new(startSize.X, startSize.Y, 0)
 			end
+
+			local offset = (-0.5 * direction) * startSize
+			shrinkPartCFrame *= CFrame.new(offset)
 		end
 
 		if configuration.ShrinkToZero then
@@ -347,7 +356,7 @@ function Vanisher.Run(scope: _T.Scope, utility: _T.Utility)
 
 		-- To support moving for unanchored objects
 		local vanisherConnection = cleanupScope:add(RunService.PreRender:Connect(function()
-			shrinkPart.CFrame = vanisher.CFrame * relativeOffset * CFrame.new((shrinkPart.Size * 0.5) * direction)
+			shrinkPart.CFrame = shrinkPartCFrame * CFrame.new((shrinkPart.Size * 0.5) * direction)
 		end))
 
 		local tween = startTween(shrinkPart, { Size = endSize })
