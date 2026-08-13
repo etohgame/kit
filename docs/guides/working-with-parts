@@ -1,0 +1,45 @@
+---
+sidebar_position: 2
+---
+
+# Working with Parts
+
+Parts are the most important feature in Roblox. Within this guide, you will learn how to use parts and customize them to your liking.
+
+## Properties
+
+When you click on a part, you will see the properties of the part within the Properties window. If you do not know how to access this, read the [guide on Studio](studio.md).
+
+![](/guides/working-with-parts/selectpartandshowpropertieswindow.png)
+
+Within this menu, you will be able to select a variety of properties and change them. Most properties are categorized into a few core categories, like Apperance, Collision, Part, and more. Properties within these categories determine how the part functions.
+
+Note that the following section will only cover the most important properties of parts. Another other properties may be found within the [`BasePart` documentation](https://create.roblox.com/docs/reference/engine/classes/BasePart).
+
+## Appearance
+
+Changing how a part appears is one of the most fundamental things you need to know in order to make a tower, and even more important when making the tower look nice. 
+
+You can change the color of a part by using the `Color` property. When changing the `Color` property, you may type out the color in the RBG format by clicking on the text box, or use a color picker by clicking on the colored square next to the text box. The `BrickColor` property isn't recommended to be used as it is less customizable, only letting you choose from a collection of pre-selected colors. 
+
+The `Transparency` property changes how transparent the part is. This property is sometimes used to indicate parts with no collision, which may be used to set up traps for the player. You can also use this property in combination with the `Glass` `Material` to create some nice visuals.
+
+If you don't want your part always using the Stud texture, there are a few ways to customize it. Within the Surface category, you can change the texture of each side of the part, however note that this category hides itself if all the properties within it are set to `Smooth`, and it will need to be manually set to something else using a plugin or code in order to make it come back in the Properties window. There is also a `Material` property in the Apperance tab that you can use to change what textures the parts use entirely. If you know how to use `MaterialVarient`s, please submit all `MaterialVarient`s used in the tower model, and give them a unique name to prevent possible name conflict.
+
+`Reflectance` exists. `CastShadow` also exists but it only works with certain Lighting settings.
+
+## Collision
+
+You can change how a part interacts with other parts by changing its Collision properties.
+
+`CanCollide` determines if a part collides with other parts. If this is set to false, it will never collide with anything. `CanTouch` determines if the `Touched` event of the part is fired when the part is touched by another part.
+
+The `CollisionGroup` of a part determines what parts it can and cannot collide with. A list of built-in collision groups can be found [here](/docs/misc.md#collision-groups). Note that they do not have autocomplete unless already used in the place due to the collision groups being properly created when the place is ran.
+
+## Part Data
+
+`Anchored` determines if a part is not affected by physics. Please do not disable this on any parts in the obby folder. 
+
+`CustomPhysicalProperties` can be used in a lot of cool ways. You can set Elacticity to 0 and Elacticity to 100 to make the part not bounce you off if you are moving at very high speeds. You can also change the friction of the part to change how slippery it is.
+
+`Shape` changes the shape of the part. 
