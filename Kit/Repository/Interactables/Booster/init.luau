@@ -45,7 +45,7 @@ type BoosterCache = {
 
 local Booster = {
 	CanQueue = true,
-	RunOnStart = false,
+	RunOnStart = true,
 }
 
 local BOOSTER_CONFIG_TEMPLATE
@@ -66,12 +66,46 @@ function Booster.Run(scope: _T.Scope, utility: _T.Utility)
 	--> Setup
 	local boosterConfig = scope.instance
 	if not boosterConfig then
+		local repo = scope.rootScope.repository
+		if not repo["Interactables/BoostPad"] then
+			repo["Interactables/BoostPad"] = Booster
+		end
 		return
 	end
 
 	local booster = boosterConfig.Parent
 	if not booster or not booster:IsA("BasePart") then
 		return
+	end
+	
+	--> BoostPad backwards compatibility
+	if scope.scriptPath == "Interactables/BoostPad" then
+		scope:log({
+			"BoostPads have been deprecated in favor of the new Pad mode on regular Boosters.",
+			"Please convert your old BoostPads into regular Boosters.",
+			`Path: {booster:GetFullName()}`,
+			type = "warn",
+		})
+		
+		local startTweenConfig = scope:add(Instance.new("Configuration"))
+		startTweenConfig.Parent = boosterConfig
+		startTweenConfig.Name = "StartTweenConfiguration"
+		startTweenConfig:SetAttribute("Time", 0)
+		startTweenConfig:SetAttribute("Direction", Enum.EasingDirection.In)
+		startTweenConfig:SetAttribute("Style", Enum.EasingStyle.Linear)
+		
+		local endTweenConfig = scope:add(Instance.new("Configuration"))
+		endTweenConfig.Parent = boosterConfig
+		endTweenConfig.Name = "EndTweenConfiguration"
+		endTweenConfig:SetAttribute("Time", 0)
+		endTweenConfig:SetAttribute("Direction", Enum.EasingDirection.In)
+		endTweenConfig:SetAttribute("Style", Enum.EasingStyle.Linear)
+		
+		boosterConfig:SetAttribute("Mode", "Pad")
+		boosterConfig:SetAttribute("PadDistance", boosterConfig:GetAttribute("Distance"))
+		scope:add(boosterConfig:GetAttributeChangedSignal("Distance"):Connect(function()
+			boosterConfig:SetAttribute("PadDistance", boosterConfig:GetAttribute("Distance"))
+		end))
 	end
 
 	local CharacterUtil = utility.Character

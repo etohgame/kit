@@ -73,7 +73,7 @@ export type __Scope_params = {
 		[any]: unknown,
 	},
 	debug: boolean,
-	repository: { [string]: (LegacyRepositoryModule | RepositoryModule)? },
+	repository: { [string]: (LegacyRepositoryModule | RepositoryModule) },
 
 	active: boolean,
 	activeScripts: { [string]: { [Instance]: boolean } },
