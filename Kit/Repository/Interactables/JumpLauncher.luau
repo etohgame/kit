@@ -38,7 +38,7 @@ local LAUNCHER_CONFIG_TEMPLATE = {
 	Transparency = math.nan,
 }
 
-local player = Players.LocalPlayer
+local player = Players.LocalPlayer :: Player
 local function handleCache(rootScope: _T.Scope, utility: _T.Utility)
 	local cache = {
 		playerBuffering = false,
@@ -98,7 +98,7 @@ function JumpLauncher.Run(scope: _T.Scope, utility: _T.Utility)
 	local configuration = Config.GetConfig(scope, launcherConfig, LAUNCHER_CONFIG_TEMPLATE):ObserveChanges()
 	local touchConfiguration =
 		Config.GetConfig(scope, launcherConfig:FindFirstChild("TouchConfiguration"), Config.TOUCH_CONFIG)
-			:ObserveChanges()
+		:ObserveChanges()
 
 	--> Model Setup
 	local soundsFolder = jumpLauncher:FindFirstChild("Sounds")

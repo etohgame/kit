@@ -177,10 +177,14 @@ end
 	
 	Returns the `player`'s `Humanoid` if it exists.
 ]=]
-function CharacterManager:GetHumanoid(player: Player): Humanoid?
+function CharacterManager:GetHumanoid(player: Player?): Humanoid?
+	if not player then
+		return nil
+	end
+	
 	local character = player.Character
 	if not character then
-		return
+		return nil
 	end
 
 	return character:FindFirstChildOfClass("Humanoid")

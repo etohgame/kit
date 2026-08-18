@@ -235,22 +235,30 @@ function ClientObjects.formatTimerText(text: string, decimalPlaces: number, time
 	local seconds = flooredSeconds % 60
 	local milliseconds = math.floor(timeRemaining * 100) % 100
 
-	local playerName = localPlayer.Name
-	local playerDisplayName = localPlayer.DisplayName
-
-	return text:gsub("{T}", displayTime)
-		:gsub("{M}", tostring(minutes))
-		:gsub("{SM}", if tostring(minutes) == "1" then "" else "s")
-		:gsub("{S}", string.format("%02i", seconds))
-		:gsub("{MS}", string.format("%02i", milliseconds))
-		:gsub("{SS}", if displayTime == "1" then "" else "s")
-		:gsub("{pn}", playerName:lower())
-		:gsub("{Pn}", playerName)
-		:gsub("{PN}", playerName:upper())
-		:gsub("{dn}", playerDisplayName:lower())
-		:gsub("{Dn}", playerDisplayName)
-		:gsub("{DN}", playerDisplayName:upper())
-		:gsub("{UID}", localPlayer.UserId)
+	local playerName = "Player"
+	local playerDisplayName = "Player"
+	local uid = math.nan
+	if localPlayer then
+		playerName = localPlayer.Name
+		playerDisplayName = localPlayer.DisplayName
+		uid = localPlayer.UserId
+	end
+	
+	return (string.gsub(text, "{%w+}", {
+		["{T}"] = displayTime,
+		["{M}"] = tostring(minutes),
+		["{SM}"] = if tostring(minutes) == "1" then "" else "s",
+		["{S}"] = string.format("%02i", seconds),
+		["{MS}"] = string.format("%02i", milliseconds),
+		["{SS}"] = if displayTime == "1" then "" else "s",
+		["{pn}"] = playerName:lower(),
+		["{Pn}"] = playerName,
+		["{PN}"] = playerName:upper(),
+		["{dn}"] = playerDisplayName:lower(),
+		["{Dn}"] = playerDisplayName,
+		["{DN}"] = playerDisplayName:upper(),
+		["{UID}"] = tostring(uid),
+	}))
 end
 
 --[=[

@@ -75,11 +75,15 @@ function BouncePad.Run(scope: _T.Scope, utility: _T.Utility)
 			cooldownActive = false
 		end)
 
-		if Players:GetPlayerFromCharacter(part.Parent) == player then
-			part = player.Character.PrimaryPart
-
+		if utility.ClientObjects.validatePlayerToucher(part, touchConfiguration.playerHitboxMode) then
+			local charparts = utility.Character.getCharacter()
+			
+			local rootPart = charparts.rootPart
+			if rootPart then
+				part = rootPart
+			end
 			-- fix velocity sometimes being weird
-			local humanoid = utility.Character.getHumanoid()
+			local humanoid = charparts.humanoid
 			if humanoid then
 				humanoid:ChangeState(Enum.HumanoidStateType.Freefall)
 			end

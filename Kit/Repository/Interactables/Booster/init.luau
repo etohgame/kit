@@ -28,19 +28,19 @@ local _T = require(ReplicatedStorage.Framework.ClientTypes)
 local CharacterManager_Types = require(ReplicatedStorage.Framework.Kit.Managers.CharacterManager.TypeDefs)
 local SequencerSupport = require(script.SequencerSupport)
 
-type Booster = {
+type Booster<T> = {
 	hitbox: BasePart,
 	configuration: { [string]: any },
 	extraVariables: { [string]: any},
-	startTweenConfig: { [string]: any },
-	endTweenConfig: { [string]: any },
+	startTweenConfig: T,
+	endTweenConfig: T,
 	id: string,
 }
 
-type BoosterCache = {
+type BoosterCache<T> = {
 	activators: { [BasePart]: () -> () },
-	boosters: { Booster },
-	activeBoosters: { [string]: Booster? },
+	boosters: { Booster<T> },
+	activeBoosters: { [string]: Booster<T> },
 }
 
 local Booster = {
@@ -93,7 +93,7 @@ function Booster.Run(scope: _T.Scope, utility: _T.Utility)
 		else {}
 
 	--> Functions
-	local function getBoostData(booster: Booster): CharacterManager_Types.BoostData?
+	local function getBoostData(booster: Booster<typeof(Config.TWEEN_CONFIG)>): CharacterManager_Types.BoostData?
 		local boostModule = CharacterUtil.getBoostModule(booster.configuration.Type)
 		if not boostModule then
 			return nil
@@ -137,7 +137,7 @@ function Booster.Run(scope: _T.Scope, utility: _T.Utility)
 	CharacterUtil.getHitbox("StaticWholeBody", overlapParams)
 
 	local cache = utility.Scope.getCached(scope, scope.scriptPath, function()
-		local cache: BoosterCache = {
+		local cache: BoosterCache<typeof(Config.TWEEN_CONFIG)> = {
 			activators = {},
 			boosters = {},
 			activeBoosters = {},
@@ -161,7 +161,7 @@ function Booster.Run(scope: _T.Scope, utility: _T.Utility)
 			lastTick = currentTick
 
 			--> Get touching parts and determine if any zone boosters are being touched
-			local touchingBoosters: { Booster } = {}
+			local touchingBoosters: { Booster<typeof(Config.TWEEN_CONFIG)> } = {}
 			for _, booster in cache.boosters do
 				if
 					#Workspace:GetPartsInPart(booster.hitbox, overlapParams) > 0
@@ -230,7 +230,7 @@ function Booster.Run(scope: _T.Scope, utility: _T.Utility)
 	end
 
 	--> Main functionality
-	local boosterData: Booster = {
+	local boosterData: Booster<typeof(Config.TWEEN_CONFIG)> = {
 		hitbox = booster,
 		configuration = configuration,
 		extraVariables = extraVariables,

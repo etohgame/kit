@@ -202,11 +202,11 @@ local function handleButtonCache(rootScope: _T.Scope, utility: _T.Utility): Butt
 	local function handleNewPlatform(platform: BasePart)
 		local this = {} :: typeof(TAGS)
 		cache.ButtonActivatedPlatforms[platform] = this
-		for key in pairs(TAGS) do -- we love broken type inference
+		for key in TAGS do -- we love broken type inference
 			this[key] = platform:HasTag(key)
 		end
 		if not this.IgnoreInitialActivate then
-			task.defer(activatePlatform, platform, false)
+			task.defer(activatePlatform, platform, false, nil)
 		end
 	end
 
@@ -214,7 +214,7 @@ local function handleButtonCache(rootScope: _T.Scope, utility: _T.Utility): Butt
 		if not tagFilter(platform) then
 			continue
 		end
-		handleNewPlatform(platform)
+		handleNewPlatform(platform :: BasePart)
 	end
 	rootScope:add(CollectionService:GetInstanceAddedSignal(PLATFORM_TAG):Connect(function(instance)
 		if not tagFilter(instance) or not instance:IsA("BasePart") then
@@ -372,12 +372,12 @@ function Button.Run(scope: _T.Scope, utility: _T.Utility)
 		cache.Buttons[buttonPart] = nil
 	end)
 
-	local timerLabel = buttonConfig:FindFirstChildWhichIsA("TextLabel")
+	local timerLabel = buttonConfig:FindFirstChildWhichIsA("TextLabel") :: TextLabel?
 
 	local function updatePlatforms(pressed: boolean?)
 		-- don't deactivate if there's a different button of the same color active
 		-- this is to match v5.5 behavior
-		
+
 		if not pressed then
 			for _, otherButton in cache.Buttons do
 				if

@@ -104,7 +104,7 @@ export type CharacterManager = {
 	ValidateDamageBrick: (self: CharacterManager, brick: BasePart) -> (number | string)?,
 
 	-- helper functions
-	GetHumanoid: (self: CharacterManager, player: Player) -> Humanoid?,
+	GetHumanoid: (self: CharacterManager, player: Player?) -> Humanoid?,
 	ChangeHumanoidProperty: (self: CharacterManager, property: string, value: any, tweenInfo: TweenInfo?) -> (),
 
 	-- booster functions
