@@ -17,8 +17,6 @@ Thank you
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local GuiManager = ReplicatedStorage.Framework.Kit.Managers.GuiManager
-
 export type __VALID_DAMAGEBRICKS = {
 	kills: number,
 	double: number,
@@ -72,7 +70,7 @@ export type BoostData = {
 	power: number,
 	
 	priority: number?,
-	frame: typeof(GuiManager.BoostFrame)?, -- created later
+	frame: typeof(ReplicatedStorage.Framework.Kit.Managers.GuiManager.BoostFrame)?, -- created later
 	module: Boost,
 	extraVariables: {[string]: any},
 
@@ -101,10 +99,10 @@ export type CharacterManager = {
 
 	-- damage functions
 	Damage: (self: CharacterManager, damage: BasePart | number | string) -> (),
-	ValidateDamageBrick: (self: CharacterManager, brick: BasePart) -> (number | string)?,
+	ValidateDamageBrick: (self: CharacterManager, brick: BasePart) -> ((number | string)?, number?),
 
 	-- helper functions
-	GetHumanoid: (self: CharacterManager, player: Player?) -> Humanoid?,
+	GetHumanoid: (self: CharacterManager, player: Player) -> Humanoid?,
 	ChangeHumanoidProperty: (self: CharacterManager, property: string, value: any, tweenInfo: TweenInfo?) -> (),
 
 	-- booster functions

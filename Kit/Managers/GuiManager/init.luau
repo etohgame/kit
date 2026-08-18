@@ -45,6 +45,8 @@ local Log = require(Framework.Log)
 local CharacterManager_Types = require(Kit.Managers.CharacterManager.TypeDefs)
 local KitSettings = require(ReplicatedStorage.KitSettings)
 
+local localPlayer = Players.LocalPlayer :: Player
+
 --[[
 ---------------------------------------------------------------------------
 Main table
@@ -88,9 +90,9 @@ end
 	
 	Creates and returns a boost timer frame for the given `boostType`.
 ]=]
-function GuiManager:CreateBoostFrame(boostData: CharacterManager_Types.BoostData): _TDefs.BoostTimerFrame
+function GuiManager:CreateBoostFrame(boostData: CharacterManager_Types.BoostData): _TDefs.BoostTimerFrame?
 	if boostData.hideGUI then
-		return -- don't make one if they disabled it
+		return nil-- don't make one if they disabled it
 	end
 
 	boostID += 1
@@ -116,7 +118,7 @@ function GuiManager:CreateBoostFrame(boostData: CharacterManager_Types.BoostData
 	frame.LayoutOrder = -boostID
 	frame.Parent = GuiManager.Gui.Boosts
 
-	boostData.frame = frame
+	boostData.frame = frame :: _TDefs.BoostTimerFrame?
 	TweenService:Create(frame, BOOST_FRAME_TWEEN_INFO, { Size = script.BoostFrame.Size }):Play()
 
 	GuiManager:UpdateBoostFrame(boostData)
@@ -216,7 +218,7 @@ function GuiManager:__updateKeyDisplay()
 	end
 
 	local characterCFrame
-	local character = Players.LocalPlayer.Character
+	local character = (Players.LocalPlayer :: Player).Character
 	if character then
 		characterCFrame = character:GetPivot()
 	end
@@ -295,24 +297,22 @@ end
 ]=]
 function GuiManager:DisplayGUI(guiName: string, ...: any)
 	local gui = script:FindFirstChild(guiName)
-	if not gui then -- already being displayed?
+	if not gui or not gui:IsA("ScreenGui") then -- already being displayed?
 		Log({
 			`{guiName} GUI not found or already visible!!`,
 			type = "warn",
 		})
-
-		return true
+		return
 	end
 
 	if guiName == "debug" then
 		local displayMemory = ...
-		gui.memory.Visible = displayMemory
-		gui.memory.LocalScript.Enabled = displayMemory
+		(gui :: typeof(script.debug)).memory.Visible = displayMemory
+		do (gui :: typeof(script.debug)).memory.LocalScript.Enabled = displayMemory end
 	end
 
 	gui.Enabled = true
 	gui.Parent = GuiManager.PlayerGui
-	return true
 end
 
 function GuiManager:Init()
@@ -321,17 +321,16 @@ function GuiManager:Init()
 	end
 	self.__initialized = true
 
-	local localPlayer = Players.LocalPlayer
-	local playerGui = localPlayer:WaitForChild("PlayerGui")
+	local playerGui = localPlayer:WaitForChild("PlayerGui") :: PlayerGui
 	task.spawn(function()
-		GuiManager.Gui = playerGui:WaitForChild("EffectGUI", 5)
+		GuiManager.Gui = playerGui:WaitForChild("EffectGUI", 5) :: index<_TDefs.GuiManager, "Gui">
 	end)
 	GuiManager.PlayerGui = playerGui
 
 	--> Detect any new EffectGUIs
 	playerGui.ChildAdded:Connect(function(child)
 		if child.Name == "EffectGUI" then
-			GuiManager.Gui = child
+			GuiManager.Gui = child :: index<_TDefs.GuiManager, "Gui">
 		end
 	end)
 

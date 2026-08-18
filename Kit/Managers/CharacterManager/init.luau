@@ -117,7 +117,7 @@ Functions
 function CharacterManager:ValidateDamageBrick(brick: BasePart)
 	local damageAmount: (number | string)?
 	if brick:GetAttribute("Activated") == false then
-		return
+		return nil, nil
 	end
 
 	local configuration = brick:FindFirstChild("DamageBrickConfiguration")
@@ -151,7 +151,7 @@ function CharacterManager:Damage(damage: BasePart | string | number)
 		return
 	end
 
-	local cooldown = 0
+	local cooldown: number
 	local damageAmount: (number | string)?
 	if typeof(damage) == "Instance" and damage:IsA("BasePart") then
 		damageAmount, cooldown = CharacterManager:ValidateDamageBrick(damage)
@@ -162,7 +162,7 @@ function CharacterManager:Damage(damage: BasePart | string | number)
 	if not damageAmount then
 		return
 	end
-	if cooldown > 0 and typeof(damage) == "Instance" then
+	if (cooldown or 0) > 0 and typeof(damage) == "Instance" then
 		damageCooldown[damage] = true
 		task.delay(cooldown, function()
 			damageCooldown[damage] = false
@@ -177,11 +177,7 @@ end
 	
 	Returns the `player`'s `Humanoid` if it exists.
 ]=]
-function CharacterManager:GetHumanoid(player: Player?): Humanoid?
-	if not player then
-		return nil
-	end
-	
+function CharacterManager:GetHumanoid(player: Player): Humanoid?
 	local character = player.Character
 	if not character then
 		return nil
@@ -197,7 +193,7 @@ end
 	A `TweenInfo` can be provided to tween the value.
 ]=]
 function CharacterManager:ChangeHumanoidProperty(property: string, value: any, tweenInfo: TweenInfo?)
-	local humanoid = CharacterManager:GetHumanoid(Players.LocalPlayer)
+	local humanoid = CharacterManager:GetHumanoid(Players.LocalPlayer :: Player)
 	if not humanoid then
 		return
 	end
@@ -330,7 +326,7 @@ function CharacterManager:StartBoost(boostData: _TDefs.BoostData)
 	if boostData.mode == "Default" then --handle regular boosters
 		boostData.infinite = CharacterManager:IsBoostInfinite(boostData)
 
-		local boostLoop
+		local boostLoop: RBXScriptConnection
 		boostLoop = RunService.Heartbeat:Connect(function()
 			local activeBoostData = CharacterManager:GetActiveBoost(boostData.type, boostData.mode)
 

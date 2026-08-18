@@ -28,7 +28,7 @@ local Character = {}
 local Framework = ReplicatedStorage.Framework
 local Managers = Framework.Kit.Managers
 
-local localPlayer = Players.LocalPlayer
+local localPlayer = Players.LocalPlayer :: Player
 
 Character.HitboxModes =
 	table.freeze({ "StaticWholeBody", "StaticCenter", "StaticArms", "RootPart", "WholeBody", "Center" })
@@ -47,11 +47,7 @@ end
 	See [the documentation on hitbox modes](/docs/misc#hitbox-modes) for more information.
 ]=]
 function Character.getHitbox(mode: HitboxModes, params: OverlapParams?): { BasePart }
-	local parts: {BasePart} = {}
-
-	if not localPlayer then
-		return {}
-	end
+	local parts = {}
 
 	local character = localPlayer.Character
 	if not character then
@@ -202,13 +198,16 @@ local weldedShoulders: { Motor6D } = {}
 	the carry animation will stop.
 ]=]
 function Character.carryPart(weldState: boolean, weldTo: BasePart, animationDisabled: boolean)
-	local charParts = Character.getCharacter()
-	local character = charParts.character
-	local humanoid = charParts.humanoid
-	if not character or not humanoid then
+	local character = localPlayer.Character
+	if not character then
 		return
 	end
 
+	local humanoid = character and character:FindFirstChildOfClass("Humanoid")
+	if not humanoid then
+		return
+	end
+	
 	if weldState then
 		local rootPart = humanoid.RootPart
 		if not rootPart or not weldTo then
@@ -226,10 +225,7 @@ function Character.carryPart(weldState: boolean, weldTo: BasePart, animationDisa
 		rootWeld.Part1 = weldTo
 		rootWelds[weldTo] = rootWeld
 
-		for index, arm in { character:FindFirstChild("Left Arm"), character:FindFirstChild("Right Arm") } do
-			if not arm:IsA("BasePart") then
-				continue
-			end
+		for index, arm: BasePart in { character:FindFirstChild("Left Arm"), character:FindFirstChild("Right Arm") } do
 			local shoulder = character:FindFirstChild(`{arm.Name:split(" ")[1]} Shoulder`, true)
 			if not shoulder or not shoulder:IsA("Motor6D") then
 				continue
@@ -279,7 +275,7 @@ function Character.carryPart(weldState: boolean, weldTo: BasePart, animationDisa
 	end
 end
 
-local characterParts: {character: Model?, primaryPart: BasePart?, humanoid: Humanoid?, rootPart: BasePart?} = {}
+local characterParts = {}
 local function getParts(character: Model)
 	task.defer(function()
 		local humanoid = character:WaitForChild("Humanoid")
@@ -292,12 +288,10 @@ local function getParts(character: Model)
 	end)
 end
 
-if localPlayer then
-	if Players.CharacterAutoLoads then
-		getParts(localPlayer.Character or localPlayer.CharacterAdded:Wait())
-	end
-	localPlayer.CharacterAdded:Connect(getParts)
+if Players.CharacterAutoLoads then
+	getParts(localPlayer.Character or localPlayer.CharacterAdded:Wait())
 end
+localPlayer.CharacterAdded:Connect(getParts)
 
 --[=[
     @within Character
@@ -311,10 +305,6 @@ end
     When the character respawns, all of the values will update accordingly.
 ]=]
 function Character.getCharacter()
-	if not localPlayer then
-		return characterParts
-	end
-	
 	getParts(localPlayer.Character or localPlayer.CharacterAdded:Wait())
 	return characterParts
 end

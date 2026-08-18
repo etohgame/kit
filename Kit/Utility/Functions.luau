@@ -39,7 +39,7 @@ local Config = require(script.Parent.Config)
 	```
 ]=]
 function Functions.generateUID(curlyBraces: boolean?): string
-	return HttpService:GenerateGUID(curlyBraces or false):gsub("-", "")
+	return (HttpService:GenerateGUID(curlyBraces or false):gsub("-", ""))
 end
 
 --[=[
@@ -129,7 +129,7 @@ function Functions.playSoundFromInstance(
 		return newSound
 	end
 
-	return
+	return nil
 end
 
 --[=[

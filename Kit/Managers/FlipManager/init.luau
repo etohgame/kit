@@ -71,7 +71,7 @@ Functions
 ---------------------------------------------------------------------------
 ]]
 
-local localPlayer = Players.LocalPlayer
+local localPlayer = Players.LocalPlayer :: Player
 
 local flipCooldowns = {}
 
@@ -100,7 +100,7 @@ function FlipManager:TryFlip()
 		return
 	end
 
-	for _, touchingPart: BasePart in Workspace:GetPartsInPart(torso, PARAMS) do
+	for _, touchingPart in Workspace:GetPartsInPart(torso, PARAMS) do
 		if
 			(
 				not touchingPart:HasTag("CanFlip")
@@ -118,16 +118,16 @@ function FlipManager:TryFlip()
 			flipCooldowns[touchingPart] = nil
 		end)
 
-		local teleportPart = touchingPart
+		local teleportPart: BasePart = touchingPart
 		if not touchingPart:HasTag("DoNotFlipPlayer") then
 			local teleportToObject = touchingPart:FindFirstChild("TeleToObject")
 			if
 				teleportToObject
 				and teleportToObject:IsA("ObjectValue")
 				and teleportToObject.Value
-				and teleportToObject.Value:IsA("BasePart")
+				and (teleportToObject.Value :: Instance):IsA("BasePart")
 			then
-				teleportPart = teleportToObject.Value
+				teleportPart = teleportToObject.Value :: BasePart
 			elseif teleportToObject then
 				warn("blank", teleportToObject, "value")
 				return
@@ -174,7 +174,7 @@ function FlipManager:BindToFlip(part: BasePart, callback: (rootPart: BasePart) -
 	end
 
 	local callbacks = FlipManager.__callbacks
-	local callbackID = HttpService:GenerateGUID()
+	local callbackID: string? = HttpService:GenerateGUID()
 	if not callbacks[part] then
 		callbacks[part] = {}
 	end
