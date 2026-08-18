@@ -19,11 +19,10 @@ Thank you
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 
-local character = Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait()
-local humanoid: Humanoid? = character:WaitForChild("Humanoid")
-if not humanoid then
-	return
-end
+local localPlayer = Players.LocalPlayer :: Player
+
+local character = localPlayer.Character or localPlayer.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid") :: Humanoid
 
 -- Head collision glitch fix
 local head = character:FindFirstChild("Head")
@@ -34,7 +33,7 @@ if head and head:IsA("BasePart") then
 end
 
 -- Truss Fix
--- Original script by AkaWhats (& some help by MasSpartan)
+-- Original script by AkaWhats (& some help by Nullspace)
 -- Code touchups & some micro-optimizations done by synnwave
 
 local DEFAULT_FPS = 1 / 60
@@ -55,8 +54,8 @@ local STATES = {
     [Enum.HumanoidStateType.Running] = false,
 }
 
-local fps
-local function onStateChanged(oldState, newState)
+local fps: number
+local function onStateChanged(oldState: Enum.HumanoidStateType, newState: Enum.HumanoidStateType)
     if newState ~= oldState and STATES[newState] then
         for state, allowed in STATES do
             if allowed and state ~= newState then

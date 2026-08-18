@@ -60,11 +60,11 @@ local function traverseFolders(folder: Instance, repository: Repo, startingPath:
 				continue
 			end
 
-			local cached = requireCache[instance]
+			local cached: (ScopeTypes.LegacyRepositoryModule | ScopeTypes.RepositoryModule)? = requireCache[instance]
 			if not requireCache[instance] then
 				-- requires already cache but i think it'l be a bit more
 				-- performant doing this
-				local loadSuccess, loadReturns = pcall(require, instance)
+				local loadSuccess, loadReturns: (ScopeTypes.LegacyRepositoryModule | ScopeTypes.RepositoryModule)? = pcall(require, instance)
 				if not loadSuccess then
 					Log({
 						`Failed to load repository script "{path}"`,
@@ -278,7 +278,7 @@ function ClientObjectManager:Init()
 		local property = if i == 2 then "LocalTransparencyModifier" else "Transparency"
 		for _, instance in CollectionService:GetTagged(tag) do
 			if instance:IsA("BasePart") then
-				instance[property] = 1
+				(instance :: any)[property] = 1
 			end
 		end
 

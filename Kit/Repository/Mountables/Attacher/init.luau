@@ -44,19 +44,15 @@ local BANNED_STATES = {
 	[Enum.HumanoidStateType.RunningNoPhysics] = true,
 }
 
-local ATTACHER_CONFIG_TEMPLATE
-function Attacher.Init(utility: _T.Utility)
-	local Config = utility.Config
-	ATTACHER_CONFIG_TEMPLATE = {
-		AttachUsingAlign = false,
-		Cooldown = 0.5,
-		CleanDelay = 0,
-		DismountState = Config.Type.Enum(Enum.HumanoidStateType.Jumping),
-		DismountStateEnabled = true,
-		Offset = CFrame.new(0, 0, -5),
-		WeldToLimb = Config.Type.Enum(Enum.Limb.Torso),
-	}
-end
+local ATTACHER_CONFIG_TEMPLATE = {
+	AttachUsingAlign = false,
+	Cooldown = 0.5,
+	CleanDelay = 0,
+	DismountState = Enum.HumanoidStateType.Jumping,
+	DismountStateEnabled = true,
+	Offset = CFrame.new(0, 0, -5),
+	WeldToLimb = Enum.Limb.Torso,
+}
 
 local function getLimb(character: Instance?, hitPart: BasePart, limb: Enum.Limb): BasePart?
 	if not character or not limb then

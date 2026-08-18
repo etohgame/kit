@@ -29,15 +29,11 @@ local BouncePad = {
 	RunOnStart = false,
 }
 
-local PAD_CONFIG_TEMPLATE
-function BouncePad.Init(utility: _T.Utility)
-	local Config = utility.Config
-	PAD_CONFIG_TEMPLATE = {
-		Power = 100,
-		Cooldown = 0.05,
-		RelativeForce = false,
-	}
-end
+local PAD_CONFIG_TEMPLATE = {
+	Power = 100,
+	Cooldown = 0.05,
+	RelativeForce = false,
+}
 
 function BouncePad.Run(scope: _T.Scope, utility: _T.Utility)
 	--> Setup
@@ -79,11 +75,15 @@ function BouncePad.Run(scope: _T.Scope, utility: _T.Utility)
 			cooldownActive = false
 		end)
 
-		if Players:GetPlayerFromCharacter(part.Parent) == player then
-			part = player.Character.PrimaryPart
-
+		if utility.ClientObjects.validatePlayerToucher(part, touchConfiguration.playerHitboxMode) then
+			local charparts = utility.Character.getCharacter()
+			
+			local rootPart = charparts.rootPart
+			if rootPart then
+				part = rootPart
+			end
 			-- fix velocity sometimes being weird
-			local humanoid = utility.Character.getHumanoid()
+			local humanoid = charparts.humanoid
 			if humanoid then
 				humanoid:ChangeState(Enum.HumanoidStateType.Freefall)
 			end

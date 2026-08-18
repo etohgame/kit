@@ -132,28 +132,22 @@ local Sequencer = {
 
 	Communicator = COMMUNICATOR,
 }
-local SEQUENCER_CONFIG_TEMPLATE
-local MUSIC_SYNC_CONFIG_TEMPLATE
-local STOPPER_CONFIG_TEMPLATE
-function Sequencer.Init(utility: _T.Utility)
-	local Config = utility.Config
-	SEQUENCER_CONFIG_TEMPLATE = {
-		LoopAmount = 0,
-		LoopDelay = 0,
-		Cooldown = 0,
-		Speed = 1,
-		Visualize = false,
-		RunAtStart = false,
-		HideSequence = false,
-	}
-	MUSIC_SYNC_CONFIG_TEMPLATE = {
-		ZoneName = Config.Type.string,
-		SyncEnabled = false,
-	}
-	STOPPER_CONFIG_TEMPLATE = {
-		BreakLoop = false,
-	}
-end
+local SEQUENCER_CONFIG_TEMPLATE = {
+	LoopAmount = 0,
+	LoopDelay = 0,
+	Cooldown = 0,
+	Speed = 1,
+	Visualize = false,
+	RunAtStart = false,
+	HideSequence = false,
+}
+local MUSIC_SYNC_CONFIG_TEMPLATE = {
+	ZoneName = "",
+	SyncEnabled = false,
+}
+local STOPPER_CONFIG_TEMPLATE = {
+	BreakLoop = false,
+}
 
 local musicManager
 function Sequencer.Run(scope: _T.Scope, utility: _T.Utility)
@@ -210,7 +204,7 @@ function Sequencer.Run(scope: _T.Scope, utility: _T.Utility)
 	local syncConfiguration = Config.GetConfig(scope, musicSyncConfig, MUSIC_SYNC_CONFIG_TEMPLATE):ObserveChanges()
 
 	local syncData
-	if musicSyncConfig and syncConfiguration.SyncEnabled and syncConfiguration.ZoneName then
+	if musicSyncConfig and syncConfiguration.SyncEnabled then
 		local syncPointer = utility.Instance.getPointer(musicSyncConfig:FindFirstChild("Sync"))
 		if syncPointer then
 			syncData = utility.SongTime.BuildSyncCache(require(syncPointer) :: any)

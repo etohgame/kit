@@ -31,17 +31,17 @@ local Morpher = {
 	RunOnStart = false,
 }
 
-local BUTTON_CONFIG_TEMPLATE
+local BUTTON_CONFIG_TEMPLATE = {
+	Timer = 0,
+	TimerText = "{T}",
+	TimerDecimalPlaces = 1,
+	CarryObjects = true,
+}
 local TOUCH_CONFIGURATION
 local TWEEN_CONFIGURATION
 function Morpher.Init(utility: _T.Utility)
 	local Config = utility.Config
-	BUTTON_CONFIG_TEMPLATE = {
-		Timer = 0,
-		TimerText = "{T}",
-		TimerDecimalPlaces = 1,
-		CarryObjects = true,
-	}
+	
 	TOUCH_CONFIGURATION = Config.TOUCH_CONFIG
 	TWEEN_CONFIGURATION = Config.TWEEN_CONFIG
 end

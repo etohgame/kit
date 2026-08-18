@@ -36,15 +36,15 @@ local Emitter = {
 	RunOnStart = false,
 }
 
-local EMITTER_CONFIG_TEMPLATE
+local EMITTER_CONFIG_TEMPLATE = {
+	GlobalSound = true,
+	Uses = 0, -- refreshes when changed
+	Cooldown = 1,
+}
 local EMMISSION_CONFIG_TEMPLATE
 function Emitter.Init(utility: _T.Utility)
 	local Config = utility.Config
-	EMITTER_CONFIG_TEMPLATE = {
-		GlobalSound = true,
-		Uses = math.huge, -- refreshes when changed
-		Cooldown = 1,
-	}
+	
 	EMMISSION_CONFIG_TEMPLATE = {
 		EmitCount = Config.Type.Some(Config.Type.number, Config.Type.NumberRange, Config.Type.none),
 		EmitDelay = 0,

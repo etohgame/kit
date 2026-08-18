@@ -34,15 +34,11 @@ local MusicZoneEditor = {
 	RunOnStart = false,
 }
 
-local EDITOR_CONFIG_TEMPLATE
-function MusicZoneEditor.Init(utility: _T.Utility)
-	local Config = utility.Config
-	EDITOR_CONFIG_TEMPLATE = {
-		ZoneName = "",
-		OneTimeUse = false,
-		Cooldown = 1,
-	}
-end
+local EDITOR_CONFIG_TEMPLATE = {
+	ZoneName = "",
+	OneTimeUse = false,
+	Cooldown = 1,
+}
 
 local SequencerSupport = require(script.SequencerSupport)
 local function handleCache(rootScope: _T.Scope, utility: _T.Utility)

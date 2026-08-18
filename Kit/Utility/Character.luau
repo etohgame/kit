@@ -28,11 +28,13 @@ local Character = {}
 local Framework = ReplicatedStorage.Framework
 local Managers = Framework.Kit.Managers
 
+local localPlayer = Players.LocalPlayer :: Player
+
 Character.HitboxModes =
 	table.freeze({ "StaticWholeBody", "StaticCenter", "StaticArms", "RootPart", "WholeBody", "Center" })
 export type HitboxModes = "StaticWholeBody" | "StaticCenter" | "StaticArms" | "RootPart" | "WholeBody" | "Center" | string
 
-local function _addToListAndFilter(part, list, params: OverlapParams?)
+local function _addToListAndFilter(part: BasePart, list: {BasePart}, params: OverlapParams?)
 	table.insert(list, part)
 	if typeof(params) == "OverlapParams" then
 		params:AddToFilter(part)
@@ -47,13 +49,13 @@ end
 function Character.getHitbox(mode: HitboxModes, params: OverlapParams?): { BasePart }
 	local parts = {}
 
-	local character = Players.LocalPlayer.Character
+	local character = localPlayer.Character
 	if not character then
 		return parts
 	end
 
 	if mode == "RootPart" or mode:find("Static") then
-		local hitbox = character:FindFirstChild("_HITBOX")
+		local hitbox = character:FindFirstChild("_HITBOX") :: typeof(Managers.CharacterManager._HITBOX)?
 		if not hitbox then
 			return parts
 		end
@@ -76,7 +78,7 @@ function Character.getHitbox(mode: HitboxModes, params: OverlapParams?): { BaseP
 
 			if mode == "WholeBody" then
 				_addToListAndFilter(characterPart, parts, params)
-			elseif mode == "Center" and (characterPart.Name ~= "Left Arm" and characterPart.Name ~= "Right Arm") then
+			elseif (mode :: string) == "Center" and (characterPart.Name ~= "Left Arm" and characterPart.Name ~= "Right Arm") then
 				_addToListAndFilter(characterPart, parts, params)
 			end
 		end
@@ -114,7 +116,7 @@ end
 	See [CharacterManager](/api/CharacterManager#GetHumanoid) for more info.
 ]=]
 function Character.getHumanoid(): Humanoid?
-	return CharacterManager:GetHumanoid(Players.LocalPlayer)
+	return CharacterManager:GetHumanoid(localPlayer)
 end
 
 --[=[
@@ -196,12 +198,16 @@ local weldedShoulders: { Motor6D } = {}
 	the carry animation will stop.
 ]=]
 function Character.carryPart(weldState: boolean, weldTo: BasePart, animationDisabled: boolean)
-	local character = Players.LocalPlayer.Character
+	local character = localPlayer.Character
+	if not character then
+		return
+	end
+
 	local humanoid = character and character:FindFirstChildOfClass("Humanoid")
 	if not humanoid then
 		return
 	end
-
+	
 	if weldState then
 		local rootPart = humanoid.RootPart
 		if not rootPart or not weldTo then
@@ -219,7 +225,7 @@ function Character.carryPart(weldState: boolean, weldTo: BasePart, animationDisa
 		rootWeld.Part1 = weldTo
 		rootWelds[weldTo] = rootWeld
 
-		for index, arm in { character:FindFirstChild("Left Arm"), character:FindFirstChild("Right Arm") } do
+		for index, arm: BasePart in { character:FindFirstChild("Left Arm"), character:FindFirstChild("Right Arm") } do
 			local shoulder = character:FindFirstChild(`{arm.Name:split(" ")[1]} Shoulder`, true)
 			if not shoulder or not shoulder:IsA("Motor6D") then
 				continue
@@ -269,7 +275,6 @@ function Character.carryPart(weldState: boolean, weldTo: BasePart, animationDisa
 	end
 end
 
-local localPlayer = Players.LocalPlayer
 local characterParts = {}
 local function getParts(character: Model)
 	task.defer(function()

@@ -105,6 +105,8 @@ local function processValue(value: any, default: any): (any, boolean?)
 		return thisValue
 	elseif typeof(value) ~= typeof(default) then
 		return default
+	elseif typeof(value) == "EnumItem" and typeof(default) == "EnumItem" and value.EnumType ~= default.EnumType then
+		return default
 	end
 
 	return value

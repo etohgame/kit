@@ -28,35 +28,30 @@ local BeatBlock = {
 	RunOnStart = false,
 }
 
-local BEATBLOCK_CONFIG_TEMPLATE
-local MUSIC_SYNC_CONFIG_TEMPLATE
-function BeatBlock.Init(utility: _T.Utility)
-	local Config = utility.Config
-	BEATBLOCK_CONFIG_TEMPLATE = {
-		ChangeCanTouch = true,
-		Indicator = true,
-		IndicatorSize = Vector3.new(3, 3, 3),
-		IndicatorScaleMultiplier = 1,
-		MaterialIndicator = Config.Type.Enum(Enum.Material.SmoothPlastic),
+local BEATBLOCK_CONFIG_TEMPLATE = {
+	ChangeCanTouch = true,
+	Indicator = true,
+	IndicatorSize = Vector3.new(3, 3, 3),
+	IndicatorScaleMultiplier = 1,
+	MaterialIndicator = Enum.Material.SmoothPlastic,
 
-		OffCanCollide = false,
-		OffTransparency = 0.5,
-		OffCanTouch = false,
+	OffCanCollide = false,
+	OffTransparency = 0.5,
+	OffCanTouch = false,
 
-		OnCanCollide = true,
-		OnTransparency = 1,
-		OnCanTouch = true,
+	OnCanCollide = true,
+	OnTransparency = 1,
+	OnCanTouch = true,
 
-		Interval = 1,
-		IndicatorInterval = 0.5,
+	Interval = 1,
+	IndicatorInterval = 0.5,
 
-		ToggleChildren = false,
-	}
-	MUSIC_SYNC_CONFIG_TEMPLATE = {
-		ZoneName = Config.Type.string,
-		SyncEnabled = false,
-	}
-end
+	ToggleChildren = false,
+}
+local MUSIC_SYNC_CONFIG_TEMPLATE = {
+	ZoneName = "",
+	SyncEnabled = false,
+}
 
 local REFRESH_RATE = 1 / 60
 
@@ -108,7 +103,7 @@ function BeatBlock.Run(scope: _T.Scope, utility: _T.Utility)
 	local syncConfiguration = Config.GetConfig(scope, musicSyncConfig, MUSIC_SYNC_CONFIG_TEMPLATE):ObserveChanges()
 
 	local syncData
-	if syncConfiguration.SyncEnabled and syncConfiguration.ZoneName then
+	if syncConfiguration.SyncEnabled then
 		local syncPointer = utility.Instance.getPointer(musicSyncConfig:FindFirstChild("Sync"))
 		if syncPointer then
 			syncData = utility.SongTime.BuildSyncCache(require(syncPointer) :: any)

@@ -54,7 +54,7 @@ export type ScopeCommunicator = typeof(setmetatable({} :: __Communicator_params,
 -----------------------------------------
 --> Scope Types
 
-export type RepositoryModule = { Run: (scope: Scope, repository: any) -> (), [string]: any }
+export type RepositoryModule = { Run: (scope: Scope, repository: any) -> (), Init: ((utility: any) -> ())?, [string]: any }
 export type LegacyRepositoryModule = (scope: Scope, repository: any) -> ()
 
 export type __Scope_params = {
