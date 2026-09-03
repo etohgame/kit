@@ -143,6 +143,8 @@ function Seat.Run(scope: _T.Scope, utility: _T.Utility)
 				debug.profileend()
 			end
 		end)
+
+		seatScope:add(dismountSeat)
 	end
 
 	--> Activation
