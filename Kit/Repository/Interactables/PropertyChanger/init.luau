@@ -44,6 +44,29 @@ local TWEENABLE_TYPES = {
 	boolean = false, -- booleans can be tweened but i'm not including that here
 }
 
+local GAMEPAD_KEYS = {
+	[Enum.KeyCode.ButtonY] = true,
+	[Enum.KeyCode.ButtonX] = true,
+	[Enum.KeyCode.ButtonA] = true,
+	[Enum.KeyCode.ButtonB] = true,
+	
+	[Enum.KeyCode.ButtonL1] = true,
+	[Enum.KeyCode.ButtonL2] = true,
+	[Enum.KeyCode.ButtonL3] = true,
+	
+	[Enum.KeyCode.ButtonR1] = true,
+	[Enum.KeyCode.ButtonR2] = true,
+	[Enum.KeyCode.ButtonR3] = true,
+	
+	[Enum.KeyCode.DPadUp] = true,
+	[Enum.KeyCode.DPadDown] = true,
+	[Enum.KeyCode.DPadLeft] = true,
+	[Enum.KeyCode.DPadRight] = true,
+	
+	[Enum.KeyCode.ButtonStart] = true,
+	[Enum.KeyCode.ButtonSelect] = true
+}
+
 -- DO NOT CHANGE THIS VARIABLE AT ALL --
 local BLACKLISTED_CLASSES = {
 	Tool = true,
@@ -308,7 +331,10 @@ local function handleCache(rootScope: _T.Scope, utility: _T.Utility): _TDefs.Cac
 			return utility.JumpButton.IsDown()
 		end,
 		IsKeyDown = function(key: string | Enum.KeyCode)
-			return UserInputService:IsKeyDown(key)
+			local key = if type(key) == "string" then Enum.KeyCode[key] else key 
+			return if GAMEPAD_KEYS[key] 
+				then UserInputService:IsGamepadButtonDown(Enum.UserInputType.Gamepad1, key) 
+				else UserInputService:IsKeyDown(key)
 		end,
 		PreferredInput = function()
 			return UserInputService.PreferredInput
