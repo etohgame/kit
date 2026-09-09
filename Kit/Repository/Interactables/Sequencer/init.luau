@@ -429,6 +429,10 @@ function Sequencer.Run(scope: _T.Scope, utility: _T.Utility)
 
 			local passed = 0
 			for _, sequencePart in currentSequenceData do
+				if syncConfiguration.SyncEnabled and delta <= 0 then
+					sequencePart.hasPassed = false
+				end
+				
 				if sequencePart.hasPassed or not sequencePart.activators then
 					-- sequencer has already passed this part, skip
 					passed += 1
