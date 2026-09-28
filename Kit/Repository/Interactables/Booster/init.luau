@@ -45,7 +45,7 @@ type BoosterCache = {
 
 local Booster = {
 	CanQueue = true,
-	RunOnStart = false,
+	RunOnStart = true,
 }
 
 local BOOSTER_CONFIG_TEMPLATE
@@ -66,6 +66,10 @@ function Booster.Run(scope: _T.Scope, utility: _T.Utility)
 	--> Setup
 	local boosterConfig = scope.instance
 	if not boosterConfig then
+		local repo = scope.rootScope.repository
+		if not repo["Interactables/BoostPad"] then
+			repo["Interactables/BoostPad"] = Booster
+		end
 		return
 	end
 
@@ -79,14 +83,29 @@ function Booster.Run(scope: _T.Scope, utility: _T.Utility)
 	local configuration = Config.GetConfig(scope, boosterConfig, BOOSTER_CONFIG_TEMPLATE):ObserveChanges()
 	local touchConfiguration =
 		Config.GetConfig(scope, boosterConfig:FindFirstChild("TouchConfiguration"), Config.TOUCH_CONFIG)
-			:ObserveChanges()
+		:ObserveChanges()
 	local startTweenConfiguration =
 		Config.GetConfig(scope, boosterConfig:FindFirstChild("StartTweenConfiguration"), Config.TWEEN_CONFIG)
-			:ObserveChanges()
+		:ObserveChanges()
 	local endTweenConfiguration =
 		Config.GetConfig(scope, boosterConfig:FindFirstChild("EndTweenConfiguration"), Config.TWEEN_CONFIG)
-			:ObserveChanges()
+		:ObserveChanges()
+	
+	--> BoostPad backwards compatibility
+	if scope.scriptPath == "Interactables/BoostPad" then
+		scope:log({
+			"BoostPads have been deprecated in favor of the new Pad mode on regular Boosters.",
+			"Please convert your old BoostPads into regular Boosters.",
+			`Path: {booster:GetFullName()}`,
+			type = "warn",
+		})
 		
+		configuration.PadDistance = boosterConfig:GetAttribute("Distance")
+		configuration.Mode = "Pad"
+		startTweenConfiguration.Time = 0
+		endTweenConfiguration.Time = 0
+	end
+
 	local extraVariableConfig = boosterConfig:FindFirstChild("ExtraVariables")
 	local extraVariables = if extraVariableConfig
 		then extraVariableConfig:GetAttributes()

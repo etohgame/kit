@@ -41,7 +41,7 @@ local LightingManager = require(Kit.Managers.LightingManager)
 
 local ClientObjectManager = {
 	__initialized = false,
-    VERSION_NUMBER = "6.1.3", --@kit-version
+	VERSION_NUMBER = "6.1.3", --@kit-version
 } :: _TDefs.ClientObjectsController
 
 type Repo = { [string]: any }
@@ -106,42 +106,34 @@ local function getRepository(overrideRepository: Instance?)
 	return repository
 end
 
-local function loadScript(targetScope: ScopeTypes.Scope, scriptPath: string, instance: Instance?)
-	local thisScript = targetScope.repository[scriptPath]
-	if not thisScript then
-		return
+-- This function must run using scope::spawn or scope::defer
+local function runScript(targetScope: ScopeTypes.Scope, scriptPath: string, thisScript: ScopeTypes.RepositoryModule | ScopeTypes.LegacyRepositoryModule, instance: Instance?)
+	debug.setmemorycategory(scriptPath)
+	local innerScope = targetScope:inherit({
+		instance = instance,
+		scriptPath = scriptPath,
+	})
+	if instance then
+		targetScope.activeScripts[scriptPath][instance] = true
+		innerScope:attach(instance)
 	end
 
-	local thread: thread
-	thread = targetScope:defer(function()
-		debug.setmemorycategory(scriptPath)
-		local innerScope = targetScope:inherit({
-			instance = instance,
-			scriptPath = scriptPath,
-        })
-        if instance then
-            targetScope.activeScripts[scriptPath][instance] = true
-            innerScope:attach(instance)
-        end
-        
-		if typeof(thisScript) == "function" then
-			thisScript(innerScope, Utility)
-		elseif typeof(thisScript) == "table" and typeof(thisScript.Run) == "function" then
-			thisScript.Run(innerScope, Utility)
-		else
-			Log({
-				`Repository Script "{scriptPath}" does not have a runner function.`,
-				type = "info",
-				printType = "warn",
-			})
-		end
+	if typeof(thisScript) == "function" then
+		thisScript(innerScope, Utility)
+	elseif typeof(thisScript) == "table" and typeof(thisScript.Run) == "function" then
+		thisScript.Run(innerScope, Utility)
+	else
+		Log({
+			`Repository Script "{scriptPath}" does not have a runner function.`,
+			type = "info",
+			printType = "warn",
+		})
+	end
 
-		innerScope:add(thread, function()
-			targetScope:remove(thread)
-			if instance and targetScope.rootScope:isAlive() then
-				targetScope.activeScripts[scriptPath][instance] = nil
-			end
-		end)
+	innerScope:add(function()
+		if instance and targetScope.rootScope:isAlive() then
+			targetScope.activeScripts[scriptPath][instance] = nil
+		end
 	end)
 end
 
@@ -153,8 +145,8 @@ end
 ]=]
 function ClientObjectManager:ScanFolder(targetScope: ScopeTypes.Scope, path: Instance, targetPath: Instance?)
 	local repository = targetScope.repository
-    local activeScripts = targetScope.activeScripts
-    
+	local activeScripts = targetScope.activeScripts
+
 	--> Get objects that shouldnt be loaded in (yet?)
 	local objectBlacklist = {}
 	for _, instance in CollectionService:GetTagged("SkipObjectLoad") do
@@ -164,50 +156,41 @@ function ClientObjectManager:ScanFolder(targetScope: ScopeTypes.Scope, path: Ins
 	end
 
 	--> Get scripts
-	local scriptQueue = {}
 	for scriptPath, thisScript in repository do
-        for _, instance in CollectionService:GetTagged("CO_" .. scriptPath) do
-            if not instance:IsDescendantOf(path) then
-                continue
-            end       
+		if typeof(thisScript) == "table" and thisScript.CanQueue == false then
+			continue
+		end
+		
+		if not activeScripts[scriptPath] then
+			activeScripts[scriptPath] = {}
+		end
+
+		for _, instance in CollectionService:GetTagged("CO_" .. scriptPath) do
+			if not instance:IsDescendantOf(path) then
+				continue
+			end       
 			if activeScripts[scriptPath] and activeScripts[scriptPath][instance] then
 				continue
 			end
 
 			local shouldQueue = true
-			if typeof(thisScript) == "table" and thisScript.CanQueue == false then
-				shouldQueue = false
-			end
-			if shouldQueue then
-				-- As bad as this loop looks, it's actually not since each
-				-- CO removes the tag when it's loaded so this check will
-				-- almost never run more than once or twice
-				for blacklistedInstance in objectBlacklist do
-					if blacklistedInstance == instance or instance:IsDescendantOf(blacklistedInstance) then
-						shouldQueue = false
-						break
-					end
+			for blacklistedInstance in objectBlacklist do
+				if blacklistedInstance == instance or instance:IsDescendantOf(blacklistedInstance) then
+					shouldQueue = false
+					break
 				end
 			end
 
 			if shouldQueue then
-				scriptQueue[instance] = scriptPath
-				if not activeScripts[scriptPath] then
-					activeScripts[scriptPath] = {}
-				end
+				targetScope:defer(runScript, targetScope, scriptPath, thisScript, instance)
 			end
 		end
 	end
-
-	for _, instance in path:GetChildren() do
-		if targetPath then
+	
+	if targetPath then
+		for _, instance in path:GetChildren() do
 			instance.Parent = targetPath
 		end
-	end
-
-	--> Run Scripts
-	for instance, scriptPath in scriptQueue do
-		loadScript(targetScope, scriptPath, instance)
 	end
 end
 
@@ -239,21 +222,21 @@ function ClientObjectManager:LoadClientObjects(
 		repository = thisRepository,
 	})
 
-    local container = rootScope:add(Instance.new("Folder"))
-    container.Name = `{tower}TempContainer`
-    container.Parent = ReplicatedStorage
-    rootScope.shared.TempContainer = container
+	local container = rootScope:add(Instance.new("Folder"))
+	container.Name = `{tower}TempContainer`
+	container.Parent = ReplicatedStorage
+	rootScope.shared.TempContainer = container
+	
+	--> Load RunOnStart repo scripts
+	for scriptPath, thisScript in thisRepository do
+		if typeof(thisScript) == "table" and thisScript.RunOnStart then
+			rootScope:spawn(runScript, rootScope, scriptPath, thisScript)
+		end
+	end
 
 	--> Scan folder for repo scripts
 	ClientObjectManager:ScanFolder(rootScope, from, target)
 	from:Destroy()
-
-	--> Load RunOnStart repo scripts
-	for scriptPath, thisScript in thisRepository do
-		if typeof(thisScript) == "table" and thisScript.RunOnStart then
-			loadScript(rootScope, scriptPath)
-		end
-	end
 
 	--> Deregister any lighting presets & cleanup variables on scope cleanup
 	local tower = rootScope.tower
