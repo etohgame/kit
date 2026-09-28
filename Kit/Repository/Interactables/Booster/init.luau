@@ -20,6 +20,7 @@ Thank you
 ]]
 
 local HttpService = game:GetService("HttpService")
+local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 local Workspace = game:GetService("Workspace")
@@ -62,6 +63,7 @@ function Booster.Init(utility: _T.Utility)
 	}
 end
 
+local player = Players.LocalPlayer
 function Booster.Run(scope: _T.Scope, utility: _T.Utility)
 	--> Setup
 	local boosterConfig = scope.instance
@@ -75,18 +77,19 @@ function Booster.Run(scope: _T.Scope, utility: _T.Utility)
 	end
 
 	local CharacterUtil = utility.Character
+	local ClientObjectUtil = utility.ClientObjects
 	local Config = utility.Config
 	local configuration = Config.GetConfig(scope, boosterConfig, BOOSTER_CONFIG_TEMPLATE):ObserveChanges()
 	local touchConfiguration =
 		Config.GetConfig(scope, boosterConfig:FindFirstChild("TouchConfiguration"), Config.TOUCH_CONFIG)
-			:ObserveChanges()
+		:ObserveChanges()
 	local startTweenConfiguration =
 		Config.GetConfig(scope, boosterConfig:FindFirstChild("StartTweenConfiguration"), Config.TWEEN_CONFIG)
-			:ObserveChanges()
+		:ObserveChanges()
 	local endTweenConfiguration =
 		Config.GetConfig(scope, boosterConfig:FindFirstChild("EndTweenConfiguration"), Config.TWEEN_CONFIG)
-			:ObserveChanges()
-		
+		:ObserveChanges()
+
 	local extraVariableConfig = boosterConfig:FindFirstChild("ExtraVariables")
 	local extraVariables = if extraVariableConfig
 		then extraVariableConfig:GetAttributes()
@@ -131,11 +134,6 @@ function Booster.Run(scope: _T.Scope, utility: _T.Utility)
 	end
 
 	--> Cache system and main loop for zone boosters
-	local overlapParams = OverlapParams.new()
-	overlapParams.FilterType = Enum.RaycastFilterType.Include
-	overlapParams.CollisionGroup = ""
-	CharacterUtil.getHitbox("StaticWholeBody", overlapParams)
-
 	local cache = utility.Scope.getCached(scope, scope.scriptPath, function()
 		local cache: BoosterCache = {
 			activators = {},
@@ -143,29 +141,46 @@ function Booster.Run(scope: _T.Scope, utility: _T.Utility)
 			activeBoosters = {},
 		}
 
+		local overlapParams = OverlapParams.new()
+		overlapParams.CollisionGroup = ""
+		overlapParams.ExcludeInstances = {CharacterUtil.getCharacter().character :: Instance}
+		local characterHitboxParts = CharacterUtil.getHitbox("StaticWholeBody")
+		
+		scope:add(player.CharacterAdded:Connect(function(char: Model)
+			char:WaitForChild("_HITBOX")
+			overlapParams.ExcludeInstances = {char :: Instance}
+			characterHitboxParts = CharacterUtil.getHitbox("StaticWholeBody")
+		end))
+
 		local lastTick = os.clock()
 		local fpsCap = 1 / 60
-
-		local isTableEmpty = utility.Table.IsEmpty
+		
 		scope.rootScope:add(RunService.Heartbeat:Connect(function(deltaTime: number)
-			debug.profilebegin("Booster -> Update")
-			if isTableEmpty(cache.boosters) then
-				return
-			end
-
 			--> Cap loop to 60fps
 			local currentTick = os.clock()
 			if currentTick - lastTick < fpsCap then
 				return
 			end
 			lastTick = currentTick
+			
+			if not cache.boosters[1] then
+				return
+			end
+			
+			debug.profilebegin("Booster -> Update")
 
 			--> Get touching parts and determine if any zone boosters are being touched
+			local touchingParts = {}
+			for _, hitboxPart in characterHitboxParts do
+				for _, part in Workspace:GetPartsInPart(hitboxPart, overlapParams) do
+					touchingParts[part] = true
+				end
+			end
+
 			local touchingBoosters: { Booster } = {}
 			for _, booster in cache.boosters do
 				if
-					#Workspace:GetPartsInPart(booster.hitbox, overlapParams) > 0
-					and booster.hitbox:GetAttribute("Activated") ~= false
+					touchingParts[booster.hitbox]
 				then
 					table.insert(touchingBoosters, booster)
 				end
@@ -266,8 +281,6 @@ function Booster.Run(scope: _T.Scope, utility: _T.Utility)
 		if touchConfiguration.canFlip then
 			scope:add(utility.ClientObjects.bindToFlip(booster, activateBoost))
 		end
-	elseif configuration.Mode == "Zone" then
-		table.insert(cache.boosters, boosterData)
 	elseif configuration.Mode == "Pad" then
 		local padHitbox = Instance.fromExisting(booster)
 		padHitbox.Name = "Hitbox"
@@ -290,8 +303,7 @@ function Booster.Run(scope: _T.Scope, utility: _T.Utility)
 		padHitbox.Anchored = false
 
 		boosterData.hitbox = padHitbox
-		table.insert(cache.boosters, boosterData)
-	else
+	elseif configuration.Mode ~= "Zone" then
 		scope:log({
 			"Booster has an unknown Mode and cannot function.",
 			`Path: {booster:GetFullName()}`,
@@ -299,6 +311,33 @@ function Booster.Run(scope: _T.Scope, utility: _T.Utility)
 		})
 		return
 	end
+	
+	if configuration.Mode ~= "Default" then
+		if ClientObjectUtil.isInstanceActive(scope, boosterData.hitbox) then
+			table.insert(cache.boosters, boosterData)
+		end
+		
+		ClientObjectUtil.listenInstanceActive(scope, boosterData.hitbox, nil, function(active)
+			if active then
+				if table.find(cache.boosters, boosterData) then
+					return
+				end
+				table.insert(cache.boosters, boosterData)
+			else
+				local boosterDataSlot = table.find(cache.boosters, boosterData)
+				if boosterDataSlot then
+					table.remove(cache.boosters, boosterDataSlot)
+				end
+			end
+		end)
+	end
+
+	scope:add(function()
+		local boosterDataSlot = table.find(cache.boosters, boosterData)
+		if boosterDataSlot then
+			table.remove(cache.boosters, boosterDataSlot)
+		end
+	end)
 end
 
 return Booster
