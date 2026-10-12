@@ -8,7 +8,7 @@
 ⚠️  WARNING - PLEASE READ! ⚠️
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-If you are submitting to EToH: 
+If you are submitting to EToH:
 
 PLEASE, **DO NOT** make any script edits to this script.
 To make a script edit, please read the following:
@@ -209,13 +209,6 @@ function Swing.Run(scope: _T.Scope, utility: _T.Utility)
         local function dismountSwing()
             rideScope:cleanup(true)
 
-            if attachedRoot then
-                local momentum = if configuration.KeepMomentum then handle.AssemblyLinearVelocity * 2 else Vector3.zero
-                attachedRoot.AssemblyLinearVelocity = momentum
-                attachedRoot.CFrame = CFrame.new(attachedRoot.Position)
-                    * CFrame.Angles(0, math.rad(attachedRoot.Orientation.Y), 0)
-            end
-
             if isPlayer and humanoid then
                 utility.Character.carryPart(false, handle, not configuration.HandleAnimation)
                 humanoid.PlatformStand = false
@@ -223,6 +216,13 @@ function Swing.Run(scope: _T.Scope, utility: _T.Utility)
                     humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
                     utility.Functions.playSoundFromInstance(attachedRoot, soundsFolder, "Jump")
                 end
+            end
+
+            if attachedRoot then
+                local momentum = if configuration.KeepMomentum then handle.AssemblyLinearVelocity * 2 else Vector3.zero
+                attachedRoot.AssemblyLinearVelocity = momentum
+                attachedRoot.CFrame = CFrame.new(attachedRoot.Position)
+                    * CFrame.Angles(0, math.rad(attachedRoot.Orientation.Y), 0)
             end
 
             if controlConfiguration.CanControl then
